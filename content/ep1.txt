@@ -1,0 +1,39 @@
+"gamemounting.txt"
+{
+	"Half-Life 2"
+	{
+		"appid"		"220" //380
+		"required"	"0"
+		"showinmenu"	"1"
+		"gametitle"	"HL2: Episode 1"
+		
+		"paths"
+		{
+			"local"		"episodic"
+			"local"		"episodic/ep1_sound_vo_english.vpk"
+			"local"		"episodic/ep1_pak.vpk"
+			
+			"dedicated"	"episodic"
+			"dedicated"	"episodic/ep1_sound_vo_english.vpk"
+			"dedicated"	"episodic/ep1_pak.vpk"
+		}
+		
+		"maps"
+		{
+			ep1_citadel_00		""
+			ep1_citadel_01		""
+			ep1_citadel_02		""
+			ep1_citadel_02b		""
+			ep1_citadel_03		""
+			ep1_citadel_04		""
+			ep1_c17_00			""
+			ep1_c17_00a			""
+			ep1_c17_01			""
+			ep1_c17_02			""
+			ep1_c17_02b			""
+			ep1_c17_02a			""
+			ep1_c17_05			""
+			ep1_c17_06			""
+		}
+	}
+}

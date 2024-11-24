@@ -1,0 +1,508 @@
+ep1_c17_02a
+{
+	console
+	{
+		sk_gunship_health_increments "12"
+		mp_player_death_items "0"
+	}
+	entity
+	{
+//--Setup--
+		delete {targetname "global_newgame_template_base_items"}
+		delete {targetname "global_newgame_template_ammo"}
+		delete {targetname "global_newgame_spawner_crowbar"}
+		delete {targetname "global_newgame_spawner_pistol"}
+		delete {targetname "global_newgame_spawner_smg"}
+		delete {targetname "global_newgame_spawner_shotgun"}
+		delete {targetname "global_newgame_spawner_physcannon"}
+		delete {targetname "global_newgame_spawner_suit"}
+		delete {targetname "global_newgame_spawner_ammo"}
+		delete {classname "info_player_start"}
+		create {classname "point_template" origin "5298.9 6475.59 -2479.5"
+			values {//	"Template08" "global_newgame_spawner_crowbar"
+			//	"Template06" "global_newgame_spawner_pistol"
+			//	"Template05" "global_newgame_spawner_smg"
+			//	"Template04" "global_newgame_spawner_shotgun"
+			//	"Template02" "global_newgame_spawner_physcannon"
+			//	"Template01" "global_newgame_spawner_suit"
+				"Template01" "alyx"
+				"Template02" "door_startmap"
+				"spawnflags" "2"
+				"targetname" "global_newgame_template_base_items"} }
+		edit {classname "func_areaportal" values {targetname "syn_DisabledPortal" StartOpen "1"} }
+		edit {classname "func_areaportalwindow" values {targetname "syn_DisabledPortalWindow" FadeStartDist "1000" FadeDist "1500"} }
+
+//Prevent Backtracking
+		create {classname "trigger_push" origin "-56 0 0"
+			values {model "*227"
+				spawnflags "1"
+				speed "750"
+				pushdir "0 180 0"} }
+//and disable backtracking trigger
+		edit {classname "trigger_changelevel" values {edt_map "ep1_c17_02b" edt_landmark "landmark_ep1_c17_02a" spawnflags "6" startdisabled "1"} }
+
+//--Starting Items--
+		create {classname "info_player_equip"
+			values {
+				item_suit			"1"
+				item_armor			"60"
+				weapon_physcannon	"1"
+				weapon_pistol		"1"
+				weapon_shotgun		"1"
+				weapon_smg1			"1"
+				weapon_ar2			"1"
+				weapon_frag			"1"
+				weapon_slam			"1"
+				weapon_crossbow		"1"
+				weapon_crowbar		"1"
+				ammo_pistol			"54"
+				ammo_buckshot		"12"
+				ammo_smg1			"45"
+				ammo_ar2			"30"
+				ammo_grenade		"1"
+			} }
+//New Weapons
+		create {classname "info_player_equip"
+			values {targetname "syn_new_weapons"
+				StartDisabled "1"
+				weapon_rpg			"1"
+				ammo_rpg_round		"2"
+			} }
+
+		create {classname "trigger_multiple"
+			origin "2183 7528 -2449.5"
+			values {model "*217"
+				spawnflags "1"
+				targetname "syn_new_weapon_trigger"
+				//StartDisabled "1"
+				filtername "syn_new_weapon_filter"
+				OnTrigger "syn_new_weapons,Enable,,0,1"
+				OnStartTouch "syn_new_weapons,EquipAllPlayers,,0,-1"
+				OnStartTouch "!activator,AddOutput,targetname syn_ep1_c17_02a_got_new_weapons,0.1,-1"} }
+
+		create {classname "filter_activator_name"
+			values {targetname "syn_new_weapon_filter"
+				Negated "1"
+				filtername "syn_ep1_c17_02a_got_new_weapons"} }
+
+		create {classname "trigger_once" origin "1520 8400 -2504"
+			values {model "*285"
+				spawnflags "1"
+				OnTrigger "syn_new_weapons,EquipAllPlayers,,0,-1"} }
+
+//--Spawns--
+		create {classname "info_spawn_manager"
+			values {targetname "syn_spawn_manager"} }
+//Intro
+		create {classname "info_player_coop" origin "5450 6463.63 -2547.97"
+			values {angles "0 180 0" targetname "syn_spawn_player_1"} }
+//Gunship area
+		create {classname "info_player_coop" origin "2245 7565 -2420"
+			values {angles "-30 90 0" targetname "syn_spawn_player_1a" StartDisabled "1"} }
+//Water Area (switch)
+		create {classname "info_player_coop" origin "-760 8896 -2840"
+			values {angles "0 0 0" targetname "syn_spawn_player_2" StartDisabled "1"} }
+//Zombie Area (End)
+		create {classname "info_player_coop" origin "-240 10040 -2832"
+			values {angles "0 225 0" targetname "syn_spawn_player_3" StartDisabled "1"} }
+
+		create {classname "info_global_settings"
+			values {targetname "syn_global_settings" IsVehicleMap "0"} }
+
+//--Extra--
+
+		create { classname "info_intermission" origin "91 8724 -2405" values { angles "18 -122 0" } }
+
+//Trav|Edt - Increase Magitude of post-places combine SLAMS
+		edit {targetname "slam_slam_01_exp_16" values {iMagnitude "200"} }
+		edit {targetname "slam_slam_01_exp_17" values {iMagnitude "200"} }
+		edit {targetname "slam_slam_01_exp_15" values {iMagnitude "200"} }
+		edit {targetname "slam_slam_01_exp_12" values {iMagnitude "200"} }
+		edit {targetname "slam_slam_01_exp_13" values {iMagnitude "200"} }
+
+//Trav|Edt - Increase clientRagdoll counts (cvar)
+		edit {classname "game_ragdoll_manager" values {MaxRagdollCount "-1"} }
+
+//teleport players to battle
+		create {classname "info_teleport_destination" origin "2212 7800 -2280"
+			values {angles "0 90 0"
+				targetname "trav_teleport_2"} }
+		
+		create 
+		{
+			classname "trigger_once"
+			origin "2212 7800 -2323.5"
+			values 
+			{
+				edt_getbspmodelfor_classname "trigger_once"
+				edt_getbspmodelfor_origin "2212 7800 -2323.5"
+				spawnflags "1"
+				OnTrigger "syn_spawn_manager,SetCheckPoint,syn_spawn_player_1a,0,1"
+				OnTrigger "syn_spawn_manager,TeleportPlayers,trav_teleport_2,0.1,-1"
+				OnTrigger "syn_antihide_push,Enable,,0.1,-1"
+			} 
+		}
+
+		create 
+		{
+			classname "trigger_push"
+			origin "2190 7450 -2420"
+			values 
+			{
+				model "*218"
+				angles "0 90 0"
+				spawnflags "1"
+				StartDisabled "1"
+				targetname "syn_antihide_push"
+				pushdir "0 0 0"
+				speed "550"
+			} 
+		}
+//disabling movement of gunship ragdoll
+		create {classname "logic_auto"
+			values {spawnflags "1"
+				OnMapSpawn "relay_gunship_killed,AddOutput,OnTrigger gunship_showdown_ragdoll:DisableMotion::0:-1,0,-1"
+			}
+		}
+//modi - Alyx: "I found a shotgun". Remaking this part to prevent game stuck
+		delete {targetname "slam_slam_01_13"}
+		delete {targetname "trigger_teleport"}
+		create
+		{
+			classname "func_breakable"
+			origin "1183.3 8542.96 -2510.97"
+			values
+			{
+				edt_getbspmodelfor_targetname "slam_slam_01_13"
+				"targetname" "slam_slam_01_13"
+				"spawnflags" "518"
+				"physdamagescale" "1.0"
+				"minhealthdmg" "0"
+				"disablereceiveshadows" "0"
+				"rendercolor" "255 255 255"
+				"renderamt" "255"
+				"rendermode" "0"
+				"renderfx" "0"
+				"pressuredelay" "0"
+				"explodemagnitude" "0"
+				"spawnobject" "0"
+				"nodamageforces" "0"
+				"gibdir" "0 0 0"
+				"explosion" "0"
+				"material" "1"
+				"health" "1"
+				"propdata" "6"
+				"PerformanceMode" "0"
+				"ExplodeRadius" "0"
+				"ExplodeDamage" "0"
+				"disableshadows" "0"
+				"OnBreak" "slam_slam_01_11_beamtrigger2,Kill,,0,1"
+				"OnBreak" "slam_slam_01_beam_11a2,TurnOff,,0,1"
+				"OnBreak" "slam_slam_01_exp_13,Explode,,0,-1"
+				"OnBreak" "alyx_laserblocker,Kill,,0,1"
+				// "OnBreak" "trigger_shotgun,Enable,,0,-1"
+				"OnBreak" "relay_teleport_alyx,Trigger,,0,-1"
+				"OnBreak" "syn_movealyx,MoveToPosition,,0.1,1"
+			}
+		}
+		
+		create {classname "scripted_sequence" origin "998 8598 -2558"
+			values
+			{
+				targetname "syn_movealyx"
+				m_iszEntity "alyx"
+				m_fMoveTo "1"
+				angles "0 180 0"
+				spawnflags "560"
+				OnBeginSequence "!self,CancelSequence,,0.1,-1"
+				OnBeginSequence "!self,kill,,0.2,1"
+			}
+		}
+
+		create {classname "trigger_once" origin "998 8598 -2558"
+			values
+			{
+				edt_mins "-20 -20 -20"
+				edt_maxs "20 20 20"
+				spawnflags "2"
+				filtername "filter_alyx"
+				OnTrigger "syn_movealyx,CancelSequence,,0,-1"
+				OnTrigger "syn_movealyx,kill,,0.1,-1"
+				OnTrigger "trigger_shotgun,Enable,,0.5,-1"
+				OnTrigger "skip_shotgun_pickup,Trigger,,10,-1"
+				OnTrigger "alyx,AddOutput,OnWeaponPickup skip_shotgun_pickup:Disable::0:1,0,-1"
+			}
+		}
+
+		create {classname "logic_relay" origin "998 8598 -2558"
+			values
+			{
+				StartDisabled "0"
+				targetname "skip_shotgun_pickup"
+				OnTrigger "lcs_hos_enterance,Start,,1,-1"
+			}
+		}
+
+//Trav|Edt - add more postgunship combine
+		create {classname "logic_relay"
+			values {spawnflags "1"
+				targetname "door1_det_relay_bustfrontdoor"
+				OnTrigger "ptemplate_hos_start,ForceSpawn,,6,-1"
+				//OnTrigger "ptemplate_hos_start,ForceSpawn,,7,-1"
+				//OnTrigger "ptemplate_hos_start,ForceSpawn,,8,-1"
+				OnTrigger "ptemplate_hos_start,ForceSpawn,,9,-1"} }
+				
+		create {classname "info_teleport_destination" origin "-760 8896 -2840"
+			values {angles "0 0 0"
+				targetname "trav_teleport"} }
+
+		delete {classname "logic_auto" origin "5280 6448 -2517.5"}
+		delete {classname "logic_auto" origin "5280 6432 -2517.5"}
+//Trav|Edt - Manage players not killing eachother here
+		create {classname "logic_auto"
+			values {spawnflags "1"
+				OnNewGame "global_newgame_template_base_items,ForceSpawn,,0.1,1"
+				OnMapTransition "follow_alyx,Activate,,0.1,1"
+				OnMapSpawn "func_rot_button_2,AddOutput,OnOpen !self:Lock::0:-1,0,-1"
+				OnMapSpawn "func_rot_button_2,AddOutput,OnOpen trav_teleport_water_fall:Enable::0:-1,0,-1"
+				OnMapSpawn "func_rot_button_2,AddOutput,OnOpen trav_teleport_water:Enable::0:-1,0,-1"
+				OnMapSpawn "func_rot_button_2,AddOutput,OnOpen trav_teleport_water:Disable::1.5:-1,0,-1"
+				OnMapSpawn "func_rot_button_2,AddOutput,OnOpen syn_global_settings:AddOutput:IsVehicleMap 1:0:-1,0,-1"
+				OnMapSpawn "func_rot_button_2,AddOutput,OnOpen syn_spawn_manager:SetCheckpoint:syn_spawn_player_2:0:-1,0,-1"
+				OnMapSpawn "func_rot_button_2,AddOutput,OnOpen syn_spawn_manager:TeleportPlayers:trav_teleport:2:-1,0,-1"
+				OnMapSpawn "prop_barrel,DisableMotion,,5,-1"} }
+//players beind that are falling into water
+		create {classname "trigger_teleport"
+			origin "-232 8588 -2704"
+			values {model "*358"
+				spawnflags "1"
+				targetname "trav_teleport_water_fall"
+				filtername "syn_filter_water_fall"
+				StartDisabled "1"
+				target "trav_teleport_water_dest"} }
+//players in the water
+		create {classname "trigger_teleport"
+			origin "-184 8775 -2872"//z-2898.86
+			values {model "*361"
+				spawnflags "1"
+				targetname "trav_teleport_water"
+				StartDisabled "1"
+				target "trav_teleport_water_dest"} }
+//dont teleport players who already made it in door if they fall again
+		create {classname "trigger_multiple"
+			origin "300 8920 -2648"
+			values {model "*375"
+				spawnflags "1"
+				OnStartTouch "!activator,AddOutput,targetname syn_ep1_c17_2a_dontteleportme,0,-1"} }
+
+		create {classname "filter_activator_name"
+			values {targetname "syn_filter_water_fall"
+				Negated "1"
+				filtername "syn_ep1_c17_2a_dontteleportme"} }
+
+		create {classname "info_teleport_destination" origin "-760 8896 -2840" values {targetname "trav_teleport_water_dest"} }
+//setup barrel
+		edit {targetname "prop_barrel" values {origin "-400 8992 -2864" angles "90 270 0"} }
+
+		//create {classname "trigger_once"
+		//	origin "-752 8930.03 -2846"
+		//	values {model "*365"
+		//		spawnflags "1"
+		//		OnTrigger "syn_spawn_manager,MovePlayers,,0,-1"} }
+
+//Trav|Edt - save network usage in water area
+		delete {targetname "ragdoll_cit_01"}
+		delete {targetname "ragdoll_cit_2"}
+
+//Trav|Edt - teleport all players to zombie holdout
+		create {classname "trigger_once"
+			origin "-450 9649 -2728"
+			values {model "*246"
+				spawnflags "1"
+				OnTrigger "syn_spawn_manager,MovePlayers,,0,-1"
+				OnTrigger "syn_spawn_manager,SetCheckpoint,syn_spawn_player_3,0,-1"
+				//OnTrigger "syn_global_settings,AddOutput,IsVehicleMap 1,0,-1"
+				OnTrigger "trav_tmaker_zombies*,Enable,,15,-1"
+				OnTrigger "trav_antirush_door,UnLock,,80,-1"//150
+				OnTrigger "syn_global_settings,AddOutput,IsVehicleMap 0,150,-1"} }
+
+//TraV|Edt - prevent running past zombie battle so early
+		create {classname "prop_door_rotating" origin "-1256 9425 -2778"
+			values {spawnflags "2048"
+				targetname "trav_antirush_door"
+				model "models/props_c17/door01_left.mdl"
+				axis "-1256 9425 -2777.72, -1256 9425 -2777.72"
+				skin "8"
+				speed "70"
+				hardware "1"
+				opendir "2"
+				returndelay "-1"
+				distance "90"} }
+
+//Trav|Edt - add more zombies in zombie holdout
+
+//zombine
+		create {classname "npc_template_maker"
+			origin "-64 9808 -2824"
+			values {spawnflags "128"
+				angles " 0 270 0"
+				targetname "trav_tmaker_zombies1"
+				StartDisabled "1"
+				MaxNPCCount "12"
+				SpawnFrequency "0.4"
+				MaxLiveChildren "6"
+				TemplateName "template_holdout_group2"} }
+
+		//create {classname "logic_relay"
+		//	values {spawnflags "1"
+		//		targetname "relay_holdout_doorbreak_2"
+		//		OnTrigger "trav_tmaker_zombies1,Enable,,0,-1"} }
+
+//pzombie
+		create {classname "npc_template_maker"
+			origin "-1080 9328 -2824"
+			values {spawnflags "128"
+				angles " 0 0 0"
+				targetname "trav_tmaker_zombies2"
+				StartDisabled "1"
+				MaxNPCCount "4"
+				SpawnFrequency "2"
+				MaxLiveChildren "3"
+				TemplateName "template_holdout_poison"} }
+
+		//create {classname "logic_relay"
+		//	values {spawnflags "1"
+		//		targetname "lrelay_holdout_spawnsers"
+		//		OnTrigger "trav_tmaker_zombies2,Enable,,0,-1"} }
+
+//zombie
+		create {classname "npc_template_maker"
+			origin "-824 9968 -2824"
+			values {spawnflags "128"
+				angles " 0 270 0"
+				targetname "trav_tmaker_zombies3"
+				StartDisabled "1"
+				MaxNPCCount "16"
+				SpawnFrequency "0.4"
+				MaxLiveChildren "8"
+				TemplateName "template_holdout_zombie3"} }
+
+		//create {classname "logic_relay"
+		//	values {spawnflags "1"
+		//		targetname "relay_holdout_doorbreak_1"
+		//		OnTrigger "trav_tmaker_zombies3,Enable,,0,-1"} }
+
+//Trav|Edt - Auti-rush
+		create {classname "trigger_coop"
+			origin "-2696 8452 -2748"
+			values {model "*428"
+				spawnflags "1"
+				//StartDisabled "1"
+				targetname "syn_antirush_coop"
+				CountType "1"
+				UseHUD "1"
+				PlayerValue "50"
+				OnPlayersIn "syn_antirush_push,Disable,,0,1"
+				OnPlayersIn "syn_teleport_alyx_end,Teleport,,0.1,1"
+				OnPlayersIn "follow_alyx,Deactivate,,0,-1"
+				OnPlayersIn "!self,Disable,,1,1"} }
+
+		create {classname "trigger_push"
+			origin "-2692 8240 -2749.32"
+			values {model "*236"
+				spawnflags "1"
+				targetname "syn_antirush_push"
+				pushdir "0 90 0"
+				speed "450"} }
+
+		create {classname "point_teleport"
+			origin "-2744 8090 -2800"
+			values {targetname "syn_teleport_alyx_end"
+				angles "0 90 0"
+				target "alyx"} }
+
+//End of Trav|Edt
+
+		// create an extra RPG near the gunship battle
+		//create { classname "weapon_rpg" origin "2529 8615 -2545" values { angles "0 45 0" } }
+//Clean up a few ents for edict limit on larger player counts
+		delete {classname "prop_physics" origin "1777.31 8114.34 -2556.09"}
+		delete {classname "prop_physics" origin "1761.11 8135.87 -2557.9"}
+		delete {classname "prop_physics" origin "2022.08 7864.6 -2552.97"}
+		delete {classname "prop_physics" origin "2004.4 7848.34 -2552.99"}
+		delete {classname "prop_physics" origin "2274.24 7914.96 -2368.43"}
+		delete {classname "prop_physics" origin "2282.16 7931.09 -2366.64"}
+		delete {classname "prop_physics" origin "2410.3 8367.28 -2557.88"}
+		delete {classname "prop_physics" origin "2403.34 8357.51 -2557.88"}
+		delete {classname "prop_physics" origin "-46.6422 8484.59 -2833"}
+		delete {classname "prop_physics" origin "-2081.6 8490.54 -2797.52"}
+		delete {classname "prop_physics" origin "371.22 8675.62 -2836.11"}
+		delete {classname "prop_physics" origin "-209.598 8717.16 -2700.6"}
+		delete {classname "prop_physics" origin "-919.196 9100.49 -2693.92"}
+		delete {classname "prop_physics" origin "-905.807 9108.29 -2693.9"}
+		delete {classname "prop_physics" origin "-1165.08 7844.82 -2524.8"}
+		delete {classname "prop_physics" origin "2619.15 7882.32 -2557.91"}
+		delete {classname "prop_physics" origin "4815.38 7137.67 -2535.63"}
+		delete {classname "prop_physics" origin "4816.01 6944.01 -2534.11"}
+		delete {classname "prop_physics" origin "5704.96 6901.96 -2533.56"}
+		delete {classname "prop_physics" origin "5647.98 6730 -2533.56"}
+		delete {classname "env_fire" origin "5566.61 6970 -2535.1"}
+		delete {classname "env_fire" origin "5566 6986 -2535.1"}
+		delete {classname "env_fire" origin "5578 6954 -2535.1"}
+		delete {classname "light" origin "5566 6970 -2515.1"}
+		delete {classname "move_rope" origin "5585 6477.93 -2356.95"}
+		delete {classname "move_rope" origin "5681 6382.93 -2356.95"}
+		delete {classname "move_rope" origin "5681 6348.93 -2356.95"}
+		delete {classname "move_rope" origin "5759 6477.93 -2356.95"}
+		delete {classname "move_rope" origin "-389.441 7728.44 -2433.99"}
+		delete {classname "move_rope" origin "-389.441 7684.44 -2433.99"}
+		edit {targetname "room_wire_01a8" values {NextKey ""} }
+		delete {classname "move_rope" origin "-435.441 9050.57 -2434.99"}
+		delete {classname "move_rope" origin "-435.441 9091.57 -2433.99"}
+		delete {classname "move_rope" origin "-1161.55 8038 -2411.56"}
+		delete {classname "move_rope" origin "-1097.55 8038 -2405.56"}
+		delete {classname "move_rope" origin "-1225.55 8038 -2405.56"}
+		delete {classname "move_rope" origin "-1088.43 8052 -2413.56"}
+		delete {classname "move_rope" origin "-1152.43 8052 -2413.56"}
+		delete {classname "move_rope" origin "-1024.43 8052 -2413.56"}
+		delete {classname "move_rope" origin "-472.441 8524.57 -2391.99"}
+		delete {classname "move_rope" origin "-473.441 8582.57 -2392.99"}
+		delete {classname "move_rope" origin "-473.441 8788.57 -2391.99"}
+		delete {classname "move_rope" origin "-472 8944 -2391.99"}
+		delete {classname "move_rope" origin "648.99 8679.99 -2499.99"}
+		delete {classname "move_rope" origin "647.99 8723.99 -2499.99"}
+		delete {classname "move_rope" origin "648.99 8691.99 -2499.99"}
+		delete {classname "move_rope" origin "630.99 8679.99 -2499.99"}
+		delete {classname "move_rope" origin "631.99 8723.99 -2499.99"}
+		delete {classname "move_rope" origin "630.99 8691.99 -2499.99"}
+		delete {classname "move_rope" origin "-216.01 8496.99 -2499.99"}
+		delete {classname "move_rope" origin "-172.01 8497.99 -2499.99"}
+		delete {classname "move_rope" origin "-204.01 8496.99 -2499.99"}
+		delete {classname "move_rope" origin "216.01 7734.99 -2499.99"}
+		delete {classname "move_rope" origin "172.01 7735.99 -2499.99"}
+		delete {classname "move_rope" origin "204.01 7734.99 -2499.99"}
+		delete {classname "move_rope" origin "-1112.01 8972.01 -2499.99"}
+		delete {classname "move_rope" origin "-1068.01 8971.01 -2499.99"}
+		delete {classname "move_rope" origin "-1100.01 8972.01 -2499.99"}
+		delete {classname "move_rope" origin "-2241.01 8577.44 -2773.99"}
+		delete {classname "move_rope" origin "-2039.01 8729.99 -2812"}
+		delete {classname "move_rope" origin "-2197.01 8576.44 -2773.99"}
+		delete {classname "move_rope" origin "-2229.01 8577.44 -2773.99"}
+		delete {classname "move_rope" origin "-2557.99 9112.01 -2773.99"}
+		delete {classname "move_rope" origin "-2558.99 9068.01 -2773.99"}
+		delete {classname "move_rope" origin "-2557.99 9100.01 -2773.99"}
+		delete {classname "move_rope" origin "-2557.21 9051.01 -2773"}
+		delete {targetname "spark_rag_1"}
+		delete {targetname "contraint_rag_rope_03"}
+		delete {targetname "physbox_rag_rope_03"}
+		delete {targetname "physbox_rag_rope_4"}
+		delete {targetname "contraint_rag_rope_4"}
+		delete {targetname "spark_rag_2"}
+
+		// remove weird black wall
+		delete { targetname "brush_fall" }
+
+//Trav|Edt - Functionality check
+		create {classname "logic_relay" values {targetname "trav_functionality_ep1_c17_02a"} }
+	}
+}

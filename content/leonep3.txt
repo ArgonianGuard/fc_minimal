@@ -1,0 +1,18 @@
+"gamemounting.txt"
+{
+	"Halflife2-Episode3"
+	{
+		"appid"	"220"
+		"required"	"0"
+		"sourcemod"	"1"
+		"showinmenu"	"1"
+		"gametitle"	"The Closure"
+
+		"paths"
+		{
+			"local"			"Halflife2-Episode3"
+
+			"dedicated"		"Halflife2-Episode3"
+		}
+	}
+}

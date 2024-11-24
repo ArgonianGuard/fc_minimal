@@ -1,0 +1,85 @@
+// Choreo version 1
+event loop "loop"
+{
+  time 5.638000 -1.000000
+  param "1.678000"
+  loopcount "255"
+}
+actor "scout"
+{
+  channel "Anim"
+  {
+    event expression "specialAction01"
+    {
+      time 0.000000 1.328917
+      param "player\scout\emotion\emotion"
+      param2 "happyBig"
+      event_ramp
+      {
+        0.2520 0.6235
+        0.9660 0.5647
+        1.0980 0.1137
+        1.3289 0.0000
+      }
+    }
+    event speak "*train*"
+    {
+      time 0.000000 -1.000000
+      param "*train*"
+      fixedlength
+      cctype "cc_master"
+      cctoken ""
+    }
+    event sequence "taunt_vehicle_moped_start"
+    {
+      time 0.000000 5.666667
+      param "taunt_vehicle_moped_start"
+      fixedlength
+    }
+    event speak "taunt.ScoutMopedStart"
+    {
+      time 0.045454 1.356270
+      param "taunt.ScoutMopedStart"
+      fixedlength
+      cctype "cc_master"
+      cctoken ""
+    }
+    event expression "specialAction01"
+    {
+      time 0.977273 1.689394
+      param "player\scout\emotion\emotion"
+      param2 "specialAction01"
+      event_ramp
+      {
+        0.0800 0.9647
+        0.4160 0.7804
+      }
+    }
+    event expression "specialAction01Upper"
+    {
+      time 1.678000 5.659091
+      param "player\scout\emotion\emotion"
+      param2 "specialAction01Upper"
+    }
+    event expression "specialAction01Upper"
+    {
+      time 1.224455 1.678000
+      param "player\scout\emotion\emotion"
+      param2 "specialAction01Upper"
+      event_ramp
+      {
+        0.4535 1.0000
+      }
+    }
+  }
+}
+scalesettings
+{
+  "CChoreoView" "100"
+  "SceneRampTool" "100"
+  "ExpressionTool" "100"
+  "GestureTool" "100"
+  "RampTool" "100"
+}
+fps 60
+snap off

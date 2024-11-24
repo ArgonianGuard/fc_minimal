@@ -1,0 +1,56 @@
+Rule MvMDefenderDied
+{
+	criteria ConceptMvMDefenderDied IsMvMDefender 100PercentChance IsJohn 
+	Response johnmourn
+}
+criterion "LoadoutIsUzi" "loadout_slot_action" "Gravity Gun" "required"
+Rule MeleeDareCombatJohn
+{
+	criteria ConceptPlayerBattleCry IsWeaponMelee IsJohn IsCrosshairEnemy
+	Response MeleeDareCombatJohn
+}
+response "johnmourn"
+{
+	speak "vo\npc\male01\question11.wav"
+	speak "vo\npc\male01\gordead_ans11.wav"
+	speak "vo\npc\male01\gordead_ans12.wav"
+	speak "vo\npc\male01\gordead_ans15.wav"
+	speak "vo\npc\male01\gordead_ans03.wav"
+	speak "vo\npc\male01\gordead_ans08.wav"
+	speak "vo\npc\male01\gordead_ques01.wav"
+	speak "vo\npc\male01\gordead_ques16.wav"
+	speak "vo\npc\male01\gordead_ans17.wav"
+	
+}
+Response PlayerBattleCryJohn
+{
+	speak "vo\npc\male01\squad_follow02.wav"
+	speak "vo\episode_1\npc\male01\cit_hurryup.wav"
+	speak "vo\episode_1\npc\male01\cit_thisway.wav"
+}
+Response PlayerBattleCryJohnTest
+{
+	speak "boner.mp3"
+
+}
+Rule PlayerBattleCryJohn
+{
+	criteria ConceptPlayerBattleCry IsJohn
+	Response PlayerBattleCryJohn
+}
+Rule PlayerBattleCryJohnTest
+{
+	criteria ConceptPlayerBattleCry IsJohn LoadoutIsUzi
+	Response PlayerBattleCryJohnTest
+}
+Rule PlayerCloakedSpyJohn
+{
+	criteria ConceptPlayerCloakedSpy IsJohn
+	Response PlayerCloakedSpyJohn
+}
+response PlayerCloakedSpyJohn
+{
+	speak "sound/vo/npc/male01/behindyou01.wav"
+	speak "sound/vo/npc/male01/behindyou02.wav"
+}
+

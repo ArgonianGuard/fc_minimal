@@ -1,0 +1,20 @@
+"gamemounting.txt"
+{
+	"CombineDestiny"
+	{
+		"appid"	"220"
+		"required"	"0"
+		"sourcemod"	"1"
+		"showinmenu"	"0"
+		"contenttag"	"cd"
+		// Blue Co-op
+		"gamemode"	"3"
+
+		"paths"
+		{
+			"local"			"CombineDestiny"
+
+			"dedicated"		"CombineDestiny"
+		}
+	}
+}

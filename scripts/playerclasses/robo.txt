@@ -1,0 +1,50 @@
+//
+// Fortress Obscura -  Telecon Player Class
+//
+PlayerClass
+{
+	// Attributes.
+	"name"			"robo"
+	"model"			"models/player/telecon.mdl"
+	"model_hwm"		"models/player/telecon.mdl"
+	"model_hands"	"models/weapons/c_models/c_telecon_arms.mdl"
+	"localize_name"		"FC_CLASS_TELECON"
+	"speed_max"		"320"
+	"health_armor_max"		"75"
+	"armor_max"		"100"
+	"armortype"		"1"
+	"health_max"		"125"
+
+	// Grenades.
+	"grenade1"		"TF_WEAPON_GRENADE_NORMAL"
+	"grenade2"		"TF_WEAPON_GRENADE_EMP"
+
+	// Weapons.
+	"weapon1"		"TF_WEAPON_SCATTERGUN"
+	"weapon2"		"TF_WEAPON_PISTOL"
+	"weapon3"		"TF_WEAPON_BAT"
+	"weapon4"		"TF_WEAPON_PDA_ENGINEER_BUILD"
+	"weapon5"		"TF_WEAPON_PDA_ENGINEER_DESTROY"
+
+	"buildable1"	"OBJ_TELEPORTER"
+	
+	"DontDoAirwalk"	"0"
+	"DontDoNewJump"	"0"
+
+	AmmoMax
+	{
+		"tf_ammo_primary"	"32"
+		"tf_ammo_secondary"	"96"
+		"tf_ammo_metal"		"200"
+		"tf_ammo_grenades1"	"1"
+		"tf_ammo_grenades2"	"1"
+		"lfe_ammo_grenades1"	"2"
+		"lfe_ammo_grenades2"	"2"
+	}	
+
+	// Death Sounds
+	"sound_death"				"telecon.critdeath02"
+	"sound_crit_death"			"telecon.critdeath01"
+	"sound_melee_death"			"telecon.critdeath02"
+	"sound_explosion_death"			"telecon.critdeath02"	
+}

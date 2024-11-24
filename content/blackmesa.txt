@@ -1,0 +1,27 @@
+"gamemounting.txt"
+{
+	"Black Mesa"
+	{
+		"appid"	"362890"
+		"required"	"0"
+		"sourcemod"	"0"
+		"showinmenu"	"0"
+		"contenttag"	"blackmesa"
+
+		"paths"
+		{
+			"local"			"bms"
+			"local"			"bms/bms_misc_dir.vpk"
+			"local"			"bms/bms_maps_dir.vpk"
+			"local"			"bms/bms_models_dir.vpk"
+			"local"			"bms/bms_textures_dir.vpk"
+			"local"			"bms/bms_sounds_misc_dir.vpk"
+
+			"dedicated"		"bms"
+			"dedicated"		"bms/bms_misc_dir.vpk"
+			"dedicated"		"bms/bms_models_dir.vpk"
+			"dedicated"		"bms/bms_textures_dir.vpk"
+			"dedicated"		"bms/bms_sounds_misc_dir.vpk"
+		}
+	}
+}

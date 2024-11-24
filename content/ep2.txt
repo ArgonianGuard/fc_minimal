@@ -1,0 +1,44 @@
+"gamemounting.txt"
+{
+	"Half-Life 2"
+	{
+		"appid"		"220" //420
+		"required"	"0"
+		"showinmenu"	"1"
+		"gametitle"	"HL2: Episode 2"
+		"deps"		"ep1"
+		
+		"paths"
+		{
+			"local"		"ep2"
+			"local"		"ep2/ep2_sound_vo_english.vpk"
+			"local"		"ep2/ep2_pak.vpk"
+			
+			"dedicated"	"ep2"
+			"dedicated"	"ep2/ep2_sound_vo_english.vpk"
+			"dedicated"	"ep2/ep2_pak.vpk"
+		}
+		
+		"maps"
+		{
+			ep2_outland_01		""
+			ep2_outland_01a		""
+			ep2_outland_02		""
+			ep2_outland_03		""
+			ep2_outland_04		""
+			ep2_outland_05		""
+			ep2_outland_06		""
+			ep2_outland_06a		""
+			ep2_outland_07		""
+			ep2_outland_08		""
+			ep2_outland_09		""
+			ep2_outland_10		""
+			ep2_outland_10a		""
+			ep2_outland_11		""
+			ep2_outland_11a		""
+			ep2_outland_11b		""
+			ep2_outland_12		""
+			ep2_outland_12a		""
+		}
+	}
+}
