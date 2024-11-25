@@ -1,0 +1,38 @@
+"gamemounting.txt"
+{
+	"ptsd_2"
+	{
+		"appid"	"220"
+		"sourcemod" "1"
+		"showinmenu" "1"
+		"gametitle" "PTSD 2 Mod"
+		"deps"	"ep2 ep1"
+		
+		"paths"
+		{
+			"path"	"ptsd_2"
+		}
+		
+		"maps"
+		{
+			ptsd_2_p1				""
+			ptsd_2_p2				""
+			ptsd_2_p3				""
+			ptsd_2_p4				""
+			ptsd_2_p5				""
+			ptsd_2_p7				""
+			ptsd_2_p8				""
+			ptsd_2_p9				""
+			ptsd_2_hell				""
+			ptsd_2_p10				""
+			ptsd_2_pxx				""
+			ptsd_2_finale			""
+			ptsd_2_finale_2			""
+			ptsd_2_final_day		""
+			//Don't show these in create server
+			//ending_loop			""
+			//ptsd_2_p1_fake		""
+			//ptsd_2_endless_desert	""
+		}
+	}
+}

@@ -6,13 +6,37 @@
 		"required"	"0"
 		"sourcemod"	"0"
 		"showinmenu"	"0"
-		"contenttag"	"prospekt"
+		"deps"		"ep1 ep2"
 
 		"paths"
 		{
-			"local"			"prospekt"
+			"path"			"prospekt"
+		}
 
-			"dedicated"		"prospekt"
+		"maps"
+		{
+			pxg_level_01_fg		""
+			pxg_level_02_fg		""
+			pxg_level_02a_fg	""
+			pxg_level_03a_fg	""
+			pxg_level_03b_fg	""
+			pxg_level_03c_fg	""
+			pxg_level_04a_fg	""
+			pxg_level_04b_fg	""
+			pxg_level_05_fg		""
+			pxg_level_06_fg		""
+			pxg_level_xen		""
+			pxg_level_06a_fg	""
+			pxg_level_07		""
+			pxg_level_08		""
+			pxg_level_09		""
+			pxg_finallevel01a	""
+			pxg_sneak_lvl_01	""
+			pxg_sneak_lvl_02	""
+			pxg_sneak_lvl_03	""
+			pxg_sneak_lvl_04	""
+			pxg_sneak_lvl_05	""
+			jack_story_lvl_01	""
 		}
 	}
 }

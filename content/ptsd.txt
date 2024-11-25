@@ -1,0 +1,31 @@
+"gamemounting.txt"
+{
+	"ptsd"
+	{
+		"appid"	"220"
+		"sourcemod" "1"
+		"showinmenu" "1"
+		"gametitle" "PTSD Mod"
+		"deps"	"ep1 ep2"
+		
+		"paths"
+		{
+			"path"	"ptsd"
+		}
+
+		"maps"
+		{
+			ptsd_1		""
+			ptsd_2		""
+			ptsd_2_p1	""
+			ptsd_3		""
+			ptsd_3_p1	""
+			ptsd_3_p2	""
+			ptsd_4		""
+			ptsd_5		""
+			ptsd_6		""
+			boneless_ptsd	""
+			ptsd_final	""
+		}
+	}
+}

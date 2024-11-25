@@ -1,0 +1,24 @@
+"gamemounting.txt"
+{
+	"ptsd_festive"
+	{
+		"appid"	"220"
+		"sourcemod" "1"
+		"showinmenu" "1"
+		"gametitle" "PT Christmas Special"
+		"deps"	"ep1 ep2"
+		
+		"paths"
+		{
+			"path"	"ptsd_festive"
+		}
+
+		"maps"
+		{
+			ptsd_festive_1			""
+			ptsd_festive_2			""
+			ptsd_festive_final_1	""
+			the_end					""
+		}
+	}
+}
