@@ -6,7 +6,7 @@
 		"sourcemod" "1"
 		"showinmenu" "1"
 		"gametitle" "PTSD 2 Mod"
-		"deps"	"ep2 ep1"
+		"deps"	"ep2"
 		
 		"paths"
 		{

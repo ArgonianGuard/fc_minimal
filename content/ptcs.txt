@@ -6,7 +6,7 @@
 		"sourcemod" "1"
 		"showinmenu" "1"
 		"gametitle" "PT Christmas Special"
-		"deps"	"ep1 ep2"
+		"deps"	"ep2"
 		
 		"paths"
 		{
