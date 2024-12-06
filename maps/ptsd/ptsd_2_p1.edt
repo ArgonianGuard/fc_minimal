@@ -59,7 +59,7 @@
 		create {classname "trigger_gravity" origin "-310 -240 30" values {gravity "1.0" spawnflags "1" startdisabled "0" model "*36"} }
 		create {classname "trigger_changelevel" values {targetname "syn_toptsd22" map "ptsd_2" landmark "topsd22" startdisabled "1" spawnflags "6"} }
 		create {classname "info_landmark" origin "-10 -20 5" values {targetname "topsd22"} }
-		create {classname "trigger_changelevel" origin "3665 75 80"
+		create {classname "trigger_changelevel" origin "3665 2280 -180"
 			values
 			{
 				targetname "syn_toptsd3"

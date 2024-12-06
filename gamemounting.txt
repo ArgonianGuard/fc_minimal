@@ -7,20 +7,19 @@
 		
 		"paths"
 		{
-			"local"			"tf"
+			"local"			"tf/tf2_sound_misc_dir.vpk"
+			"local"			"tf/tf2_textures_dir.vpk"
+			"local"			"tf/tf2_misc_dir.vpk"
+			"local"			"tf/tf2_sound_vo_english_dir.vpk"
 			"local"			"tf/downloads"
+			"local"			"tf"
 
-			"local"			"tf/tf2_textures.vpk"
-			"local"			"tf/tf2_sound_vo_english.vpk"
-			"local"			"tf/tf2_sound_misc.vpk"
-			"local"			"tf/tf2_misc.vpk"
-
-			"dedicated"		"tf"			
-			"dedicated"			"tf/downloads"
-			"dedicated"		"tf/tf2_textures.vpk"
-			"dedicated"		"tf/tf2_sound_vo_english.vpk"
-			"dedicated"		"tf/tf2_sound_misc.vpk"
-			"dedicated"		"tf/tf2_misc.vpk"
+			"dedicated"		"tf/tf2_sound_misc_dir.vpk"
+			"dedicated"		"tf/tf2_textures_dir.vpk"
+			"dedicated"		"tf/tf2_misc_dir.vpk"
+			"dedicated"		"tf/tf2_sound_vo_english_dir.vpk"
+			"dedicated"		"tf/downloads"
+			"dedicated"		"tf"
 		}
 	}
 
@@ -32,10 +31,10 @@
 		"paths"
 		{	
 			"dedicated"		"tf"
-			"dedicated"		"tf/tf2_textures.vpk"
-			"dedicated"		"tf/tf2_sound_vo_english.vpk"
-			"dedicated"		"tf/tf2_sound_misc.vpk"
-			"dedicated"		"tf/tf2_misc.vpk"
+			"dedicated"		"tf/tf2_sound_misc_dir.vpk"
+			"dedicated"		"tf/tf2_textures_dir.vpk"
+			"dedicated"		"tf/tf2_misc_dir.vpk"
+			"dedicated"		"tf/tf2_sound_vo_english_dir.vpk"
 		}
 	}
 
