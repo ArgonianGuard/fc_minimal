@@ -9,13 +9,10 @@
 		
 		"paths"
 		{
-			"local"		"episodic"
-			"local"		"episodic/ep1_sound_vo_english.vpk"
-			"local"		"episodic/ep1_pak.vpk"
-			
-			"dedicated"	"episodic"
-			"dedicated"	"episodic/ep1_sound_vo_english.vpk"
-			"dedicated"	"episodic/ep1_pak.vpk"
+			"path"		"episodic"
+			"path"		"episodic/ep1_sound_vo_english.vpk"
+			"path"		"episodic/ep1_pak_dir.vpk"
+
 		}
 		
 		"maps"

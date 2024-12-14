@@ -2,18 +2,15 @@
 {
 	"Half-Life 2"
 	{
-		"appid"		"280"
+		"appid"		"220"
 		"required"	"0"
+		"gametitle"	"Half-Life 1"
 		
 		"paths"
 		{
-			"local"			"hl1/hl1_sound_vo_english.vpk"
-			"local"			"hl1/hl1_pak.vpk"
-			"local"			"hl1"
-			
-			"dedicated"		"hl1/hl1_sound_vo_english.vpk"
-			"dedicated"		"hl1/hl1_pak.vpk"
-			"dedicated"		"hl1"
+			"path"			"hl1"
+			"path"			"hl1/hl1_sound_vo_english.vpk"
+			"path"			"hl1/hl1_pak_dir.vpk"
 		}
 	}
 }

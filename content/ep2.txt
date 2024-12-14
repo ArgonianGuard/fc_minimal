@@ -10,13 +10,9 @@
 		
 		"paths"
 		{
-			"local"		"ep2"
-			"local"		"ep2/ep2_sound_vo_english.vpk"
-			"local"		"ep2/ep2_pak.vpk"
-			
-			"dedicated"	"ep2"
-			"dedicated"	"ep2/ep2_sound_vo_english.vpk"
-			"dedicated"	"ep2/ep2_pak.vpk"
+			"path"		"ep2"
+			"path"		"ep2/ep2_sound_vo_english.vpk"
+			"path"		"ep2/ep2_pak_dir.vpk"
 		}
 		
 		"maps"

@@ -1,0 +1,27 @@
+"Games"
+{
+	"tf"
+	{
+		"Offsets"
+		{
+			"GiveNamedItem"
+			{
+				"windows"	"483"
+				"linux"	"484"
+				"mac"	"484"
+			}
+		}
+	}
+	"fc_minimal"
+	{
+		"Offsets"
+		{
+			"GiveNamedItem"
+			{
+				"windows"	"491"
+				"linux"	"492"
+				"mac"	"492"
+			}
+		}
+	}
+}
