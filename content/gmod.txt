@@ -8,13 +8,9 @@
 		
 		"paths"
 		{                                                
-			"local"	"garrysmod"                      
-			"local"	"garrysmod/garrysmod.vpk"        
-			"local"	"garrysmod/fallbacks.vpk"
-    
-			"dedicated"	"garrysmod"                      
-			"dedicated"	"garrysmod/garrysmod.vpk"        
-			"dedicated"	"garrysmod/fallbacks.vpk"
+			"path"	"garrysmod"                      
+			"path"	"garrysmod/garrysmod_dir.vpk"        
+			"path"	"garrysmod/fallbacks_dir.vpk"
 		}
 	} 
 }
