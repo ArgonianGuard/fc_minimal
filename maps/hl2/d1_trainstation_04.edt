@@ -76,6 +76,15 @@ d1_trainstation_04
 
 	//	create {classname "info_player_coop" origin "-7530.05 -4056.76 -250.97"
 	//		values {angles "0 160 0" targetname "syn_spawn_player_2" StartDisabled "1"} }
+		
+		create {classname "fc_weapon_progress"
+			values
+			{
+				targetname "weapon_progress"
+				wpnprogress "0"
+				physcannon_progress "0"
+			}
+		}
 
 		//Trav|Edt - don't spawn intro cops until all players are out of area
 		delete {classname "trigger_once" origin "-3464 -3584 624"}

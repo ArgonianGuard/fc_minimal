@@ -29,6 +29,15 @@ d1_trainstation_03
 				OnMapSpawn "door_bracerprop,disableplayercollision,,1,-1"
 			}
 		}
+		
+		create {classname "fc_weapon_progress"
+			values
+			{
+				targetname "weapon_progress"
+				wpnprogress "0"
+				physcannon_progress "0"
+			}
+		}
 
 		// Changelevels do not have origins, so get by landmark and mapname - disable
 		edit {classname "trigger_changelevel" values {edt_landmark "landmark_trainstation_02-03" edt_map "d1_trainstation_02" edt_addspawnflags "2"} }

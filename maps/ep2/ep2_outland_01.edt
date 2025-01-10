@@ -51,6 +51,15 @@ ep2_outland_01
 				OnTimer "syn_equip_start,EquipAllPlayers,,12.1,-1"
 			}
 		}
+		
+		create {classname "fc_weapon_progress"
+			values
+			{
+				targetname "weapon_progress"
+				wpnprogress "0"
+				physcannon_progress "0"
+			}
+		}
 
 //--Starting Items--
 		create {classname "info_player_equip"

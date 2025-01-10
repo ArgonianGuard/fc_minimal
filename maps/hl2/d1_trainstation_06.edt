@@ -20,6 +20,15 @@ d1_trainstation_06
 				"item_armor"	"25"
 			}
 		}
+		
+		create {classname "fc_weapon_progress"
+			values
+			{
+				targetname "weapon_progress"
+				wpnprogress "0"
+				physcannon_progress "0"
+			}
+		}
 
 //Trav|Edt - Lock transition_door after map transition
 		create {classname "logic_auto"
@@ -143,7 +152,6 @@ d1_trainstation_06
 		create {classname "trigger_multiple"
 			origin "-8001 -734 -113.5"
 			values {
-				//model "*16"
 				edt_getbspmodelfor_classname "trigger_once"
 				edt_getbspmodelfor_origin "-8000 -3171 207.5"
 				spawnflags "1"
@@ -170,7 +178,6 @@ d1_trainstation_06
 		create {classname "trigger_once"
 			origin "-7784 -1520 -44"
 			values {
-				//model "*18"
 				edt_getbspmodelfor_classname "trigger_once"
 				edt_getbspmodelfor_origin "-7784 -1520 -44"
 				spawnflags "512"

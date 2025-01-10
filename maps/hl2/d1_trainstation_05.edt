@@ -67,6 +67,15 @@ d1_trainstation_05
 //outside
 		create {classname "info_player_coop" origin "-10336.3 -4707.12 322"
 			values {angles "0 101 0" targetname "syn_spawn_player_5" StartDisabled "1"} }
+		
+		create {classname "fc_weapon_progress"
+			values
+			{
+				targetname "weapon_progress"
+				wpnprogress "0"
+				physcannon_progress "0"
+			}
+		}
 
 		//Trav|Edt - prevent alyx from blocking way
 		edit {targetname "mark_alyx_intro" values {origin "-6432 -880 9"} }
