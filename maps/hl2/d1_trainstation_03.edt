@@ -192,6 +192,35 @@ d1_trainstation_03
 		//	//	"OnTrigger" "ai_breakin_cop3goal4_blockplayer,Enable,,0,-1"
 		//	}
 		//}
+		
+		// Prevent !player,SetHealth,100
+		delete {targetname "attic_door_close_relay"}
+		create {classname "logic_relay"
+			values
+			{
+				targetname "attic_door_close_relay"
+				OnTrigger "relay_door_cops_start,Trigger,,1.5,1"
+				OnTrigger "lcs_cit_blocker_holdem2,Start,,0,1"
+				//OnTrigger "!player,SetHealth,100,0,1"
+				OnTrigger "ss_DoorBracer_ShutDoor,BeginSequence,,0,1"
+				OnTrigger "cops_ignore_player,ApplyRelationship,,0.5,-1"
+			}
+		}
+		
+		delete {classname "trigger_once" origin "-4772 -4612 440"}
+		create {classname "trigger_once" origin "-4772 -4612 440"
+			values
+			{
+				edt_getbspmodelfor_classname "trigger_once"
+				edt_getbspmodelfor_origin "-4772 -4612 440"
+				spawnflags "1"
+				OnTrigger "stair1_bootstomp_2,PlaySound,,0.1,-1"
+				OnTrigger "stair1_bootstomp_1,PlaySound,,0,-1"
+				//OnTrigger "!player,SetHealth,100,0,-1"
+				OnTrigger "ss_DoorBracer_ShutDoor,MoveToPosition,,0,-1"
+				OnTrigger "brush_staircase_block,Disable,,0,-1"
+			}
+		}
 
 		//Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d1_trainstation_03"} }

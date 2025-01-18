@@ -237,6 +237,22 @@ d1_trainstation_04
 
 		// prevent post-vator secret door from closing
 		delete {classname "trigger_once" origin "-7818 -4128 -176"}
+		
+		// Prevent usage of !player,SetHealth,100
+		delete {classname "trigger_once" origin "-6974 -4250 584"}
+		create {classname "trigger_once" origin "-6974 -4250 584"
+			values
+			{
+				edt_getbspmodelfor_classname "trigger_once"
+				edt_getbspmodelfor_origin "-6974 -4250 584"
+				spawnflags "1"
+				//OnTrigger "!player,SetHealth,100,0,-1"
+				OnTrigger "npc_windowscanner,SetFollowTarget,target_scanner_inspection_final,0,-1"
+				OnTrigger "gordon_criminal_global,TurnOn,,0,-1"
+				OnTrigger "achivement_escape_raid,FireEvent,,1,-1"
+			}
+		}
+		delete {classname "trigger_once" origin "-5800 -4296 592.5"}
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d1_trainstation_04"} }
