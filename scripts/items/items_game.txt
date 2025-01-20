@@ -25761,7 +25761,6 @@
 				"player_bodygroups"
 				{
 					"hat"			"1"
-					"headphones"	"1"
 				}
 			}
 			"mouse_pressed_sound" 	"ui/item_hat_pickup.wav"
@@ -25889,7 +25888,6 @@
 				"player_bodygroups"
 				{
 					"hat"			"1"
-					"headphones"	"1"
 				}
 			}
 			"mouse_pressed_sound" 	"ui/item_hat_pickup.wav"
@@ -26061,7 +26059,7 @@
 		}
 		"29006"
 		{
-			"name"	"ScribHat"
+			"name"	"ScribHatLilly"
 			"prefab"		"base_hat"
 			"hidden"	"0"
 			"item_class"	"tf_wearable"
@@ -26194,6 +26192,323 @@
 				{
 					"hat"			"1"
 					"headphones"	"1"
+				}
+			}
+			"mouse_pressed_sound" 	"ui/item_hat_pickup.wav"
+			"drop_sound" 			"ui/item_hat_drop.wav"
+		}
+		"29008"
+		{
+			"name"	"RobotChickenHat"
+			"prefab"		"base_hat"
+			"hidden"	"0"
+			"item_class"	"tf_wearable"
+			"capabilities"
+			{
+				"paintable"		"1"
+				"nameable"		"1"
+			}
+			"loadondemand" "1"
+			"show_in_armory"	"1"
+			"item_type_name" "#TF_Wearable_Hat"
+			"item_name"	"#TF_RobotChickenHat"
+			"item_description"	"#TF_RobotChickenHat_Desc"
+			"item_slot"	"head"
+			"equip_region"	"head"
+			"item_quality"	"unique"
+			"min_ilevel"	"10"
+			"max_ilevel"	"10"
+			"image_inventory"	"backpack/workshop_partner/player/items/all_class/as_robot_chicken/as_robot_chicken_demo"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_player_per_class"
+			{
+				"scout"	"models/player/items/all_class/as_robot_chicken_scout.mdl"
+				"sniper"	"models/player/items/all_class/as_robot_chicken_sniper.mdl"
+				"soldier"	"models/player/items/all_class/as_robot_chicken_soldier.mdl"
+				"mercenary"	"models/player/items/all_class/as_robot_chicken_demo.mdl"
+				"demoman"	"models/player/items/all_class/as_robot_chicken_demo.mdl"
+				"medic"	"models/player/items/all_class/as_robot_chicken_medic.mdl"
+				"heavy"	"models/player/items/all_class/as_robot_chicken_heavy.mdl"
+				"spy"	"models/player/items/all_class/as_robot_chicken_spy.mdl"
+				"engineer"	"models/player/items/all_class/as_robot_chicken_engineer.mdl"
+				"pyro"	"models/player/items/all_class/as_robot_chicken_pyro.mdl"
+			}
+			"drop_type"	"drop"
+			"used_by_classes"
+			{
+				"scout"	"1"
+				"sniper"	"1"
+				"soldier"	"1"
+				"demoman"	"1"
+				"medic"	"1"
+				"heavy"	"1"
+				"spy" "1"
+				"engineer" "1"
+				"pyro" "1"
+				"mercenary" "1"
+			}
+			"attributes"
+			{
+				"cannot trade"
+				{
+					"attribute_class"	"cannot_trade"
+					"value"				"1"
+				}
+			}
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"			"1"
+					"headphones"	"1"
+				}
+			}
+			"mouse_pressed_sound" 	"ui/item_hat_pickup.wav"
+			"drop_sound" 			"ui/item_hat_drop.wav"
+		}
+		"29009"
+		{
+			"name"	"BDayHat"
+			"prefab"		"base_hat"
+			"hidden"	"0"
+			"item_class"	"tf_wearable"
+			"capabilities"
+			{
+				"paintable"		"1"
+				"nameable"		"1"
+			}
+			"loadondemand" "1"
+			"show_in_armory"	"1"
+			"item_type_name" "#TF_Wearable_Hat"
+			"item_name"	"#TF_Birthday2011_Hat"
+			"item_description"	""
+			"item_slot"	"head"
+			"equip_region"	"head"
+			"item_quality"	"unique"
+			"min_ilevel"	"10"
+			"max_ilevel"	"10"
+			"image_inventory"	"backpack/player/items/all_class/bdayhat_heavy"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_player_per_class"
+			{
+				"scout"	"models/player/items/all_class/bdayhat_scout.mdl"
+				"sniper"	"models/player/items/all_class/bdayhat_sniper.mdl"
+				"soldier"	"models/player/items/all_class/bdayhat_soldier.mdl"
+				"mercenary"	"models/player/items/all_class/bdayhat_demo.mdl"
+				"demoman"	"models/player/items/all_class/bdayhat_demo.mdl"
+				"medic"	"models/player/items/all_class/bdayhat_medic.mdl"
+				"heavy"	"models/player/items/all_class/bdayhat_heavy.mdl"
+				"spy"	"models/player/items/all_class/bdayhat_spy.mdl"
+				"engineer"	"models/player/items/all_class/bdayhat_engineer.mdl"
+				"pyro"	"models/player/items/all_class/bdayhat_pyro.mdl"
+			}
+			"drop_type"	"drop"
+			"used_by_classes"
+			{
+				"scout"	"1"
+				"sniper"	"1"
+				"soldier"	"1"
+				"demoman"	"1"
+				"medic"	"1"
+				"heavy"	"1"
+				"spy" "1"
+				"engineer" "1"
+				"pyro" "1"
+				"mercenary" "1"
+			}
+			"attributes"
+			{
+				"cannot trade"
+				{
+					"attribute_class"	"cannot_trade"
+					"value"				"1"
+				}
+			}
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"			"1"
+				}
+			}
+			"mouse_pressed_sound" 	"ui/item_hat_pickup.wav"
+			"drop_sound" 			"ui/item_hat_drop.wav"
+		}
+		"29010"
+		{
+			"name"	"CowBoyBoots"
+			"prefab"		"no_craft misc"
+			"hidden"	"0"
+			"item_class"	"tf_wearable"
+			"capabilities"
+			{
+				"paintable"		"1"
+				"nameable"		"1"
+			}
+			"loadondemand" "1"
+			"show_in_armory"	"1"
+			"item_type_name" "#TF_Wearable_Boots"
+			"item_name"	"#TF_CowboyBoots"
+			"item_description"	"#TF_CowboyBoots_Desc"
+			"item_slot"	"misc2"
+			"equip_region"	"feet"
+			"item_quality"	"unique"
+			"min_ilevel"	"10"
+			"max_ilevel"	"10"
+			"image_inventory"	"backpack/player/items/all_class/cowboyboots_soldier"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_player_per_class"
+			{
+				"scout"	"models/player/items/all_class/cowboyboots_scout.mdl"
+				"sniper"	"models/player/items/all_class/cowboyboots_sniper.mdl"
+				"soldier"	"models/player/items/all_class/cowboyboots_soldier.mdl"
+				"mercenary"	"models/player/items/all_class/cowboyboots_demo.mdl"
+				"demoman"	"models/player/items/all_class/cowboyboots_demo.mdl"
+				"engineer"	"models/player/items/all_class/cowboyboots_engineer.mdl"
+			}
+			"drop_type"	"drop"
+			"used_by_classes"
+			{
+				"scout"	"1"
+				"sniper"	"1"
+				"soldier"	"1"
+				"demoman"	"1"
+				"engineer" "1"
+				"mercenary" "1"
+			}
+			"attributes"
+			{
+				"cannot trade"
+				{
+					"attribute_class"	"cannot_trade"
+					"value"				"1"
+				}
+			}
+			"mouse_pressed_sound" 	"ui/item_hat_pickup.wav"
+			"drop_sound" 			"ui/item_hat_drop.wav"
+		}
+		"29011"
+		{
+			"name"	"CrimeCraftHelmet"
+			"prefab"		"base_hat"
+			"hidden"	"0"
+			"item_class"	"tf_wearable"
+			"capabilities"
+			{
+				"paintable"		"1"
+				"nameable"		"1"
+			}
+			"loadondemand" "1"
+			"show_in_armory"	"1"
+			"item_type_name" "#TF_Wearable_Hat"
+			"item_name"	"#TF_CrimeCraftHelmet"
+			"item_description"	"#TF_CrimeCraftHelmet_Desc"
+			"item_slot"	"head"
+			"equip_region"	"hat"
+			"item_quality"	"unique"
+			"min_ilevel"	"10"
+			"max_ilevel"	"10"
+			"image_inventory"	"backpack/player/items/all_class/crimecraft_helmet_demo"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_player_per_class"
+			{
+				"scout"	"models/player/items/all_class/crimecraft_helmet_scout.mdl"
+				"sniper"	"models/player/items/all_class/crimecraft_helmet_sniper.mdl"
+				"soldier"	"models/player/items/all_class/crimecraft_helmet_soldier.mdl"
+				"mercenary"	"models/player/items/all_class/crimecraft_helmet_demo.mdl"
+				"demoman"	"models/player/items/all_class/crimecraft_helmet_demo.mdl"
+				"medic"	"models/player/items/all_class/crimecraft_helmet_medic.mdl"
+				"heavy"	"models/player/items/all_class/crimecraft_helmet_heavy.mdl"
+				"spy"	"models/player/items/all_class/crimecraft_helmet_spy.mdl"
+				"engineer"	"models/player/items/all_class/crimecraft_helmet_engineer.mdl"
+				"pyro"	"models/player/items/all_class/crimecraft_helmet_pyro.mdl"
+			}
+			"drop_type"	"drop"
+			"used_by_classes"
+			{
+				"scout"	"1"
+				"sniper"	"1"
+				"soldier"	"1"
+				"demoman"	"1"
+				"medic"	"1"
+				"heavy"	"1"
+				"spy" "1"
+				"engineer" "1"
+				"pyro" "1"
+				"mercenary" "1"
+			}
+			"attributes"
+			{
+				"cannot trade"
+				{
+					"attribute_class"	"cannot_trade"
+					"value"				"1"
+				}
+			}
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"			"1"
+					"headphones"	"1"
+				}
+			}
+			"mouse_pressed_sound" 	"ui/item_hat_pickup.wav"
+			"drop_sound" 			"ui/item_hat_drop.wav"
+		}
+		"29012"
+		{
+			"name"	"DeusSunglasses"
+			"prefab"		"base_misc"
+			"hidden"	"0"
+			"item_class"	"tf_wearable"
+			"capabilities"
+			{
+				"paintable"		"1"
+				"nameable"		"1"
+			}
+			"loadondemand" "1"
+			"show_in_armory"	"1"
+			"item_type_name" "#TF_Wearable_Glasses"
+			"item_name"	"#TF_DEX_Glasses"
+			"item_description"	"#TF_DEX_Glasses_Desc"
+			"item_slot"	"misc"
+			"equip_region"	"glasses"
+			"item_quality"	"unique"
+			"min_ilevel"	"10"
+			"max_ilevel"	"10"
+			"image_inventory"	"backpack/workshop_partner/player/items/all_class/dex_glasses/dex_glasses"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_player_per_class"
+			{
+				"basename"	"models/player/items/all_class/dex_glasses_%s.mdl"
+				"mercenary"	"models/player/items/all_class/dex_glasses_demo.mdl"
+			}
+			"drop_type"	"drop"
+			"used_by_classes"
+			{
+				"scout"	"1"
+				"sniper"	"1"
+				"soldier"	"1"
+				"demoman"	"1"
+				"medic"	"1"
+				"heavy"	"1"
+				"spy" "1"
+				"engineer" "1"
+				"pyro" "1"
+				"mercenary" "1"
+			}
+			"attributes"
+			{
+				"cannot trade"
+				{
+					"attribute_class"	"cannot_trade"
+					"value"				"1"
 				}
 			}
 			"mouse_pressed_sound" 	"ui/item_hat_pickup.wav"
