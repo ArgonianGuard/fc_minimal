@@ -31028,75 +31028,9 @@
 				}
 			}
 		}
-		"30845"
-		{
-			"name"		"Taunt: The Jumping Jack"
-			"first_sale_date"		"2017/09/13"
-			"prefab"		"no_craft taunt"
-			"item_name"		"#TF_taunt_jumping_jack"
-			"item_description"		"#TF_taunt_jumping_jack_Desc"
-			"ad_text"		"#TF_taunt_jumping_jack_AdText"
-			"attributes"
-			{
-				"taunt is press and hold"
-				{
-					"attribute_class"		"enable_misc2_holdtaunt"
-					"value"		"1"
-				}
-			}
-			"image_inventory"		"backpack/workshop/player/items/engineer/taunt_jackhammer_rodeo/taunt_jackhammer_rodeo"
-			"capabilities"
-			{
-				"can_craft_count"		"1"
-			}
-			"used_by_classes"
-			{
-				"engineer"		"1"
-			}
-			"attributes"
-			{
-				"taunt is press and hold"
-				{
-					"attribute_class"		"enable_misc2_holdtaunt"
-					"value"		"1"
-				}
-				"taunt move speed"
-				{
-					"attribute_class"		"taunt_move_speed"
-					"value"		"200"
-				}
-				"taunt move acceleration time"
-				{
-					"attribute_class"		"taunt_move_acceleration_time"
-					"value"		"0.300000"
-				}
-				"taunt turn speed"
-				{
-					"attribute_class"		"taunt_turn_speed"
-					"value"		"60"
-				}
-				"taunt turn acceleration time"
-				{
-					"attribute_class"		"taunt_turn_acceleration_time"
-					"value"		"0.200000"
-				}
-			}
-			"taunt"
-			{
-				"custom_taunt_scene_per_class"
-				{
-					"engineer"		"scenes/workshop/player/engineer/low/taunt_jackhammer_rodeo.vcd"
-				}
-				"custom_taunt_outro_scene_per_class"
-				{
-					"engineer"		"scenes/workshop/player/engineer/low/taunt_jackhammer_rodeo_outro.vcd"
-				}
-				"custom_taunt_prop_per_class"
-				{
-					"engineer"		"models/workshop/player/items/engineer/taunt_jackhammer_rodeo/taunt_jackhammer_rodeo.mdl"
-				}
-			}
-		}
+		// Doesn't appear to work
+		//"30845"
+		//	"name"		"Taunt: The Jumping Jack"
 		"30846"
 		{
 			"name"		"Plumber's Cap"

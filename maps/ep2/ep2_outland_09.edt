@@ -189,6 +189,25 @@ ep2_outland_09
 //Trav|Edt - increase combine cannon damage to players
 		edit {classname "func_tank_combine_cannon"
 			values {bullet_damage_vs_player "35"} }//25
+		
+		// Make a grenade that players can throw in
+		create {classname "npc_grenade_frag" origin "-820 -7530 74"
+			values
+			{
+				targetname "respawninggrenade"
+				OnPlayerPickup "!self,SetTimer,3,0,1"
+				OnExplode "syn_respawngrenade,ForceSpawn,,0,1"
+			}
+		}
+		create {classname "point_template"
+			values
+			{
+				targetname "syn_respawngrenade"
+				spawnflags "3"
+				Template01 "respawninggrenade"
+			}
+		}
+		
 
 //Trav|Edt - Add gnome if NewGame
 		create {classname "logic_auto"
