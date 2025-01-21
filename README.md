@@ -9,6 +9,17 @@ FC is a modified version of Lambda Fortress: Extended to have more features, fix
 	Half-Life 2
 	If you wish to play with Portal or Half-Life Source content, you must also have those installed.
 
+### Installation:
+Method 1:
+Download by GitHub Desktop and clone in to "C:\Program Files (x86)\Steam\steamapps\sourcemods\fc_minimal"
+
+Method 2:
+Download from the releases and extract to "C:\Program Files (x86)\Steam\steamapps\sourcemods" and *make sure* that the directory is named "fc_minimal"
+
+Method 3:
+Download by clicking the green "Code" button at the top and press "Download ZIP". Once it is done downloading, open the archive and extract "fc_minimal-main" to "C:\Program Files (x86)\Steam\steamapps\sourcemods"
+*Then make sure that you rename the directory to "fc_minimal"* **NOT** "fc_minimal-main" or you will not be able to launch the game.
+
 ### Fixes including:
 - Weapon improvements
 - UI improvements
