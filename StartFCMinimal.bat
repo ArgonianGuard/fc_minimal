@@ -2,6 +2,24 @@
 title FCCL
 if EXIST "drivers\etc\hosts" cd "%~dp0"
 
+rem Get Resolution of the screen
+for /f "tokens=4,5 delims=. " %%a in ('ver') do set "version=%%a%%b"
+if version lss 62 (
+	for /f "tokens=* delims=" %%f in ('wmic desktopmonitor get screenwidth /format:value') do (
+		for /f %%a in ("%%f") do set "x=%%a"
+	)
+	for /f "tokens=* delims=" %%f in ('wmic desktopmonitor get screenheight /format:value') do (
+		for /f %%a in ("%%f") do set "y=%%a"
+	)
+) else (
+	for /f "tokens=1,2,* delims=" %%f in ('wmic path Win32_VideoController get CurrentHorizontalResolution') do (
+		for /f %%a in ("%%f") do set "x=%%a"
+	)
+	for /f "tokens=1,2,* delims=" %%f in ('wmic path Win32_VideoController get CurrentVerticalResolution') do (
+		for /f %%a in ("%%f") do set "y=%%a"
+	)
+)
+
 set skipindex=1
 set cldir=""
 set cldrive=""
@@ -28,7 +46,11 @@ set /a skipindex+=1
 goto start
 
 :startcl
-start /b "FCCL" "%cldir%\steamapps\common\Source SDK Base 2013 Multiplayer\hl2.exe" -steam -game "%CD%" -multirun -novid -nosplash"
+rem If we either didn't get a valid resolution, or the resolution is lower than 640 just run windowed.
+if %x% LEQ 640 (
+	start /b "FCCL" "%cldir%\steamapps\common\Source SDK Base 2013 Multiplayer\hl2.exe" -steam -game "%CD%" -windowed -multirun -novid -nosplash"
+)
+start /b "FCCL" "%cldir%\steamapps\common\Source SDK Base 2013 Multiplayer\hl2.exe" -steam -game "%CD%" -windowed -noborder -w %x% -h %y% -multirun -novid -nosplash"
 exit
 
 :cannotfind
