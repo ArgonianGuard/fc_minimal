@@ -24308,54 +24308,6 @@
 			"mouse_pressed_sound" 	"ui/item_hat_pickup.wav"
 			"drop_sound" 		"ui/item_hat_drop.wav"
 		}
-		"9835"
-		{
-			"name"		"Lil' Bitey"
-			"prefab"		"no_craft hat marketable"
-			"item_name"		"#TF_hwn2016_lil_bitey"
-			"item_description"		"#TF_hwn2016_lil_bitey_Desc"
-			"visuals"
-			{
-				"player_bodygroups"
-				{
-					"headphones"		"1"
-				}
-			}
-			"image_inventory"		"backpack/workshop/player/items/all_class/hwn2016_lil_bitey/hwn2016_lil_bitey"
-			"capabilities"
-			{
-				"can_craft_count"		"1"
-				"paintable"		"1"
-			}
-			"model_player_per_class"
-			{
-				"scout"		"models/workshop/player/items/all_class/hwn2016_lil_bitey/hwn2016_lil_bitey_scout.mdl"
-				"sniper"		"models/workshop/player/items/all_class/hwn2016_lil_bitey/hwn2016_lil_bitey_sniper.mdl"
-				"soldier"		"models/workshop/player/items/all_class/hwn2016_lil_bitey/hwn2016_lil_bitey_soldier.mdl"
-				"demoman"		"models/workshop/player/items/all_class/hwn2016_lil_bitey/hwn2016_lil_bitey_demo.mdl"
-				"medic"		"models/workshop/player/items/all_class/hwn2016_lil_bitey/hwn2016_lil_bitey_medic.mdl"
-				"heavy"		"models/workshop/player/items/all_class/hwn2016_lil_bitey/hwn2016_lil_bitey_heavy.mdl"
-				"pyro"		"models/workshop/player/items/all_class/hwn2016_lil_bitey/hwn2016_lil_bitey_pyro.mdl"
-				"spy"		"models/workshop/player/items/all_class/hwn2016_lil_bitey/hwn2016_lil_bitey_spy.mdl"
-				"engineer"		"models/workshop/player/items/all_class/hwn2016_lil_bitey/hwn2016_lil_bitey_engineer.mdl"
-				"mercenary"		"models/workshop/player/items/all_class/hwn2016_lil_bitey/hwn2016_lil_bitey_heavy.mdl"
-			}
-			"used_by_classes"
-			{
-				"scout"		"1"
-				"sniper"		"1"
-				"soldier"		"1"
-				"demoman"		"1"
-				"medic"		"1"
-				"heavy"		"1"
-				"pyro"		"1"
-				"spy"		"1"
-				"engineer"		"1"
-				"mercenary"		"1"
-			}
-			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
-			"drop_sound"		"ui/item_hat_drop.wav"
-		}
 		"9836"
 		{
 			"name"	"Engineer Welding Mask"
@@ -49018,462 +48970,31 @@
 				}
 			}
 		}
-		"31153"
+		"31383"
 		{
-			"name"		"Taunt: The Pooped Deck"
-			"first_sale_date"		"2020/12/02"
-			"prefab"		"no_craft taunt"
-			"item_name"		"#TF_taunt_the_pooped_deck"
-			"item_description"		"#TF_taunt_the_pooped_deck_Desc"
-			"attributes"
+			"name"		"Ludicrously Lunatic Lunon Fedora"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2023_lunatic_fedora_neon"
+			"item_description"		"#TF_hwn2023_lunatic_fedora_neon_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"visuals"
 			{
-				"taunt is press and hold"
+				"player_bodygroups"
 				{
-					"attribute_class"		"enable_misc2_holdtaunt"
-					"value"		"1"
+					"hat"		"1"
+					"headphones"		"1"
 				}
 			}
-			"image_inventory"		"backpack/workshop/player/items/demo/taunt_the_pooped_deck/taunt_the_pooped_deck"
+			"image_inventory"		"backpack/workshop/player/items/all_class/hwn2023_lunatic_fedora_neon/hwn2023_lunatic_fedora_neon"
 			"capabilities"
 			{
 				"can_craft_count"		"1"
+				"paintable"		"1"
 			}
-			"used_by_classes"
+			"model_player_per_class"
 			{
-				"demoman"		"1"
-			}
-			"taunt"
-			{
-				"custom_taunt_scene_per_class"
-				{
-					"demoman"		"scenes/workshop/player/demoman/low/taunt_the_pooped_deck.vcd"
-				}
-				"custom_taunt_outro_scene_per_class"
-				{
-					"demoman"		"scenes/workshop/player/demoman/low/taunt_the_pooped_deck_outro.vcd"
-				}
-				"custom_taunt_input_remap"
-				{
-					"IN_ATTACK"
-					{
-						"pressed"
-						{
-							"demoman"		"scenes/workshop/player/demoman/low/taunt_the_pooped_deck_a1.vcd"
-						}
-					}
-					"IN_ATTACK2"
-					{
-						"pressed"
-						{
-							"demoman"		"scenes/workshop/player/demoman/low/taunt_the_pooped_deck_a2.vcd"
-						}
-					}
-				}
-				"custom_taunt_prop_per_class"
-				{
-					"demoman"		"models/workshop/player/items/demo/taunt_the_pooped_deck/taunt_the_pooped_deck.mdl"
-				}
-			}
-		}
-		"31154"
-		{
-			"name"		"Taunt: Time Out Therapy"
-			"first_sale_date"		"2020/12/02"
-			"prefab"		"no_craft taunt"
-			"item_name"		"#TF_taunt_time_out_therapy"
-			"item_description"		"#TF_taunt_time_out_therapy_Desc"
-			"attributes"
-			{
-				"taunt is press and hold"
-				{
-					"attribute_class"		"enable_misc2_holdtaunt"
-					"value"		"1"
-				}
-			}
-			"image_inventory"		"backpack/workshop/player/items/medic/taunt_time_out_therapy/taunt_time_out_therapy"
-			"capabilities"
-			{
-				"can_craft_count"		"1"
-			}
-			"used_by_classes"
-			{
-				"medic"		"1"
-			}
-			"taunt"
-			{
-				"custom_taunt_scene_per_class"
-				{
-					"medic"		"scenes/workshop/player/medic/low/taunt_time_out_therapy.vcd"
-				}
-				"custom_taunt_outro_scene_per_class"
-				{
-					"medic"		"scenes/workshop/player/medic/low/taunt_time_out_therapy_outro.vcd"
-				}
-				"custom_taunt_prop_per_class"
-				{
-					"medic"		"models/workshop/player/items/medic/taunt_time_out_therapy/taunt_time_out_therapy.mdl"
-				}
-			}
-		}
-		"31155"
-		{
-			"name"		"Taunt: Rocket Jockey"
-			"first_sale_date"		"2020/12/02"
-			"prefab"		"no_craft taunt"
-			"item_name"		"#TF_taunt_rocket_jockey"
-			"item_description"		"#TF_taunt_rocket_jockey_Desc"
-			"image_inventory"		"backpack/workshop/player/items/soldier/taunt_rocket_jockey/taunt_rocket_jockey"
-			"capabilities"
-			{
-				"can_craft_count"		"1"
-			}
-			"used_by_classes"
-			{
-				"soldier"		"1"
-			}
-			"attributes"
-			{
-				"taunt move speed"
-				{
-					"attribute_class"		"taunt_move_speed"
-					"value"		"200"
-				}
-				"taunt force move forward"
-				{
-					"attribute_class"		"taunt_force_move_forward"
-					"value"		"1"
-				}
-				"taunt is press and hold"
-				{
-					"attribute_class"		"enable_misc2_holdtaunt"
-					"value"		"1"
-				}
-				"taunt move acceleration time"
-				{
-					"attribute_class"		"taunt_move_acceleration_time"
-					"value"		"0.300000"
-				}
-				"taunt turn speed"
-				{
-					"attribute_class"		"taunt_turn_speed"
-					"value"		"60"
-				}
-				"taunt turn acceleration time"
-				{
-					"attribute_class"		"taunt_turn_acceleration_time"
-					"value"		"0.200000"
-				}
-				"taunt success sound loop"
-				{
-					"attribute_class"		"taunt_success_sound_loop"
-					"value"		"Taunt.RocketHoverLoop"
-				}
-			}
-			"taunt"
-			{
-				"custom_taunt_scene_per_class"
-				{
-					"soldier"		"scenes\workshop\player\soldier\low\taunt_rocket_jockey_intro.vcd"
-				}
-				"custom_taunt_outro_scene_per_class"
-				{
-					"soldier"		"scenes\workshop\player\soldier\low\taunt_rocket_jockey_outro.vcd"
-				}
-				"custom_taunt_input_remap"
-				{
-					"IN_ATTACK"
-					{
-						"pressed"
-						{
-							"soldier"		"scenes\workshop\player\soldier\low\taunt_rocket_jockey_cheer.vcd"
-						}
-					}
-				}
-				"custom_taunt_prop_per_class"
-				{
-					"soldier"		"models\workshop\player\items\soldier\taunt_rocket_jockey\taunt_rocket_jockey.mdl"
-				}
-			}
-		}
-		"31156"
-		{
-			"name"		"Taunt: The Boston Boarder"
-			"first_sale_date"		"2020/12/02"
-			"prefab"		"no_craft taunt"
-			"item_name"		"#TF_taunt_the_boston_boarder"
-			"item_description"		"#TF_taunt_the_boston_boarder_Desc"
-			"image_inventory"		"backpack/workshop/player/items/scout/taunt_the_boston_boarder/taunt_the_boston_boarder"
-			"capabilities"
-			{
-				"can_craft_count"		"1"
-			}
-			"used_by_classes"
-			{
-				"scout"		"1"
-			}
-			"attributes"
-			{
-				"taunt move speed"
-				{
-					"attribute_class"		"taunt_move_speed"
-					"value"		"200"
-				}
-				"taunt force move forward"
-				{
-					"attribute_class"		"taunt_force_move_forward"
-					"value"		"1"
-				}
-				"taunt is press and hold"
-				{
-					"attribute_class"		"enable_misc2_holdtaunt"
-					"value"		"1"
-				}
-				"taunt move acceleration time"
-				{
-					"attribute_class"		"taunt_move_acceleration_time"
-					"value"		"0.300000"
-				}
-				"taunt turn speed"
-				{
-					"attribute_class"		"taunt_turn_speed"
-					"value"		"60"
-				}
-				"taunt turn acceleration time"
-				{
-					"attribute_class"		"taunt_turn_acceleration_time"
-					"value"		"0.200000"
-				}
-				"taunt success sound loop"
-				{
-					"attribute_class"		"taunt_success_sound_loop"
-					"value"		"Taunt.ScoutBostonBoarder"
-				}
-			}
-			"taunt"
-			{
-				"custom_taunt_scene_per_class"
-				{
-					"scout"		"scenes/workshop/player/scout/low/taunt_the_boston_boarder.vcd"
-				}
-				"custom_taunt_outro_scene_per_class"
-				{
-					"scout"		"scenes/workshop/player/scout/low/taunt_the_boston_boarder_outro.vcd"
-				}
-				"custom_taunt_input_remap"
-				{
-					"IN_ATTACK"
-					{
-						"pressed"
-						{
-							"scout"		"scenes/workshop/player/scout/low/taunt_the_boston_boarder_trick01.vcd"
-						}
-					}
-					"IN_ATTACK2"
-					{
-						"pressed"
-						{
-							"scout"		"scenes/workshop/player/scout/low/taunt_the_boston_boarder_trick02.vcd"
-						}
-					}
-				}
-				"custom_taunt_prop_per_class"
-				{
-					"scout"		"models/workshop/player/items/scout/taunt_the_boston_boarder/taunt_the_boston_boarder.mdl"
-				}
-			}
-		}
-		"31157"
-		{
-			"name"		"Taunt: Scorcher's Solo"
-			"first_sale_date"		"2020/12/02"
-			"prefab"		"no_craft taunt"
-			"item_name"		"#TF_taunt_scorchers_solo"
-			"item_description"		"#TF_taunt_scorchers_solo_Desc"
-			"attributes"
-			{
-				"taunt is press and hold"
-				{
-					"attribute_class"		"enable_misc2_holdtaunt"
-					"value"		"1"
-				}
-			}
-			"image_inventory"		"backpack/workshop/player/items/pyro/taunt_scorchers_solo/taunt_scorchers_solo"
-			"capabilities"
-			{
-				"can_craft_count"		"1"
-			}
-			"used_by_classes"
-			{
-				"pyro"		"1"
-			}
-			"taunt"
-			{
-				"custom_taunt_scene_per_class"
-				{
-					"pyro"		"scenes/workshop/player/pyro/low/taunt_scorchers_solo.vcd"
-				}
-				"custom_taunt_outro_scene_per_class"
-				{
-					"pyro"		"scenes/workshop/player/pyro/low/taunt_scorchers_solo_outro.vcd"
-				}
-				"custom_taunt_prop_per_class"
-				{
-					"pyro"		"models/workshop/player/items/pyro/taunt_scorchers_solo/taunt_scorchers_solo.mdl"
-				}
-			}
-		}
-		"31160"
-		{
-			"name"		"Taunt: Texas Truckin"
-			"first_sale_date"		"2020/12/02"
-			"prefab"		"no_craft taunt"
-			"item_name"		"#TF_taunt_texas_truckin"
-			"item_description"		"#TF_taunt_texas_truckin_Desc"
-			"image_inventory"		"backpack/workshop/player/items/engineer/taunt_texas_truckin/taunt_texas_truckin"
-			"capabilities"
-			{
-				"can_craft_count"		"1"
-			}
-			"used_by_classes"
-			{
-				"engineer"		"1"
-			}
-			"attributes"
-			{
-				"taunt move speed"
-				{
-					"attribute_class"		"taunt_move_speed"
-					"value"		"100"
-				}
-				"taunt force move forward"
-				{
-					"attribute_class"		"taunt_force_move_forward"
-					"value"		"1"
-				}
-				"taunt is press and hold"
-				{
-					"attribute_class"		"enable_misc2_holdtaunt"
-					"value"		"1"
-				}
-				"taunt move acceleration time"
-				{
-					"attribute_class"		"taunt_move_acceleration_time"
-					"value"		"0.300000"
-				}
-				"taunt turn speed"
-				{
-					"attribute_class"		"taunt_turn_speed"
-					"value"		"60"
-				}
-				"taunt turn acceleration time"
-				{
-					"attribute_class"		"taunt_turn_acceleration_time"
-					"value"		"0.200000"
-				}
-				"taunt success sound loop"
-				{
-					"attribute_class"		"taunt_success_sound_loop"
-					"value"		"Taunt.TankForward"
-				}
-			}
-			"taunt"
-			{
-				"custom_taunt_scene_per_class"
-				{
-					"engineer"		"scenes/workshop/player/engineer/low/taunt_texas_truckin.vcd"
-				}
-				"custom_taunt_outro_scene_per_class"
-				{
-					"engineer"		"scenes/workshop/player/engineer/low/taunt_texas_truckin_outro.vcd"
-				}
-				"custom_taunt_prop_per_class"
-				{
-					"engineer"		"models/workshop/player/items/engineer/taunt_texas_truckin/taunt_texas_truckin.mdl"
-				}
-			}
-		}
-		"31161"
-		{
-			"name"		"Taunt: Spin-to-Win"
-			"first_sale_date"		"2020/12/02"
-			"prefab"		"no_craft taunt"
-			"item_name"		"#TF_taunt_spintowin"
-			"item_description"		"#TF_taunt_spintowin_Desc"
-			"attributes"
-			{
-				"taunt is press and hold"
-				{
-					"attribute_class"		"enable_misc2_holdtaunt"
-					"value"		"1"
-				}
-			}
-			"image_inventory"		"backpack/workshop/player/items/scout/taunt_spintowin/taunt_spintowin"
-			"capabilities"
-			{
-				"can_craft_count"		"1"
-			}
-			"used_by_classes"
-			{
-				"scout"		"1"
-				"agent"		"1"
-			}
-			"taunt"
-			{
-				"custom_taunt_scene_per_class"
-				{
-					"scout"		"scenes/workshop/player/scout/low/taunt_spintowin.vcd"
-					"agent"		"scenes/workshop/player/scout/low/taunt_spintowin.vcd"
-				}
-				"custom_taunt_outro_scene_per_class"
-				{
-					"scout"		"scenes/workshop/player/scout/low/taunt_spintowin_outro.vcd"
-					"agent"		"scenes/workshop/player/scout/low/taunt_spintowin_outro.vcd"
-				}
-				"custom_taunt_input_remap"
-				{
-					"IN_ATTACK"
-					{
-						"pressed"
-						{
-							"scout"		"scenes/workshop/player/scout/low/taunt_spintowin_a1.vcd"
-							"agent"		"scenes/workshop/player/scout/low/taunt_spintowin_a1.vcd"
-						}
-					}
-					"IN_ATTACK2"
-					{
-						"pressed"
-						{
-							"scout"		"scenes/workshop/player/scout/low/taunt_spintowin_a2.vcd"
-							"agent"		"scenes/workshop/player/scout/low/taunt_spintowin_a2.vcd"
-						}
-					}
-				}
-				"custom_taunt_prop_per_class"
-				{
-					"scout"		"models/workshop/player/items/scout/taunt_spintowin/taunt_spintowin.mdl"
-					"agent"		"models/workshop/player/items/scout/taunt_spintowin/taunt_spintowin.mdl"
-				}
-			}
-		}
-		"31162"
-		{
-			"name"		"Taunt: The Fist Bump"
-			"first_sale_date"		"2020/12/02"
-			"prefab"		"no_craft taunt"
-			"item_name"		"#TF_taunt_the_fist_bump"
-			"item_description"		"#TF_taunt_the_fist_bump_Desc"
-			"attributes"
-			{
-				"taunt is press and hold"
-				{
-					"attribute_class"		"enable_misc2_holdtaunt"
-					"value"		"1"
-				}
-			}
-			"image_inventory"		"backpack/workshop/player/items/all_class/taunt_the_fist_bump/taunt_the_fist_bump"
-			"capabilities"
-			{
-				"can_craft_count"		"1"
+				"basename"		"models/workshop/player/items/all_class/hwn2023_lunatic_fedora_neon/hwn2023_lunatic_fedora_neon_%s.mdl"
 			}
 			"used_by_classes"
 			{
@@ -49487,34 +49008,1017 @@
 				"spy"		"1"
 				"engineer"		"1"
 			}
-			"taunt"
+		}
+		"31384"
+		{
+			"name"		"Demonic Dome"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2023_demonic_dome"
+			"item_description"		"#TF_hwn2023_demonic_dome_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"visuals"
 			{
-				"custom_taunt_scene_per_class"
+				"player_bodygroups"
 				{
-					"scout"		"scenes/workshop/player/scout/low/taunt_the_fist_bump.vcd"
-					"sniper"		"scenes/workshop/player/sniper/low/taunt_the_fist_bump.vcd"
-					"soldier"		"scenes/workshop/player/soldier/low/taunt_the_fist_bump.vcd"
-					"demoman"		"scenes/workshop/player/demoman/low/taunt_the_fist_bump.vcd"
-					"medic"		"scenes/workshop/player/medic/low/taunt_the_fist_bump.vcd"
-					"heavy"		"scenes/workshop/player/heavy/low/taunt_the_fist_bump.vcd"
-					"pyro"		"scenes/workshop/player/pyro/low/taunt_the_fist_bump.vcd"
-					"spy"		"scenes/workshop/player/spy/low/taunt_the_fist_bump.vcd"
-					"engineer"		"scenes/workshop/player/engineer/low/taunt_the_fist_bump.vcd"
+					"hat"		"1"
+					"headphones"		"1"
 				}
-				"custom_partner_taunt_per_class"
+			}
+			"image_inventory"		"backpack/workshop/player/items/all_class/hwn2023_demonic_dome/hwn2023_demonic_dome"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/hwn2023_demonic_dome/hwn2023_demonic_dome_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_helmet_pickup.wav"
+			"drop_sound"		"ui/item_helmet_drop.wav"
+		}
+		"31385"
+		{
+			"name"		"The Mean Captain"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2023_meancaptain"
+			"item_description"		"#TF_hwn2023_meancaptain_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"propername"		"1"
+			"visuals"
+			{
+				"player_bodygroups"
 				{
-					"scout"		"scenes/workshop/player/scout/low/taunt_the_fist_bump_action.vcd"
-					"sniper"		"scenes/workshop/player/sniper/low/taunt_the_fist_bump_action.vcd"
-					"soldier"		"scenes/workshop/player/soldier/low/taunt_the_fist_bump_action.vcd"
-					"demoman"		"scenes/workshop/player/demoman/low/taunt_the_fist_bump_action.vcd"
-					"medic"		"scenes/workshop/player/medic/low/taunt_the_fist_bump_action.vcd"
-					"heavy"		"scenes/workshop/player/heavy/low/taunt_the_fist_bump_action.vcd"
-					"spy"		"scenes/workshop/player/spy/low/taunt_the_fist_bump_action.vcd"
-					"engineer"		"scenes/workshop/player/engineer/low/taunt_the_fist_bump_action.vcd"
-					"pyro"		"scenes/workshop/player/pyro/low/taunt_the_fist_bump_action.vcd"
+					"hat"		"1"
+					"headphones"		"1"
 				}
-				"taunt_separation_forward_distance"		"66"
-				"is_partner_taunt"		"1"
+			}
+			"image_inventory"		"backpack/workshop/player/items/all_class/hwn2023_meancaptain/hwn2023_meancaptain"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/hwn2023_meancaptain/hwn2023_meancaptain_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+		}
+		"31386"
+		{
+			"name"		"Clown's Cover-Up"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_clowns_coverup"
+			"item_description"		"#TF_hwn2023_clowns_coverup_Desc"
+			"item_type_name"		"#TF_Wearable_Mask"
+			"equip_regions"
+			{
+				"face"		"1"
+				"beard"		"1"
+			}
+			"drop_type"		"drop"
+			"image_inventory"		"backpack/workshop/player/items/all_class/hwn2023_clowns_coverup/hwn2023_clowns_coverup"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/hwn2023_clowns_coverup/hwn2023_clowns_coverup_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"name"		"#TF_hwn2023_clowns_coverup_Style0"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"additional_hidden_bodygroups"
+						{
+							"hat"		"1"
+							"headphones"		"1"
+						}
+					}
+					"1"
+					{
+						"name"		"#TF_hwn2023_clowns_coverup_Style1"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+					}
+				}
+			}
+		}
+		"31387"
+		{
+			"name"		"Shortness Of Breath"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_shortness_breath"
+			"item_description"		"#TF_hwn2023_shortness_breath_Desc"
+			"item_type_name"		"#TF_Wearable_Mask"
+			"equip_region"		"face"
+			"image_inventory"		"backpack/workshop/player/items/soldier/hwn2023_shortness_breath/hwn2023_shortness_breath"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/soldier/hwn2023_shortness_breath/hwn2023_shortness_breath.mdl"
+			"used_by_classes"
+			{
+				"soldier"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"name"		"#TF_hwn2023_shortness_breath_Style0"
+						"additional_hidden_bodygroups"
+						{
+							"hat"		"1"
+						}
+					}
+					"1"
+					{
+						"name"		"#TF_hwn2023_shortness_breath_Style1"
+					}
+				}
+			}
+		}
+		"31388"
+		{
+			"name"		"Warlock's Warcloak"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_warlocks_warcloak"
+			"item_description"		"#TF_hwn2023_warlocks_warcloak_Desc"
+			"item_type_name"		"#TF_Wearable_Cloak"
+			"equip_region"		"necklace"
+			"image_inventory"		"backpack/workshop/player/items/soldier/hwn2023_warlocks_warcloak/hwn2023_warlocks_warcloak"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/soldier/hwn2023_warlocks_warcloak/hwn2023_warlocks_warcloak.mdl"
+			"used_by_classes"
+			{
+				"soldier"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31389"
+		{
+			"name"		"Dead Heat"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_dead_heat"
+			"item_description"		"#TF_hwn2023_dead_heat_Desc"
+			"equip_region"		"pyro_head_replacement"
+			"item_type_name"		"#TF_Wearable_Mask"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"head"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/pyro/hwn2023_dead_heat/hwn2023_dead_heat"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/hwn2023_dead_heat/hwn2023_dead_heat.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+		}
+		"31390"
+		{
+			"name"		"Splitting Headache"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2023_splitting_headache"
+			"item_description"		"#TF_hwn2023_splitting_headache_Desc"
+			"item_type_name"		"#TF_Wearable_Headache"
+			"equip_region"		"hat"
+			"image_inventory"		"backpack/workshop/player/items/pyro/hwn2023_splitting_headache/hwn2023_splitting_headache"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/hwn2023_splitting_headache/hwn2023_splitting_headache.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+		}
+		"31391"
+		{
+			"name"		"Thunder Dome"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2023_thunder_dome"
+			"item_description"		"#TF_hwn2023_thunder_dome_Desc"
+			"item_type_name"		"#TF_Wearable_Helmet"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"image_inventory"		"backpack/workshop/player/items/demo/hwn2023_thunder_dome/hwn2023_thunder_dome"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/demo/hwn2023_thunder_dome/hwn2023_thunder_dome.mdl"
+			"used_by_classes"
+			{
+				"demoman"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/demo/hwn2023_thunder_dome/hwn2023_thunder_dome.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_thunder_dome_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/demo/hwn2023_thunder_dome_style1/hwn2023_thunder_dome_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_thunder_dome_style1"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/demo/hwn2023_thunder_dome_style2/hwn2023_thunder_dome_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_thunder_dome_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_helmet_pickup.wav"
+			"drop_sound"		"ui/item_helmet_drop.wav"
+		}
+		"31392"
+		{
+			"name"		"Stunt Suit"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_stunt_suit"
+			"item_description"		"#TF_hwn2023_stunt_suit_Desc"
+			"item_type_name"		"#TF_Wearable_Suit"
+			"equip_region"		"pants"
+			"item_slot"			"misc2"
+			"image_inventory"		"backpack/workshop/player/items/demo/hwn2023_stunt_suit/hwn2023_stunt_suit"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/demo/hwn2023_stunt_suit/hwn2023_stunt_suit.mdl"
+			"used_by_classes"
+			{
+				"demoman"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/demo/hwn2023_stunt_suit/hwn2023_stunt_suit.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_stunt_suit_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/demo/hwn2023_stunt_suit_style1/hwn2023_stunt_suit_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_stunt_suit_style1"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/demo/hwn2023_stunt_suit_style2/hwn2023_stunt_suit_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_stunt_suit_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31393"
+		{
+			"name"		"Mad Lad"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_mad_lad"
+			"item_description"		"#TF_hwn2023_mad_lad_Desc"
+			"item_type_name"		"#TF_Wearable_Armor"
+			"equip_region"		"grenades"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"grenades"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/demo/hwn2023_mad_lad/hwn2023_mad_lad"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/demo/hwn2023_mad_lad/hwn2023_mad_lad.mdl"
+			"used_by_classes"
+			{
+				"demoman"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/demo/hwn2023_mad_lad/hwn2023_mad_lad.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_mad_lad_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/demo/hwn2023_mad_lad_style1/hwn2023_mad_lad_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_mad_lad_style1"
+					}
+				}
+			}
+		}
+		"31394"
+		{
+			"name"		"Dell Dynamic"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2023_dell_dynamic"
+			"item_description"		"#TF_hwn2023_dell_dynamic_Desc"
+			"item_type_name"		"#TF_Wearable_Helmet"
+			"equip_region"		"hat"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/engineer/hwn2023_dell_dynamic/hwn2023_dell_dynamic"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/hwn2023_dell_dynamic/hwn2023_dell_dynamic.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+		}
+		"31395"
+		{
+			"name"		"Constructor's Cover"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_constructors_cover"
+			"item_description"		"#TF_hwn2023_constructors_cover_Desc"
+			"item_type_name"		"#TF_Wearable_Armor"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/engineer/hwn2023_constructors_cover/hwn2023_constructors_cover"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/hwn2023_constructors_cover/hwn2023_constructors_cover.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+		}
+		"31396"
+		{
+			"name"		"Classic Criminal"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_classic_criminal"
+			"item_description"		"#TF_hwn2023_classic_criminal_Desc"
+			"item_type_name"		"#TF_Wearable_Balaclava"
+			"equip_region"		"head_skin"
+			"image_inventory"		"backpack/workshop/player/items/spy/hwn2023_classic_criminal/hwn2023_classic_criminal"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/hwn2023_classic_criminal/hwn2023_classic_criminal.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/spy/hwn2023_classic_criminal/hwn2023_classic_criminal.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_classic_criminal_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/spy/hwn2023_classic_criminal_style1/hwn2023_classic_criminal_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_classic_criminal_style1"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/spy/hwn2023_classic_criminal_style2/hwn2023_classic_criminal_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_classic_criminal_style2"
+					}
+					"3"
+					{
+						"model_player"		"models/workshop/player/items/spy/hwn2023_classic_criminal_style3/hwn2023_classic_criminal_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_classic_criminal_style3"
+					}
+					"4"
+					{
+						"model_player"		"models/workshop/player/items/spy/hwn2023_classic_criminal_style4/hwn2023_classic_criminal_style4.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_classic_criminal_style4"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31397"
+		{
+			"name"		"Concealed Convict"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_concealed_convict"
+			"item_description"		"#TF_hwn2023_concealed_convict_Desc"
+			"item_type_name"		"#TF_Wearable_Apparel"
+			"equip_region"		"spy_coat"
+			"image_inventory"		"backpack/workshop/player/items/spy/hwn2023_concealed_convict/hwn2023_concealed_convict"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/hwn2023_concealed_convict/hwn2023_concealed_convict.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/spy/hwn2023_concealed_convict/hwn2023_concealed_convict.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_concealed_convict_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/spy/hwn2023_concealed_convict_style1/hwn2023_concealed_convict_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_concealed_convict_style1"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31398"
+		{
+			"name"		"Six-Eyed Specs"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_six_eyed_specs"
+			"item_description"		"#TF_hwn2023_six_eyed_specs_Desc"
+			"item_type_name"		"#TF_Wearable_Costume"
+			"equip_region"		"head_skin"
+			"image_inventory"		"backpack/workshop/player/items/spy/hwn2023_six_eyed_specs/hwn2023_six_eyed_specs"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/hwn2023_six_eyed_specs/hwn2023_six_eyed_specs.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31399"
+		{
+			"name"		"Medical Mummy"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_medical_mummy"
+			"item_description"		"#TF_hwn2023_medical_mummy_Desc"
+			"item_type_name"		"#TF_Wearable_Bandages"
+			"equip_region"		"head_skin"
+			"image_inventory"		"backpack/workshop/player/items/medic/hwn2023_medical_mummy/hwn2023_medical_mummy"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/medic/hwn2023_medical_mummy/hwn2023_medical_mummy.mdl"
+			"used_by_classes"
+			{
+				"medic"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/medic/hwn2023_medical_mummy/hwn2023_medical_mummy.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_medical_mummy_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/medic/hwn2023_medical_mummy_style1/hwn2023_medical_mummy_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_medical_mummy_style1"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31400"
+		{
+			"name"		"The Main Cast"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_main_cast"
+			"item_description"		"#TF_hwn2023_main_cast_Desc"
+			"item_type_name"		"#TF_Wearable_Bandages"
+			"equip_region"		"feet"
+			"image_inventory"		"backpack/workshop/player/items/medic/hwn2023_main_cast/hwn2023_main_cast"
+			"propername"		"1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/medic/hwn2023_main_cast/hwn2023_main_cast.mdl"
+			"used_by_classes"
+			{
+				"medic"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/medic/hwn2023_main_cast/hwn2023_main_cast.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_main_cast_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/medic/hwn2023_main_cast_style1/hwn2023_main_cast_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_main_cast_style1"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/medic/hwn2023_main_cast_style2/hwn2023_main_cast_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_main_cast_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31401"
+		{
+			"name"		"Power Spike"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2023_power_spike"
+			"item_description"		"#TF_hwn2023_power_spike_Desc"
+			"equip_region"		"hat"
+			"item_type_name"		"#TF_Wearable_Hair"
+			"image_inventory"		"backpack/workshop/player/items/medic/hwn2023_power_spike/hwn2023_power_spike"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/medic/hwn2023_power_spike/hwn2023_power_spike.mdl"
+			"used_by_classes"
+			{
+				"medic"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/medic/hwn2023_power_spike/hwn2023_power_spike.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_power_spike_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/medic/hwn2023_power_spike_style1/hwn2023_power_spike_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_power_spike_style1"
+					}
+				}
+			}
+		}
+		"31402"
+		{
+			"name"		"Bare Bear Bones"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2023_bare_bear_bones"
+			"item_description"		"#TF_hwn2023_bare_bear_bones_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"image_inventory"		"backpack/workshop/player/items/heavy/hwn2023_bare_bear_bones/hwn2023_bare_bear_bones"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/heavy/hwn2023_bare_bear_bones/hwn2023_bare_bear_bones.mdl"
+			"used_by_classes"
+			{
+				"heavy"		"1"
+			}
+		}
+		"31403"
+		{
+			"name"		"The Make Ogre"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_make_ogre"
+			"item_description"		"#TF_hwn2023_make_ogre_Desc"
+			"item_type_name"		"#TF_Wearable_Costume"
+			"equip_region"		"face"
+			"propername"		"1"
+			"image_inventory"		"backpack/workshop/player/items/heavy/hwn2023_make_ogre/hwn2023_make_ogre"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/heavy/hwn2023_make_ogre/hwn2023_make_ogre.mdl"
+			"used_by_classes"
+			{
+				"heavy"		"1"
+			}
+		}
+		"31404"
+		{
+			"name"		"Sightseer"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2023_sightseer"
+			"item_description"		"#TF_hwn2023_sightseer_Desc"
+			"equip_region"		"hat"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/sniper/hwn2023_sightseer/hwn2023_sightseer"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/sniper/hwn2023_sightseer/hwn2023_sightseer.mdl"
+			"used_by_classes"
+			{
+				"sniper"		"1"
+			}
+			"attributes"
+			{
+				"attach particle effect static"
+				{
+					"attribute_class"		"set_attached_particle_static"
+					"value"		"28"
+				}
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/sniper/hwn2023_sightseer/hwn2023_sightseer.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_sightseer_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/sniper/hwn2023_sightseer_style1/hwn2023_sightseer_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_sightseer_style1"
+					}
+				}
+			}
+		}
+		"31405"
+		{
+			"name"		"Sharpshooter's Shroud"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_sharpshooters_shroud"
+			"item_description"		"#TF_hwn2023_sharpshooters_shroud_Desc"
+			"item_type_name"		"#TF_Wearable_Shroud"
+			"equip_region"		"sniper_vest"
+			"image_inventory"		"backpack/workshop/player/items/sniper/hwn2023_sharpshooters_shroud/hwn2023_sharpshooters_shroud"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/sniper/hwn2023_sharpshooters_shroud/hwn2023_sharpshooters_shroud.mdl"
+			"used_by_classes"
+			{
+				"sniper"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31406"
+		{
+			"name"		"The Last Laugh"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_last_laugh"
+			"item_description"		"#TF_hwn2023_last_laugh_Desc"
+			"item_type_name"		"#TF_Wearable_Mask"
+			"equip_region"		"face"
+			"drop_type"		"drop"
+			"propername"		"1"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/scout/hwn2023_last_laugh/hwn2023_last_laugh"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/scout/hwn2023_last_laugh/hwn2023_last_laugh.mdl"
+			"used_by_classes"
+			{
+				"scout"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/scout/hwn2023_last_laugh/hwn2023_last_laugh.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_last_laugh_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/scout/hwn2023_last_laugh_style1/hwn2023_last_laugh_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_last_laugh_style1"
+					}
+				}
+			}
+		}
+		"31407"
+		{
+			"name"		"Jumping Jester"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_jumping_jester"
+			"item_description"		"#TF_hwn2023_jumping_jester_Desc"
+			"item_type_name"		"#TF_Wearable_Apparel"
+			"equip_region"		"shirt"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"dogtags"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/scout/hwn2023_jumping_jester/hwn2023_jumping_jester"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/scout/hwn2023_jumping_jester/hwn2023_jumping_jester.mdl"
+			"used_by_classes"
+			{
+				"scout"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31408"
+		{
+			"name"		"Blastphomet"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_blastphomet"
+			"item_description"		"#TF_hwn2023_blastphomet_Desc"
+			"item_type_name"		"#TF_Wearable_Costume"
+			"equip_region"
+			{
+				"whole_head"		"1"
+				"head_skin"		"1"
+			}
+			"holiday_restriction"		"halloween_or_fullmoon"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"dogtags"		"1"
+					"hat"		"1"
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/demo/hwn2023_blastphomet/hwn2023_blastphomet"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/demo/hwn2023_blastphomet/hwn2023_blastphomet.mdl"
+			"used_by_classes"
+			{
+				"demoman"		"1"
+			}
+		}
+		"31409"
+		{
+			"name"		"Spyder"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_spyder"
+			"item_description"		"#TF_hwn2023_spyder_Desc"
+			"item_type_name"		"#TF_Wearable_Costume"
+			"equip_region"		"pants"
+			"item_slot"			"misc2"
+			"holiday_restriction"		"halloween_or_fullmoon"
+			"image_inventory"		"backpack/workshop/player/items/spy/hwn2023_spyder/hwn2023_spyder"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/hwn2023_spyder/hwn2023_spyder.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+		}
+		"31410"
+		{
+			"name"		"Carry-Van"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2023_carry_van"
+			"item_description"		"#TF_hwn2023_carry_van_Desc"
+			"item_type_name"		"#TF_Wearable_Costume"
+			"equip_region"		"belt_misc"
+			"holiday_restriction"		"halloween_or_fullmoon"
+			"image_inventory"		"backpack/workshop/player/items/sniper/hwn2023_carry_van/hwn2023_carry_van"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/sniper/hwn2023_carry_van/hwn2023_carry_van.mdl"
+			"used_by_classes"
+			{
+				"sniper"		"1"
+			}
+		}
+		"31411"
+		{
+			"name"		"Fiercesome Fluorescence"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2023_fiercesome_fluorescence"
+			"item_description"		"#TF_hwn2023_fiercesome_fluorescence_Desc"
+			"item_type_name"		"#TF_Wearable_Costume"
+			"equip_region"		"hat"
+			"holiday_restriction"		"halloween_or_fullmoon"
+			"image_inventory"		"backpack/workshop/player/items/pyro/hwn2023_fiercesome_fluorescence/hwn2023_fiercesome_fluorescence"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/hwn2023_fiercesome_fluorescence/hwn2023_fiercesome_fluorescence.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/pyro/hwn2023_fiercesome_fluorescence/hwn2023_fiercesome_fluorescence.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_fiercesome_fluorescence_style0"
+						"additional_hidden_bodygroups"
+						{
+							"head"		"1"
+						}
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/pyro/hwn2023_fiercesome_fluorescence_style1/hwn2023_fiercesome_fluorescence_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2023_fiercesome_fluorescence_style1"
+					}
+				}
 			}
 		}
 		"31412"
@@ -49657,6 +50161,1145 @@
 				}
 			}
 		}
+		"31415"
+		{
+			"name"		"Boarder's Beanie"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec23_boarders_beanie"
+			"item_description"		"#TF_dec23_boarders_beanie_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/all_class/dec23_boarders_beanie/dec23_boarders_beanie"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/dec23_boarders_beanie/dec23_boarders_beanie_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player_per_class"
+						{
+							"basename"		"models/workshop/player/items/all_class/dec23_boarders_beanie/dec23_boarders_beanie_%s.mdl"
+						}
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_boarders_beanie_style1"
+					}
+					"1"
+					{
+						"model_player_per_class"
+						{
+							"basename"		"models/workshop/player/items/all_class/dec23_boarders_beanie_style2/dec23_boarders_beanie_style2_%s.mdl"
+						}
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_boarders_beanie_style2"
+					}
+					"2"
+					{
+						"model_player_per_class"
+						{
+							"basename"		"models/workshop/player/items/all_class/dec23_boarders_beanie_style3/dec23_boarders_beanie_style3_%s.mdl"
+						}
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_boarders_beanie_style3"
+					}
+				}
+			}
+		}
+		"31416"
+		{
+			"name"		"Cozy Cover-Up"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec23_cozy_coverup"
+			"item_description"		"#TF_dec23_cozy_coverup_Desc"
+			"item_type_name"		"#TF_Wearable_Apparel"
+			"equip_regions"
+			{
+				"necklace"		"1"
+				"ears"		"1"
+			}
+			"image_inventory"		"backpack/workshop/player/items/all_class/dec23_cozy_coverup/dec23_cozy_coverup"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/dec23_cozy_coverup/dec23_cozy_coverup_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player_per_class"
+						{
+							"basename"		"models/workshop/player/items/all_class/dec23_cozy_coverup/dec23_cozy_coverup_%s.mdl"
+						}
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_cozy_coverup_style1"
+						"additional_hidden_bodygroups"
+						{
+							"dogtags"		"1"
+							"headphones"		"1"
+						}
+					}
+					"1"
+					{
+						"model_player_per_class"
+						{
+							"basename"		"models/workshop/player/items/all_class/dec23_cozy_coverup_style2/dec23_cozy_coverup_style2_%s.mdl"
+						}
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_cozy_coverup_style2"
+						"additional_hidden_bodygroups"
+						{
+							"headphones"		"1"
+						}
+					}
+					"2"
+					{
+						"model_player_per_class"
+						{
+							"basename"		"models/workshop/player/items/all_class/dec23_cozy_coverup_style3/dec23_cozy_coverup_style3_%s.mdl"
+						}
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_cozy_coverup_style3"
+						"additional_hidden_bodygroups"
+						{
+							"dogtags"		"1"
+						}
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31417"
+		{
+			"name"		"The Dapper Dickens"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec23_dapper_dickens"
+			"item_description"		"#TF_dec23_dapper_dickens_Desc"
+			"equip_region"		"hat"
+			"propername"		"1"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/all_class/dec23_dapper_dickens/dec23_dapper_dickens"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/dec23_dapper_dickens/dec23_dapper_dickens_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player_per_class"
+						{
+							"basename"		"models/workshop/player/items/all_class/dec23_dapper_dickens/dec23_dapper_dickens_%s.mdl"
+						}
+						"name"		"#TF_dec23_dapper_dickens_style1"
+					}
+					"1"
+					{
+						"model_player_per_class"
+						{
+							"basename"		"models/workshop/player/items/all_class/dec23_dapper_dickens_style2/dec23_dapper_dickens_style2_%s.mdl"
+						}
+						"name"		"#TF_dec23_dapper_dickens_style2"
+					}
+				}
+			}
+		}
+		"31418"
+		{
+			"name"		"Trench Warefarer"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec23_trench_warefarer"
+			"item_description"		"#TF_dec23_trench_warefarer_Desc"
+			"item_type_name"		"#TF_Wearable_Coat"
+			"equip_region"		"soldier_coat"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"grenades"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/soldier/dec23_trench_warefarer/dec23_trench_warefarer"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/soldier/dec23_trench_warefarer/dec23_trench_warefarer.mdl"
+			"used_by_classes"
+			{
+				"soldier"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31419"
+		{
+			"name"		"Wanderer's Wool"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec23_wanderers_wool"
+			"item_description"		"#TF_dec23_wanderers_wool_Desc"
+			"equip_regions"
+			{
+				"hat"		"1"
+				"beard"		"1"
+			}
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/soldier/dec23_wanderers_wool/dec23_wanderers_wool"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/soldier/dec23_wanderers_wool/dec23_wanderers_wool.mdl"
+			"used_by_classes"
+			{
+				"soldier"		"1"
+			}
+			"attributes"
+			{
+				"attach particle effect static"
+				{
+					"attribute_class"		"set_attached_particle_static"
+					"value"		"28"
+				}
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/soldier/dec23_wanderers_wool/dec23_wanderers_wool.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_wanderers_wool_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/soldier/dec23_wanderers_wool_style2/dec23_wanderers_wool_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_wanderers_wool_style2"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/soldier/dec23_wanderers_wool_style3/dec23_wanderers_wool_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_wanderers_wool_style3"
+					}
+					"3"
+					{
+						"model_player"		"models/workshop/player/items/soldier/dec23_wanderers_wool_style4/dec23_wanderers_wool_style4.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_wanderers_wool_style4"
+					}
+					"4"
+					{
+						"model_player"		"models/workshop/player/items/soldier/dec23_wanderers_wool_style5/dec23_wanderers_wool_style5.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_wanderers_wool_style5"
+					}
+					"5"
+					{
+						"model_player"		"models/workshop/player/items/soldier/dec23_wanderers_wool_style6/dec23_wanderers_wool_style6.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_wanderers_wool_style6"
+					}
+				}
+			}
+		}
+		"31420"
+		{
+			"name"		"The Puffed Practitioner"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec23_puffed_practitioner"
+			"item_description"		"#TF_dec23_puffed_practitioner_Desc"
+			"item_type_name"		"#TF_Wearable_Coat"
+			"equip_region"		"shirt"
+			"propername"		"1"
+			"image_inventory"		"backpack/workshop/player/items/medic/dec23_puffed_practitioner/dec23_puffed_practitioner"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/medic/dec23_puffed_practitioner/dec23_puffed_practitioner.mdl"
+			"used_by_classes"
+			{
+				"medic"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31421"
+		{
+			"name"		"The Frigid Fashion"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec23_frigid_fashion"
+			"item_description"		"#TF_dec23_frigid_fashion_Desc"
+			"equip_regions"
+			{
+				"hat"		"1"
+				"ears"		"1"
+				"glasses"		"1"
+			}
+			"propername"		"1"
+			"image_inventory"		"backpack/workshop/player/items/medic/dec23_frigid_fashion/dec23_frigid_fashion"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/medic/dec23_frigid_fashion/dec23_frigid_fashion.mdl"
+			"used_by_classes"
+			{
+				"medic"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/medic/dec23_frigid_fashion/dec23_frigid_fashion.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/medic/dec23_frigid_fashion_style2/dec23_frigid_fashion_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_style1"
+					}
+				}
+			}
+		}
+		"31422"
+		{
+			"name"		"Nightcap"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec23_nightcap"
+			"item_description"		"#TF_dec23_nightcap_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"image_inventory"		"backpack/workshop/player/items/demo/dec23_nightcap/dec23_nightcap"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/demo/dec23_nightcap/dec23_nightcap.mdl"
+			"used_by_classes"
+			{
+				"demoman"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/demo/dec23_nightcap/dec23_nightcap.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_nightcap_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/demo/dec23_nightcap_style2/dec23_nightcap_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_nightcap_style2"
+					}
+				}
+			}
+		}
+		"31423"
+		{
+			"name"		"Lazy Lounger"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec23_lazy_lounger"
+			"item_description"		"#TF_dec23_lazy_lounger_Desc"
+			"item_type_name"		"#TF_Wearable_Shirt"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/demo/dec23_lazy_lounger/dec23_lazy_lounger"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/demo/dec23_lazy_lounger/dec23_lazy_lounger.mdl"
+			"used_by_classes"
+			{
+				"demoman"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31424"
+		{
+			"name"		"Slumber Slacks"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec23_slumber_slacks"
+			"item_description"		"#TF_dec23_slumber_slacks_Desc"
+			"item_type_name"		"#TF_Wearable_PantsSlippers"
+			"equip_regions"
+			{
+				"pants"		"1"
+				"feet"		"1"
+			}
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"shoes"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/demo/dec23_slumber_slacks/dec23_slumber_slacks"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/demo/dec23_slumber_slacks/dec23_slumber_slacks.mdl"
+			"used_by_classes"
+			{
+				"demoman"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31425"
+		{
+			"name"		"Clue Hairdo"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec23_clue_hairdo"
+			"item_description"		"#TF_dec23_clue_hairdo_Desc"
+			"item_type_name"		"#TF_Wearable_Hair"
+			"equip_region"		"hat"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/engineer/dec23_clue_hairdo/dec23_clue_hairdo"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/dec23_clue_hairdo/dec23_clue_hairdo.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+			"attributes"
+			{
+				"attach particle effect static"
+				{
+					"attribute_class"		"set_attached_particle_static"
+					"value"		"28"
+				}
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/engineer/dec23_clue_hairdo/dec23_clue_hairdo.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_clue_hairdo_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/engineer/dec23_clue_hairdo_style2/dec23_clue_hairdo_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_clue_hairdo_style2"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/engineer/dec23_clue_hairdo_style3/dec23_clue_hairdo_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"use_smoke_particle_effect"		"0"
+						"name"		"#TF_dec23_clue_hairdo_style3"
+					}
+				}
+			}
+		}
+		"31426"
+		{
+			"name"		"Sleuth Suit"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec23_sleuth_suit"
+			"item_description"		"#TF_dec23_sleuth_suit_Desc"
+			"item_type_name"		"#TF_Wearable_Suit"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/engineer/dec23_sleuth_suit/dec23_sleuth_suit"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/dec23_sleuth_suit/dec23_sleuth_suit.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/engineer/dec23_sleuth_suit/dec23_sleuth_suit.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_sleuth_suit_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/engineer/dec23_sleuth_suit_style2/dec23_sleuth_suit_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_sleuth_suit_style2"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/engineer/dec23_sleuth_suit_style3/dec23_sleuth_suit_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_sleuth_suit_style3"
+					}
+					"3"
+					{
+						"model_player"		"models/workshop/player/items/engineer/dec23_sleuth_suit_style4/dec23_sleuth_suit_style4.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_sleuth_suit_style4"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31427"
+		{
+			"name"		"Strasbourg Scholar"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec23_strasbourg_scholar"
+			"item_description"		"#TF_dec23_strasbourg_scholar_Desc"
+			"item_type_name"		"#TF_Wearable_Suit"
+			"equip_region"		"spy_coat"
+			"image_inventory"		"backpack/workshop/player/items/spy/dec23_strasbourg_scholar/dec23_strasbourg_scholar"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/dec23_strasbourg_scholar/dec23_strasbourg_scholar.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/spy/dec23_strasbourg_scholar/dec23_strasbourg_scholar.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_strasbourg_scholar_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/spy/dec23_strasbourg_scholar_style2/dec23_strasbourg_scholar_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_strasbourg_scholar_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31428"
+		{
+			"name"		"The Covert Covers"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec23_covert_covers"
+			"item_description"		"#TF_dec23_covert_covers_Desc"
+			"equip_regions"
+			{
+				"hat"		"1"
+				"face"		"1"
+				"necklace"		"1"
+			}
+			"propername"		"1"
+			"image_inventory"		"backpack/workshop/player/items/spy/dec23_covert_covers/dec23_covert_covers"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/dec23_covert_covers/dec23_covert_covers.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31429"
+		{
+			"name"		"Scruffed 'n Stitched"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec23_scruffed_stitched"
+			"item_description"		"#TF_dec23_scruffed_stitched_Desc"
+			"equip_regions"
+			{
+				"hat"		"1"
+				"beard"		"1"
+			}
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/sniper/dec23_scruffed_stitched/dec23_scruffed_stitched"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/sniper/dec23_scruffed_stitched/dec23_scruffed_stitched.mdl"
+			"used_by_classes"
+			{
+				"sniper"		"1"
+			}
+			"attributes"
+			{
+				"attach particle effect static"
+				{
+					"attribute_class"		"set_attached_particle_static"
+					"value"		"28"
+				}
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/sniper/dec23_scruffed_stitched/dec23_scruffed_stitched.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_scruffed_stitched_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/sniper/dec23_scruffed_stitched_style2/dec23_scruffed_stitched_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_scruffed_stitched_style2"
+					}
+				}
+			}
+		}
+		"31430"
+		{
+			"name"		"Rugged Rags"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec23_rugged_rags"
+			"item_description"		"#TF_dec23_rugged_rags_Desc"
+			"item_type_name"		"#TF_Wearable_Vest"
+			"equip_region"		"sniper_vest"
+			"image_inventory"		"backpack/workshop/player/items/sniper/dec23_rugged_rags/dec23_rugged_rags"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/sniper/dec23_rugged_rags/dec23_rugged_rags.mdl"
+			"used_by_classes"
+			{
+				"sniper"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31431"
+		{
+			"name"		"Masked Loyalty"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec23_masked_loyalty"
+			"item_description"		"#TF_dec23_masked_loyalty_Desc"
+			"item_type_name"		"#TF_Wearable_Mask"
+			"equip_region"		"pyro_head_replacement"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"grenades"		"1"
+					"head"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/pyro/dec23_masked_loyalty/dec23_masked_loyalty"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/dec23_masked_loyalty/dec23_masked_loyalty.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/pyro/dec23_masked_loyalty/dec23_masked_loyalty.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/pyro/dec23_masked_loyalty_style2/dec23_masked_loyalty_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_style1"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/pyro/dec23_masked_loyalty_style3/dec23_masked_loyalty_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_style2"
+					}
+				}
+			}
+		}
+		"31432"
+		{
+			"name"		"Impact Impaler"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec23_impact_impaler"
+			"item_description"		"#TF_dec23_impact_impaler_Desc"
+			"item_type_name"		"#TF_Wearable_Helmet"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"image_inventory"		"backpack/workshop/player/items/pyro/dec23_impact_impaler/dec23_impact_impaler"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/dec23_impact_impaler/dec23_impact_impaler.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/pyro/dec23_impact_impaler/dec23_impact_impaler.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/pyro/dec23_impact_impaler_style2/dec23_impact_impaler_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_style1"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_helmet_pickup.wav"
+			"drop_sound"		"ui/item_helmet_drop.wav"
+		}
+		"31433"
+		{
+			"name"		"Torcher's Trench Coat"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec23_torchers_trench_coat"
+			"item_description"		"#TF_dec23_torchers_trench_coat_Desc"
+			"item_type_name"		"#TF_Wearable_Coat"
+			"equip_region"		"shirt"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"grenades"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/pyro/dec23_torchers_trench_coat/dec23_torchers_trench_coat"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/dec23_torchers_trench_coat/dec23_torchers_trench_coat.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31434"
+		{
+			"name"		"Balkan's Brute"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec23_balkans_brute"
+			"item_description"		"#TF_dec23_balkans_brute_Desc"
+			"equip_region"		"hat"
+			"image_inventory"		"backpack/workshop/player/items/heavy/dec23_balkans_brute/dec23_balkans_brute"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/heavy/dec23_balkans_brute/dec23_balkans_brute.mdl"
+			"used_by_classes"
+			{
+				"heavy"		"1"
+			}
+		}
+		"31435"
+		{
+			"name"		"Bigger Mann on Campus"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec23_bigger_mann"
+			"item_description"		"#TF_dec23_bigger_mann_Desc"
+			"item_type_name"		"#TF_Wearable_Jacket"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/heavy/dec23_bigger_mann/dec23_bigger_mann"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/heavy/dec23_bigger_mann/dec23_bigger_mann.mdl"
+			"used_by_classes"
+			{
+				"heavy"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31436"
+		{
+			"name"		"Isotopic Insulator"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec23_isotopic_insulator"
+			"item_description"		"#TF_dec23_isotopic_insulator_Desc"
+			"item_type_name"		"#TF_Wearable_Coat"
+			"equip_region"		"shirt"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"dogtags"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/scout/dec23_isotopic_insulator/dec23_isotopic_insulator"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/scout/dec23_isotopic_insulator/dec23_isotopic_insulator.mdl"
+			"used_by_classes"
+			{
+				"scout"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31437"
+		{
+			"name"		"Bonk Beanie"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec23_bonk_beanie"
+			"item_description"		"#TF_dec23_bonk_beanie_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/scout/dec23_bonk_beanie/dec23_bonk_beanie"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/scout/dec23_bonk_beanie/dec23_bonk_beanie.mdl"
+			"used_by_classes"
+			{
+				"scout"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/scout/dec23_bonk_beanie/dec23_bonk_beanie.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_bonk_beanie_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/scout/dec23_bonk_beanie_style2/dec23_bonk_beanie_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec23_bonk_beanie_style2"
+					}
+				}
+			}
+		}
+		"31438"
+		{
+			"name"		"Taunt: Can It!"
+			"prefab"		"no_craft taunt"
+			"first_sale_date"		"2024/07/16"
+			"item_name"		"#TF_tauntcan_it"
+			"item_description"		"#TF_tauntcan_it_Desc"
+			"ad_text"		"#TF_tauntcan_it_AdText"
+			"image_inventory"		"backpack/workshop/player/items/soldier/tauntcan_it/tauntcan_it"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"used_by_classes"
+			{
+				"soldier"		"1"
+			}
+			"taunt"
+			{
+				"custom_taunt_scene_per_class"
+				{
+					"soldier"		"scenes/workshop/player/soldier/low/tauntcan_it.vcd"
+				}
+				"custom_taunt_prop_per_class"
+				{
+					"soldier"		"models/workshop/player/items/soldier/tauntcan_it/tauntcan_it.mdl"
+				}
+			}
+		}
+		"31439"
+		{
+			"name"		"Taunt: Cremator's Condolences"
+			"prefab"		"no_craft taunt"
+			"first_sale_date"		"2024/07/16"
+			"item_name"		"#TF_taunt_cremators_condolences"
+			"item_description"		"#TF_taunt_cremators_condolences_Desc"
+			"ad_text"		"#TF_taunt_cremators_condolences_AdText"
+			"image_inventory"		"backpack/workshop/player/items/pyro/taunt_cremators_condolences/taunt_cremators_condolences"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+			"taunt"
+			{
+				"custom_taunt_scene_per_class"
+				{
+					"pyro"		"scenes/workshop/player/pyro/low/taunt_cremators_condolences.vcd"
+				}
+				"custom_taunt_prop_per_class"
+				{
+					"pyro"		"models/workshop/player/items/pyro/taunt_cremators_condolences/taunt_cremators_condolences.mdl"
+				}
+			}
+		}
+		"31440"
+		{
+			"name"		"Taunt: Straight Shooter Tutor"
+			"prefab"		"no_craft taunt"
+			"first_sale_date"		"2024/07/16"
+			"item_name"		"#TF_taunt_straight_shooter_tutor"
+			"item_description"		"#TF_taunt_straight_shooter_tutor_Desc"
+			"ad_text"		"#TF_taunt_straight_shooter_tutor_AdText"
+			"image_inventory"		"backpack/workshop/player/items/sniper/taunt_straight_shooter_tutor/taunt_straight_shooter_tutor"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"used_by_classes"
+			{
+				"sniper"		"1"
+			}
+			"taunt"
+			{
+				"custom_taunt_scene_per_class"
+				{
+					"sniper"		"scenes/workshop/player/sniper/low/taunt_straight_shooter_tutor.vcd"
+				}
+				"custom_taunt_prop_per_class"
+				{
+					"sniper"		"models/workshop/player/items/sniper/taunt_straight_shooter_tutor/taunt_straight_shooter_tutor.mdl"
+				}
+			}
+		}
+		"31441"
+		{
+			"name"		"Taunt: Unleashed Rage"
+			"prefab"		"no_craft taunt"
+			"first_sale_date"		"2024/07/16"
+			"item_name"		"#TF_taunt_unleashed_rage"
+			"item_description"		"#TF_taunt_unleashed_rage_Desc"
+			"ad_text"		"#TF_taunt_unleashed_rage_AdText"
+			"image_inventory"		"backpack/workshop/player/items/all_class/taunt_unleashed_rage/taunt_unleashed_rage"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+			"taunt"
+			{
+				"custom_taunt_scene_per_class"
+				{
+					"scout"		"scenes/workshop/player/scout/low/taunt_unleashed_rage.vcd"
+					"sniper"		"scenes/workshop/player/sniper/low/taunt_unleashed_rage.vcd"
+					"soldier"		"scenes/workshop/player/soldier/low/taunt_unleashed_rage.vcd"
+					"demoman"		"scenes/workshop/player/demoman/low/taunt_unleashed_rage.vcd"
+					"medic"		"scenes/workshop/player/medic/low/taunt_unleashed_rage.vcd"
+					"heavy"		"scenes/workshop/player/heavy/low/taunt_unleashed_rage.vcd"
+					"pyro"		"scenes/workshop/player/pyro/low/taunt_unleashed_rage.vcd"
+					"spy"		"scenes/workshop/player/spy/low/taunt_unleashed_rage.vcd"
+					"engineer"		"scenes/workshop/player/engineer/low/taunt_unleashed_rage.vcd"
+				}
+			}
+		}
 		"31442"
 		{
 			"name"		"Botler 2000"
@@ -49751,6 +51394,419 @@
 			"mouse_pressed_sound"		"ui/item_robot_arm_pickup.wav"
 			"drop_sound"		"ui/item_robot_arm_drop.wav"
 		}
+		"31443"
+		{
+			"name"		"The Brand Loyalist"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_sum24_brand_loyalist"
+			"item_description"		"#TF_sum24_brand_loyalist_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"propername"		"1"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/all_class/sum24_brand_loyalist/sum24_brand_loyalist"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/sum24_brand_loyalist/sum24_brand_loyalist_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+		}
+		"31444"
+		{
+			"name"		"Desk Engineer"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_sum24_desk_engineer"
+			"item_description"		"#TF_sum24_desk_engineer_Desc"
+			"item_type_name"		"#TF_Wearable_Shirt"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/engineer/sum24_desk_engineer_style1/sum24_desk_engineer_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/sum24_desk_engineer_style1/sum24_desk_engineer_style1.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/engineer/sum24_desk_engineer_style1/sum24_desk_engineer_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_desk_engineer_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/engineer/sum24_desk_engineer_style2/sum24_desk_engineer_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_desk_engineer_style2"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/engineer/sum24_desk_engineer_style3/sum24_desk_engineer_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_desk_engineer_style3"
+					}
+					"3"
+					{
+						"model_player"		"models/workshop/player/items/engineer/sum24_desk_engineer_style4/sum24_desk_engineer_style4.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_desk_engineer_style4"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31445"
+		{
+			"name"		"Daring Dell"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_sum24_daring_dell"
+			"item_description"		"#TF_sum24_daring_dell_Desc"
+			"item_type_name"		"#TF_Wearable_Helmet"
+			"equip_region"		"hat"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/engineer/sum24_daring_dell_style1/sum24_daring_dell_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/sum24_daring_dell_style1/sum24_daring_dell_style1.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/engineer/sum24_daring_dell_style1/sum24_daring_dell_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_daring_dell_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/engineer/sum24_daring_dell_style2/sum24_daring_dell_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_daring_dell_style2"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/engineer/sum24_daring_dell_style3/sum24_daring_dell_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_daring_dell_style3"
+					}
+					"3"
+					{
+						"model_player"		"models/workshop/player/items/engineer/sum24_daring_dell_style4/sum24_daring_dell_style4.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_daring_dell_style4"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_helmet_pickup.wav"
+			"drop_sound"		"ui/item_helmet_drop.wav"
+		}
+		"31446"
+		{
+			"name"		"The Big Star"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_sum24_big_star"
+			"item_description"		"#TF_sum24_big_star_Desc"
+			"item_type_name"		"#TF_Wearable_Shirt"
+			"equip_region"		"shirt"
+			"propername"		"1"
+			"image_inventory"		"backpack/workshop/player/items/engineer/sum24_big_star/sum24_big_star"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/sum24_big_star/sum24_big_star.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31447"
+		{
+			"name"		"Sneaky Blinder"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_sum24_sneaky_blinder"
+			"item_description"		"#TF_sum24_sneaky_blinder_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"image_inventory"		"backpack/workshop/player/items/spy/sum24_sneaky_blinder/sum24_sneaky_blinder"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/sum24_sneaky_blinder/sum24_sneaky_blinder.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+		}
+		"31448"
+		{
+			"name"		"Tuxedo Royale"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_sum24_tuxedo_royale"
+			"item_description"		"#TF_sum24_tuxedo_royale_Desc"
+			"item_type_name"		"#TF_Wearable_Tuxedo"
+			"equip_region"		"spy_coat"
+			"image_inventory"		"backpack/workshop/player/items/spy/sum24_tuxedo_royale_style1/sum24_tuxedo_royale_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/sum24_tuxedo_royale_style1/sum24_tuxedo_royale_style1.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/spy/sum24_tuxedo_royale_style1/sum24_tuxedo_royale_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_tuxedo_royale_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/spy/sum24_tuxedo_royale_style2/sum24_tuxedo_royale_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_tuxedo_royale_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31449"
+		{
+			"name"		"Control Patrol"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_sum24_control_patrol"
+			"item_description"		"#TF_sum24_control_patrol_Desc"
+			"equip_regions"
+			{
+				"hat"		"1"
+				"glasses"		"1"
+			}
+			"image_inventory"		"backpack/workshop/player/items/soldier/sum24_control_patrol_style1/sum24_control_patrol_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/soldier/sum24_control_patrol_style1/sum24_control_patrol_style1.mdl"
+			"used_by_classes"
+			{
+				"soldier"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/soldier/sum24_control_patrol_style1/sum24_control_patrol_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/soldier/sum24_control_patrol_style2/sum24_control_patrol_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_style1"
+					}
+				}
+			}
+		}
+		"31450"
+		{
+			"name"		"Pathfinder"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_sum24_pathfinder"
+			"item_description"		"#TF_sum24_pathfinder_Desc"
+			"item_type_name"		"#TF_Wearable_Shirt"
+			"equip_region"		"soldier_coat"
+			"image_inventory"		"backpack/workshop/player/items/soldier/sum24_pathfinder_style1/sum24_pathfinder_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/soldier/sum24_pathfinder_style1/sum24_pathfinder_style1.mdl"
+			"used_by_classes"
+			{
+				"soldier"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/soldier/sum24_pathfinder_style1/sum24_pathfinder_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/soldier/sum24_pathfinder_style2/sum24_pathfinder_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_style1"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31451"
+		{
+			"name"		"Justice Johns"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_sum24_justice_johns"
+			"item_description"		"#TF_sum24_justice_johns_Desc"
+			"item_type_name"		"#TF_Wearable_Shorts"
+			"equip_region"		"soldier_legs"
+			"item_slot"			"misc2"
+			"image_inventory"		"backpack/workshop/player/items/soldier/sum24_justice_johns_style1/sum24_justice_johns_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/soldier/sum24_justice_johns_style1/sum24_justice_johns_style1.mdl"
+			"used_by_classes"
+			{
+				"soldier"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/soldier/sum24_justice_johns_style1/sum24_justice_johns_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_style0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/soldier/sum24_justice_johns_style2/sum24_justice_johns_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_style1"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31452"
+		{
+			"name"		"Crook's Cap"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_sum24_crooks_cap"
+			"item_description"		"#TF_sum24_crooks_cap_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"image_inventory"		"backpack/workshop/player/items/heavy/sum24_crooks_cap/sum24_crooks_cap"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/heavy/sum24_crooks_cap/sum24_crooks_cap.mdl"
+			"used_by_classes"
+			{
+				"heavy"		"1"
+			}
+		}
+		"31453"
+		{
+			"name"		"Brute's Braces"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_sum24_brutes_braces"
+			"item_description"		"#TF_sum24_brutes_braces_Desc"
+			"item_type_name"		"#TF_Wearable_Shirt"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/heavy/sum24_brutes_braces/sum24_brutes_braces"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/heavy/sum24_brutes_braces/sum24_brutes_braces.mdl"
+			"used_by_classes"
+			{
+				"heavy"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
 		"31454"
 		{
 			"name"		"Free Mann's Fashion"
@@ -49827,6 +51883,2230 @@
 			}
 			"mouse_pressed_sound"		"ui/item_robot_arm_pickup.wav"
 			"drop_sound"		"ui/item_robot_arm_drop.wav"
+		}
+		"31456"
+		{
+			"name"		"The Tropical Brim"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_sum24_tropical_brim"
+			"item_description"		"#TF_sum24_tropical_brim_Desc"
+			"equip_regions"
+			{
+				"hat"		"1"
+				"glasses"		"1"
+			}
+			"propername"		"1"
+			"image_inventory"		"backpack/workshop/player/items/medic/sum24_tropical_brim_style1/sum24_tropical_brim_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/medic/sum24_tropical_brim_style1/sum24_tropical_brim_style1.mdl"
+			"used_by_classes"
+			{
+				"medic"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/medic/sum24_tropical_brim_style1/sum24_tropical_brim_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_tropical_brim_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/medic/sum24_tropical_brim_style2/sum24_tropical_brim_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_tropical_brim_style2"
+					}
+				}
+			}
+		}
+		"31457"
+		{
+			"name"		"Watchmann's Wetsuit"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_sum24_watchmanns"
+			"item_description"		"#TF_sum24_watchmanns_Desc"
+			"item_type_name"		"#TF_Wearable_Shirt"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/medic/sum24_watchmanns_style1/sum24_watchmanns_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/medic/sum24_watchmanns_style1/sum24_watchmanns_style1.mdl"
+			"used_by_classes"
+			{
+				"medic"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/medic/sum24_watchmanns_style1/sum24_watchmanns_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_watchmanns_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/medic/sum24_watchmanns_style2/sum24_watchmanns_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_watchmanns_style2"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/medic/sum24_watchmanns_style3/sum24_watchmanns_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_watchmanns_style3"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31458"
+		{
+			"name"		"The Aimframe"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_sum24_aimframe"
+			"item_description"		"#TF_sum24_aimframe_Desc"
+			"item_type_name"		"#TF_Wearable_Helmet"
+			"equip_region"		"hat"
+			"propername"		"1"
+			"image_inventory"		"backpack/workshop/player/items/sniper/sum24_aimframe/sum24_aimframe"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/sniper/sum24_aimframe/sum24_aimframe.mdl"
+			"used_by_classes"
+			{
+				"sniper"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_helmet_pickup.wav"
+			"drop_sound"		"ui/item_helmet_drop.wav"
+		}
+		"31459"
+		{
+			"name"		"Commonwealth Commando"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_sum24_commonwealth"
+			"item_description"		"#TF_sum24_commonwealth_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/scout/sum24_commonwealth/sum24_commonwealth"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/scout/sum24_commonwealth/sum24_commonwealth.mdl"
+			"used_by_classes"
+			{
+				"scout"		"1"
+			}
+		}
+		"31460"
+		{
+			"name"		"Tanker's Top"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_sum24_tankers_top"
+			"item_description"		"#TF_sum24_tankers_top_Desc"
+			"item_type_name"		"#TF_Wearable_Jacket"
+			"equip_region"		"shirt"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"dogtags"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/scout/sum24_tankers_top/sum24_tankers_top"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/scout/sum24_tankers_top/sum24_tankers_top.mdl"
+			"used_by_classes"
+			{
+				"scout"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31461"
+		{
+			"name"		"The Vaudeville Visor"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_sum24_vaudeville_visor"
+			"item_description"		"#TF_sum24_vaudeville_visor_Desc"
+			"item_type_name"		"#TF_Wearable_Helmet"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"propername"		"1"
+			"image_inventory"		"backpack/workshop/player/items/demo/sum24_vaudeville_visor/sum24_vaudeville_visor"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/demo/sum24_vaudeville_visor/sum24_vaudeville_visor.mdl"
+			"used_by_classes"
+			{
+				"demoman"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_helmet_pickup.wav"
+			"drop_sound"		"ui/item_helmet_drop.wav"
+		}
+		"31462"
+		{
+			"name"		"Fire Marshal"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_sum24_fire_marshal"
+			"item_description"		"#TF_sum24_fire_marshal_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"image_inventory"		"backpack/workshop/player/items/pyro/sum24_fire_marshal/sum24_fire_marshal"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/sum24_fire_marshal/sum24_fire_marshal.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+		}
+		"31463"
+		{
+			"name"		"Invisible Flame"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_sum24_invisible_flame"
+			"item_description"		"#TF_sum24_invisible_flame_Desc"
+			"item_type_name"		"#TF_Wearable_Jacket"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/pyro/sum24_invisible_flame_style1/sum24_invisible_flame_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/sum24_invisible_flame_style1/sum24_invisible_flame_style1.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/pyro/sum24_invisible_flame_style1/sum24_invisible_flame_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_invisible_flame_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/pyro/sum24_invisible_flame_style2/sum24_invisible_flame_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_invisible_flame_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31464"
+		{
+			"name"		"Scorched Earth Stompers"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_sum24_scorched_stompers"
+			"item_description"		"#TF_sum24_scorched_stompers_Desc"
+			"item_type_name"		"#TF_Wearable_Pants"
+			"equip_region"		"pants"
+			"item_slot"			"misc2"
+			"image_inventory"		"backpack/workshop/player/items/pyro/sum24_scorched_stompers_style1/sum24_scorched_stompers_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/sum24_scorched_stompers_style1/sum24_scorched_stompers_style1.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/pyro/sum24_scorched_stompers_style1/sum24_scorched_stompers_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_scorched_stompers_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/pyro/sum24_scorched_stompers_style2/sum24_scorched_stompers_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_sum24_scorched_stompers_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31465"
+		{
+			"name"		"Taunt: Crushing Defeat"
+			"prefab"		"no_craft taunt"
+			"first_sale_date"		"2024/10/06"
+			"item_name"		"#TF_taunt_crushing_defeat"
+			"item_description"		"#TF_taunt_crushing_defeat_Desc"
+			"ad_text"		"#TF_taunt_crushing_defeat_AdText"
+			"image_inventory"		"backpack/workshop/player/items/heavy/taunt_crushing_headache/taunt_crushing_headache"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"used_by_classes"
+			{
+				"heavy"		"1"
+			}
+			"taunt"
+			{
+				"custom_taunt_scene_per_class"
+				{
+					"heavy"		"scenes/workshop/player/heavy/low/taunt_crushing_headache.vcd"
+				}
+				"custom_taunt_prop_per_class"
+				{
+					"heavy"		"models/workshop/player/items/heavy/taunt_crushing_headache/taunt_crushing_headache.mdl"
+				}
+			}
+		}
+		"31466"
+		{
+			"name"		"Taunt: Peace Out"
+			"prefab"		"no_craft taunt"
+			"first_sale_date"		"2024/10/06"
+			"item_name"		"#TF_taunt_peace_out"
+			"item_description"		"#TF_taunt_peace_out_Desc"
+			"ad_text"		"#TF_taunt_peace_out_AdText"
+			"image_inventory"		"backpack/workshop/player/items/scout/taunt_peace_out/taunt_peace_out"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+			}
+			"taunt"
+			{
+				"custom_taunt_scene_per_class"
+				{
+					"scout"		"scenes/workshop/player/scout/low/taunt_peace_out.vcd"
+				}
+				"custom_taunt_prop_per_class"
+				{
+					"scout"		"models/workshop/player/items/scout/taunt_peace_out/taunt_peace_out.mdl"
+				}
+			}
+		}
+		"31467"
+		{
+			"name"		"Taunt: Commending Clap"
+			"prefab"		"no_craft taunt"
+			"first_sale_date"		"2024/10/06"
+			"item_name"		"#TF_taunt_commending_clap"
+			"item_description"		"#TF_taunt_commending_clap_Desc"
+			"ad_text"		"#TF_taunt_commending_clap_AdText"
+			"image_inventory"		"backpack/workshop/player/items/all_class/taunt_commending_clap/taunt_commending_clap"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+			"taunt"
+			{
+				"custom_taunt_scene_per_class"
+				{
+					"scout"		"scenes/workshop/player/scout/low/taunt_commending_clap.vcd"
+					"sniper"		"scenes/workshop/player/sniper/low/taunt_commending_clap.vcd"
+					"soldier"		"scenes/workshop/player/soldier/low/taunt_commending_clap.vcd"
+					"demoman"		"scenes/workshop/player/demoman/low/taunt_commending_clap.vcd"
+					"medic"		"scenes/workshop/player/medic/low/taunt_commending_clap.vcd"
+					"heavy"		"scenes/workshop/player/heavy/low/taunt_commending_clap.vcd"
+					"pyro"		"scenes/workshop/player/pyro/low/taunt_commending_clap.vcd"
+					"spy"		"scenes/workshop/player/spy/low/taunt_commending_clap.vcd"
+					"engineer"		"scenes/workshop/player/engineer/low/taunt_commending_clap.vcd"
+				}
+			}
+		}
+		"31468"
+		{
+			"name"		"Taunt: The Punchline"
+			"prefab"		"no_craft taunt"
+			"first_sale_date"		"2024/10/06"
+			"item_name"		"#TF_taunt_the_punchline"
+			"item_description"		"#TF_taunt_the_punchline_Desc"
+			"ad_text"		"#TF_taunt_the_punchline_AdText"
+			"image_inventory"		"backpack/workshop/player/items/spy/taunt_the_punchline/taunt_the_punchline"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+			"attributes"
+			{
+				"taunt force weapon slot"
+				{
+					"attribute_class"		"taunt_force_weapon_slot"
+					"value"		"PRIMARY"
+				}
+			}
+			"taunt"
+			{
+				"custom_taunt_scene_per_class"
+				{
+					"spy"		"scenes/workshop/player/spy/low/taunt_the_punchline.vcd"
+				}
+				"custom_taunt_prop_per_class"
+				{
+					"spy"		"models/workshop/player/items/spy/taunt_the_punchline/taunt_the_punchline.mdl"
+				}
+				"custom_taunt_prop_scene_per_class"
+				{
+					"spy"		"scenes/workshop/player/spy/low/taunt_the_punchline_prop.vcd"
+				}
+			}
+		}
+		"31469"
+		{
+			"name"		"Fleet Commander"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2024_fleet_commander"
+			"item_description"		"#TF_hwn2024_fleet_commander_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/all_class/hwn2024_fleet_commander_style1/hwn2024_fleet_commander_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/hwn2024_fleet_commander_style1/hwn2024_fleet_commander_style1_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player_per_class"
+						{
+							"basename"		"models/workshop/player/items/all_class/hwn2024_fleet_commander_style1/hwn2024_fleet_commander_style1_%s.mdl"
+						}
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_fleet_commander_style1"
+					}
+					"1"
+					{
+						"model_player_per_class"
+						{
+							"basename"		"models/workshop/player/items/all_class/hwn2024_fleet_commander_style2/hwn2024_fleet_commander_style2_%s.mdl"
+						}
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_fleet_commander_style2"
+					}
+				}
+			}
+		}
+		"31470"
+		{
+			"name"		"Triboniophorus Gentlemannus"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2024_triboniophorus"
+			"item_description"		"#TF_hwn2024_triboniophorus_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/all_class/hwn2024_triboniophorus/hwn2024_triboniophorus"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/hwn2024_triboniophorus/hwn2024_triboniophorus_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+			"attributes"
+			{
+				"counts as assister is some kind of pet this update is going to be awesome"
+				{
+					"attribute_class"		"counts_as_assister"
+					"value"		"2"
+				}
+				"attach particle effect static"
+				{
+					"attribute_class"		"set_attached_particle_static"
+					"value"		"28"
+				}
+			}
+		}
+		"31471"
+		{
+			"name"		"Spider Sights"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2024_spider_sights"
+			"item_description"		"#TF_hwn2024_spider_sights_Desc"
+			"item_type_name"		"#TF_Wearable_Glasses"
+			"equip_region"		"glasses"
+			"drop_type"		"drop"
+			"image_inventory"		"backpack/workshop/player/items/all_class/hwn2024_spider_sights/hwn2024_spider_sights"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/hwn2024_spider_sights/hwn2024_spider_sights_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31472"
+		{
+			"name"		"Duality of Mantle"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2024_duality_mantle"
+			"item_description"		"#TF_hwn2024_duality_mantle_Desc"
+			"item_type_name"		"#TF_Wearable_Hood"
+			"equip_region"		"hat"
+			"image_inventory"		"backpack/workshop/player/items/all_class/hwn2024_duality_mantle/hwn2024_duality_mantle"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player_per_class"
+			{
+				"medic"		"models/workshop/player/items/all_class/hwn2024_duality_mantle/hwn2024_duality_mantle_medic.mdl"
+				"pyro"		"models/workshop/player/items/all_class/hwn2024_duality_mantle/hwn2024_duality_mantle_pyro.mdl"
+			}
+			"used_by_classes"
+			{
+				"medic"		"1"
+				"pyro"		"1"
+			}
+		}
+		"31473"
+		{
+			"name"		"Shadow Shroud"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2024_shadow_shroud"
+			"item_description"		"#TF_hwn2024_shadow_shroud_Desc"
+			"item_type_name"		"#TF_Wearable_Shroud"
+			"equip_region"		"whole_head"
+			"image_inventory"		"backpack/workshop/player/items/spy/hwn2024_shadow_shroud_style1/hwn2024_shadow_shroud_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/hwn2024_shadow_shroud_style1/hwn2024_shadow_shroud_style1.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/spy/hwn2024_shadow_shroud_style1/hwn2024_shadow_shroud_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_shadow_shroud_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/spy/hwn2024_shadow_shroud_style2/hwn2024_shadow_shroud_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_shadow_shroud_style2"
+					}
+				}
+			}
+		}
+		"31474"
+		{
+			"name"		"Nightfall Veil"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2024_nightfall_veil"
+			"item_description"		"#TF_hwn2024_nightfall_veil_Desc"
+			"item_type_name"		"#TF_Wearable_Apparel"
+			"equip_region"		"spy_coat"
+			"image_inventory"		"backpack/workshop/player/items/spy/hwn2024_nightfall_veil/hwn2024_nightfall_veil"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/hwn2024_nightfall_veil/hwn2024_nightfall_veil.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31475"
+		{
+			"name"		"The Witch Doctor"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2024_witch_doctor"
+			"item_description"		"#TF_hwn2024_witch_doctor_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"propername"		"1"
+			"image_inventory"		"backpack/workshop/player/items/medic/hwn2024_witch_doctor/hwn2024_witch_doctor"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/medic/hwn2024_witch_doctor/hwn2024_witch_doctor.mdl"
+			"used_by_classes"
+			{
+				"medic"		"1"
+			}
+		}
+		"31476"
+		{
+			"name"		"The Surgeon General"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2024_surgeon_general"
+			"item_description"		"#TF_hwn2024_surgeon_general_Desc"
+			"equip_region"		"hat"
+			"propername"		"1"
+			"image_inventory"		"backpack/workshop/player/items/medic/hwn2024_surgeon_general_style1/hwn2024_surgeon_general_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/medic/hwn2024_surgeon_general_style1/hwn2024_surgeon_general_style1.mdl"
+			"used_by_classes"
+			{
+				"medic"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/medic/hwn2024_surgeon_general_style1/hwn2024_surgeon_general_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_surgeon_general_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/medic/hwn2024_surgeon_general_style2/hwn2024_surgeon_general_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_surgeon_general_style2"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/medic/hwn2024_surgeon_general_style3/hwn2024_surgeon_general_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_surgeon_general_style3"
+					}
+					"3"
+					{
+						"model_player"		"models/workshop/player/items/medic/hwn2024_surgeon_general_style4/hwn2024_surgeon_general_style4.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_surgeon_general_style4"
+					}
+				}
+			}
+		}
+		"31477"
+		{
+			"name"		"Sear Seer"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2024_sear_seer"
+			"item_description"		"#TF_hwn2024_sear_seer_Desc"
+			"equip_region"		"hat"
+			"image_inventory"		"backpack/workshop/player/items/pyro/hwn2024_sear_seer_style1/hwn2024_sear_seer_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/hwn2024_sear_seer_style1/hwn2024_sear_seer_style1.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/pyro/hwn2024_sear_seer_style1/hwn2024_sear_seer_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_sear_seer_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/pyro/hwn2024_sear_seer_style2/hwn2024_sear_seer_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_sear_seer_style2"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/pyro/hwn2024_sear_seer_style3/hwn2024_sear_seer_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_sear_seer_style3"
+					}
+					"3"
+					{
+						"model_player"		"models/workshop/player/items/pyro/hwn2024_sear_seer_style4/hwn2024_sear_seer_style4.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_sear_seer_style4"
+					}
+				}
+			}
+		}
+		"31478"
+		{
+			"name"		"Chiromancer's Kit"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2024_chiromancers"
+			"item_description"		"#TF_hwn2024_chiromancers_Desc"
+			"item_type_name"		"#TF_Wearable_CosmeticItem"
+			"equip_region"		"grenades"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"grenades"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/pyro/hwn2024_chiromancers_style1/hwn2024_chiromancers_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/hwn2024_chiromancers_style1/hwn2024_chiromancers_style1.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/pyro/hwn2024_chiromancers_style1/hwn2024_chiromancers_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_chiromancers_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/pyro/hwn2024_chiromancers_style2/hwn2024_chiromancers_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_chiromancers_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_bottle_pickup.wav"
+			"drop_sound"		"ui/item_bottle_drop.wav"
+		}
+		"31479"
+		{
+			"name"		"School Nuisance"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2024_school_nuisance"
+			"item_description"		"#TF_hwn2024_school_nuisance_Desc"
+			"item_type_name"		"#TF_Wearable_Sweater"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/scout/hwn2024_school_nuisance/hwn2024_school_nuisance"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/scout/hwn2024_school_nuisance/hwn2024_school_nuisance.mdl"
+			"used_by_classes"
+			{
+				"scout"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31480"
+		{
+			"name"		"The Strikeout"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2024_strikeout"
+			"item_description"		"#TF_hwn2024_strikeout_Desc"
+			"item_type_name"		"#TF_Wearable_Helmet"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"propername"		"1"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/scout/hwn2024_strikeout/hwn2024_strikeout"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/scout/hwn2024_strikeout/hwn2024_strikeout.mdl"
+			"used_by_classes"
+			{
+				"scout"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_helmet_pickup.wav"
+			"drop_sound"		"ui/item_helmet_drop.wav"
+		}
+		"31481"
+		{
+			"name"		"Hellish Overlord"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2024_hellish_overlord"
+			"item_description"		"#TF_hwn2024_hellish_overlord_Desc"
+			"item_type_name"		"#TF_Wearable_Helmet"
+			"equip_region"		"whole_head"
+			"drop_type"		"drop"
+			"image_inventory"		"backpack/workshop/player/items/heavy/hwn2024_hellish_overlord/hwn2024_hellish_overlord"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/heavy/hwn2024_hellish_overlord/hwn2024_hellish_overlord.mdl"
+			"used_by_classes"
+			{
+				"heavy"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_helmet_pickup.wav"
+			"drop_sound"		"ui/item_helmet_drop.wav"
+		}
+		"31482"
+		{
+			"name"		"Strigoi Stare"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2024_strigoi_stare"
+			"item_description"		"#TF_hwn2024_strigoi_stare_Desc"
+			"equip_region"		"hat"
+			"image_inventory"		"backpack/workshop/player/items/heavy/hwn2024_strigoi_stare_style1/hwn2024_strigoi_stare_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/heavy/hwn2024_strigoi_stare_style1/hwn2024_strigoi_stare_style1.mdl"
+			"used_by_classes"
+			{
+				"heavy"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/heavy/hwn2024_strigoi_stare_style1/hwn2024_strigoi_stare_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_strigoi_stare_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/heavy/hwn2024_strigoi_stare_style2/hwn2024_strigoi_stare_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_strigoi_stare_style2"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/heavy/hwn2024_strigoi_stare_style3/hwn2024_strigoi_stare_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_strigoi_stare_style3"
+					}
+				}
+			}
+		}
+		"31483"
+		{
+			"name"		"Dusk Duster"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2024_dusk_duster"
+			"item_description"		"#TF_hwn2024_dusk_duster_Desc"
+			"item_type_name"		"#TF_Wearable_Coat"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/heavy/hwn2024_dusk_duster_style1/hwn2024_dusk_duster_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/heavy/hwn2024_dusk_duster_style1/hwn2024_dusk_duster_style1.mdl"
+			"used_by_classes"
+			{
+				"heavy"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/heavy/hwn2024_dusk_duster_style1/hwn2024_dusk_duster_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_dusk_duster_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/heavy/hwn2024_dusk_duster_style2/hwn2024_dusk_duster_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_dusk_duster_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31484"
+		{
+			"name"		"Mannhattan Protect"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2024_mannhattan_protect"
+			"item_description"		"#TF_hwn2024_mannhattan_protect_Desc"
+			"equip_region"		"hat"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/engineer/hwn2024_mannhattan_protect/hwn2024_mannhattan_protect"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/hwn2024_mannhattan_protect/hwn2024_mannhattan_protect.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+		}
+		"31485"
+		{
+			"name"		"Nuclear Necessity"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2024_nuclear_necessity"
+			"item_description"		"#TF_hwn2024_nuclear_necessity_Desc"
+			"item_type_name"		"#TF_Wearable_Jacket"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/engineer/hwn2024_nuclear_necessity/hwn2024_nuclear_necessity"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/hwn2024_nuclear_necessity/hwn2024_nuclear_necessity.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31486"
+		{
+			"name"		"Contaminated Carryall"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2024_contaminated_carryall"
+			"item_description"		"#TF_hwn2024_contaminated_carryall_Desc"
+			"item_type_name"		"#TF_Wearable_Life_Support"
+			"equip_region"		"back"
+			"image_inventory"		"backpack/workshop/player/items/engineer/hwn2024_contaminated_carryall/hwn2024_contaminated_carryall"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/hwn2024_contaminated_carryall/hwn2024_contaminated_carryall.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31487"
+		{
+			"name"		"Delldozer"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2024_delldozer"
+			"item_description"		"#TF_hwn2024_delldozer_Desc"
+			"item_type_name"		"#TF_Wearable_Augmentation"
+			"equip_region"		"right_shoulder"
+			"image_inventory"		"backpack/workshop/player/items/engineer/hwn2024_delldozer/hwn2024_delldozer"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/hwn2024_delldozer/hwn2024_delldozer.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/engineer/hwn2024_delldozer/hwn2024_delldozer.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_delldozer_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/engineer/hwn2024_delldozer_style2/hwn2024_delldozer_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_delldozer_style2"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/engineer/hwn2024_delldozer_style3/hwn2024_delldozer_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_delldozer_style3"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_robot_arm_pickup.wav"
+			"drop_sound"		"ui/item_robot_arm_drop.wav"
+		}
+		"31488"
+		{
+			"name"		"Badlands Bandido"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2024_badlands_bandido"
+			"item_description"		"#TF_hwn2024_badlands_bandido_Desc"
+			"equip_region"		"hat"
+			"image_inventory"		"backpack/workshop/player/items/demo/hwn2024_badlands_bandido_style1/hwn2024_badlands_bandido_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/demo/hwn2024_badlands_bandido_style1/hwn2024_badlands_bandido_style1.mdl"
+			"used_by_classes"
+			{
+				"demoman"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/demo/hwn2024_badlands_bandido_style1/hwn2024_badlands_bandido_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_badlands_bandido_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/demo/hwn2024_badlands_bandido_style2/hwn2024_badlands_bandido_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_badlands_bandido_style2"
+					}
+				}
+			}
+		}
+		"31489"
+		{
+			"name"		"Defaced Detonator"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2024_defaced"
+			"item_description"		"#TF_hwn2024_defaced_Desc"
+			"item_type_name"		"#TF_Wearable_Wound"
+			"image_inventory"		"backpack/workshop/player/items/demo/hwn2024_defaced_style1/hwn2024_defaced_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/demo/hwn2024_defaced_style1/hwn2024_defaced_style1.mdl"
+			"used_by_classes"
+			{
+				"demoman"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/demo/hwn2024_defaced_style1/hwn2024_defaced_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_defaced_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/demo/hwn2024_defaced_style2/hwn2024_defaced_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_hwn2024_defaced_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31491"
+		{
+			"name"		"Taunt: Curtain Call"
+			"prefab"		"no_craft taunt"
+			"first_sale_date"		"2024/12/06"
+			"item_name"		"#TF_taunt_curtain_call"
+			"item_description"		"#TF_taunt_curtain_call_Desc"
+			"ad_text"		"#TF_taunt_curtain_call_AdText"
+			"image_inventory"		"backpack/workshop/player/items/spy/taunt_curtain_call/taunt_curtain_call"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+			"taunt"
+			{
+				"custom_taunt_scene_per_class"
+				{
+					"spy"		"scenes/workshop/player/spy/low/taunt_curtain_call.vcd"
+				}
+				"custom_taunt_prop_per_class"
+				{
+					"spy"		"models/workshop/player/items/spy/taunt_curtain_call/taunt_curtain_call.mdl"
+				}
+				"custom_taunt_prop_scene_per_class"
+				{
+					"spy"		"scenes/workshop/player/spy/low/taunt_curtain_call_prop.vcd"
+				}
+			}
+		}
+		"31492"
+		{
+			"name"		"Taunt: Peace!"
+			"prefab"		"no_craft taunt"
+			"first_sale_date"		"2024/12/06"
+			"item_name"		"#TF_taunt_peace"
+			"item_description"		"#TF_taunt_peace_Desc"
+			"ad_text"		"#TF_taunt_peace_AdText"
+			"image_inventory"		"backpack/workshop/player/items/spy/taunt_peace/taunt_peace"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+			"taunt"
+			{
+				"custom_taunt_scene_per_class"
+				{
+					"scout"		"scenes/workshop/player/scout/low/taunt_peace.vcd"
+					"sniper"		"scenes/workshop/player/sniper/low/taunt_peace.vcd"
+					"soldier"		"scenes/workshop/player/soldier/low/taunt_peace.vcd"
+					"demoman"		"scenes/workshop/player/demoman/low/taunt_peace.vcd"
+					"medic"		"scenes/workshop/player/medic/low/taunt_peace.vcd"
+					"heavy"		"scenes/workshop/player/heavy/low/taunt_peace.vcd"
+					"pyro"		"scenes/workshop/player/pyro/low/taunt_peace.vcd"
+					"spy"		"scenes/workshop/player/spy/low/taunt_peace.vcd"
+					"engineer"		"scenes/workshop/player/engineer/low/taunt_peace.vcd"
+				}
+				"custom_taunt_prop_per_class"
+				{
+					"scout"		"models/workshop/player/items/scout/peace_separated_sign_prop/peace_separated_sign_prop.mdl"
+					"sniper"		"models/workshop/player/items/scout/peace_separated_sign_prop/peace_separated_sign_prop.mdl"
+					"soldier"		"models/workshop/player/items/scout/peace_separated_sign_prop/peace_separated_sign_prop.mdl"
+					"demoman"		"models/workshop/player/items/scout/peace_separated_sign_prop/peace_separated_sign_prop.mdl"
+					"medic"		"models/workshop/player/items/scout/peace_separated_sign_prop/peace_separated_sign_prop.mdl"
+					"heavy"		"models/workshop/player/items/scout/peace_separated_sign_prop/peace_separated_sign_prop.mdl"
+					"pyro"		"models/workshop/player/items/scout/peace_separated_sign_prop/peace_separated_sign_prop.mdl"
+					"spy"		"models/workshop/player/items/scout/peace_separated_sign_prop/peace_separated_sign_prop.mdl"
+					"engineer"		"models/workshop/player/items/scout/peace_updated_model_for_engie_fix/peace_updated_model_for_engie_fix.mdl"
+				}
+			}
+		}
+		"31493"
+		{
+			"name"		"Taunt: Fore-Head Slice"
+			"prefab"		"no_craft taunt"
+			"first_sale_date"		"2024/12/06"
+			"item_name"		"#TF_taunt_forehead_slice"
+			"item_description"		"#TF_taunt_forehead_slice_Desc"
+			"ad_text"		"#TF_taunt_forehead_slice_AdText"
+			"image_inventory"		"backpack/workshop/player/items/demo/taunt_forehead_slice/taunt_forehead_slice"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"used_by_classes"
+			{
+				"demoman"		"1"
+			}
+			"taunt"
+			{
+				"custom_taunt_scene_per_class"
+				{
+					"demoman"		"scenes/workshop/player/demoman/low/taunt_forehead_slice.vcd"
+				}
+				"custom_taunt_prop_per_class"
+				{
+					"demoman"		"models/workshop/player/items/demo/taunt_forehead_slice/taunt_forehead_slice.mdl"
+				}
+			}
+		}
+		"31494"
+		{
+			"name"		"Dapper Noel"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec24_dapper_noel"
+			"item_description"		"#TF_dec24_dapper_noel_Desc"
+			"equip_region"		"hat"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/all_class/dec24_dapper_noel/dec24_dapper_noel"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/dec24_dapper_noel/dec24_dapper_noel_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+		}
+		"31495"
+		{
+			"name"		"The Necroprancer"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec24_necroprancer"
+			"item_description"		"#TF_dec24_necroprancer_Desc"
+			"item_type_name"		"#TF_Wearable_Antlers"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"propername"		"1"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/all_class/dec24_necroprancer_style1/dec24_necroprancer_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/dec24_necroprancer_style1/dec24_necroprancer_style1_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player_per_class"
+						{
+							"basename"		"models/workshop/player/items/all_class/dec24_necroprancer_style1/dec24_necroprancer_style1_%s.mdl"
+						}
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_necroprancer_style1"
+					}
+					"1"
+					{
+						"model_player_per_class"
+						{
+							"basename"		"models/workshop/player/items/all_class/dec24_necroprancer_style2/dec24_necroprancer_style2_%s.mdl"
+						}
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_necroprancer_style2"
+					}
+				}
+			}
+		}
+		"31496"
+		{
+			"name"		"The Battle Music"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec24_battle_music"
+			"item_description"		"#TF_dec24_battle_music_Desc"
+			"item_type_name"		"#TF_Wearable_Headphones"
+			"equip_region"		"ears"
+			"propername"		"1"
+			"image_inventory"		"backpack/workshop/player/items/all_class/dec24_battle_music/dec24_battle_music"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/dec24_battle_music/dec24_battle_music_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"name"		"#TF_NoHat_Style"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"additional_hidden_bodygroups"
+						{
+							"hat"		"1"
+							"headphones"		"1"
+						}
+					}
+					"1"
+					{
+						"name"		"#TF_HatAndHeadphones_Style"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"additional_hidden_bodygroups"
+						{
+							"headphones"		"1"
+						}
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31497"
+		{
+			"name"		"Hot Spaniel"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec24_hot_spaniel"
+			"item_description"		"#TF_dec24_hot_spaniel_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"image_inventory"		"backpack/workshop/player/items/pyro/dec24_hot_spaniel/dec24_hot_spaniel"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/dec24_hot_spaniel/dec24_hot_spaniel.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+		}
+		"31498"
+		{
+			"name"		"Frostbite Fit"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec24_frostbite_fit"
+			"item_description"		"#TF_dec24_frostbite_fit_Desc"
+			"item_type_name"		"#TF_Wearable_Sweater"
+			"equip_region"		"shirt"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"grenades"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/pyro/dec24_frostbite_fit/dec24_frostbite_fit"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/dec24_frostbite_fit/dec24_frostbite_fit.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31499"
+		{
+			"name"		"L'aire Filteure"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec24_laire_filteure"
+			"item_description"		"#TF_dec24_laire_filteure_Desc"
+			"item_type_name"		"#TF_Wearable_Mask"
+			"equip_region"		"face"
+			"image_inventory"		"backpack/workshop/player/items/spy/dec24_laire_filteure/dec24_laire_filteure"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/dec24_laire_filteure/dec24_laire_filteure.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31500"
+		{
+			"name"		"Poleur Voyeur"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec24_poleur_voyeur"
+			"item_description"		"#TF_dec24_poleur_voyeur_Desc"
+			"item_type_name"		"#TF_Wearable_Coat"
+			"equip_region"		"spy_coat"
+			"image_inventory"		"backpack/workshop/player/items/spy/dec24_poleur_voyeur_style1/dec24_poleur_voyeur_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/dec24_poleur_voyeur_style1/dec24_poleur_voyeur_style1.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/spy/dec24_poleur_voyeur_style1/dec24_poleur_voyeur_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_poleur_voyeur_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/spy/dec24_poleur_voyeur_style2/dec24_poleur_voyeur_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_poleur_voyeur_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31501"
+		{
+			"name"		"Le Frosteaux"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec24_le_frosteaux"
+			"item_description"		"#TF_dec24_le_frosteaux_Desc"
+			"item_type_name"		"#TF_Wearable_Pants"
+			"equip_region"		"pants"
+			"item_slot"			"misc2"
+			"image_inventory"		"backpack/workshop/player/items/spy/dec24_le_frosteaux/dec24_le_frosteaux"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/dec24_le_frosteaux/dec24_le_frosteaux.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31502"
+		{
+			"name"		"Scrooge McDoc"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec24_scrooge_mcdoc"
+			"item_description"		"#TF_dec24_scrooge_mcdoc_Desc"
+			"equip_region"		"hat"
+			"image_inventory"		"backpack/workshop/player/items/medic/dec24_scrooge_mcdoc/dec24_scrooge_mcdoc"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/medic/dec24_scrooge_mcdoc/dec24_scrooge_mcdoc.mdl"
+			"used_by_classes"
+			{
+				"medic"		"1"
+			}
+		}
+		"31503"
+		{
+			"name"		"The Checkered Past"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec24_checkered_past"
+			"item_description"		"#TF_dec24_checkered_past_Desc"
+			"equip_region"		"hat"
+			"propername"		"1"
+			"image_inventory"		"backpack/workshop/player/items/medic/dec24_checkered_past/dec24_checkered_past"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/medic/dec24_checkered_past/dec24_checkered_past.mdl"
+			"used_by_classes"
+			{
+				"medic"		"1"
+			}
+			"attributes"
+			{
+				"attach particle effect static"
+				{
+					"attribute_class"		"set_attached_particle_static"
+					"value"		"28"
+				}
+			}
+		}
+		"31504"
+		{
+			"name"		"Consigliere's Coverup"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec24_consiglieres_coverup"
+			"item_description"		"#TF_dec24_consiglieres_coverup_Desc"
+			"item_type_name"		"#TF_Wearable_Coat"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/medic/dec24_consiglieres_coverup/dec24_consiglieres_coverup"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/medic/dec24_consiglieres_coverup/dec24_consiglieres_coverup.mdl"
+			"used_by_classes"
+			{
+				"medic"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/medic/dec24_consiglieres_coverup/dec24_consiglieres_coverup.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_consiglieres_coverup_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/medic/dec24_consiglieres_coverup_style2/dec24_consiglieres_coverup_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_consiglieres_coverup_style2"
+					}
+				}
+			}
+		}
+		"31505"
+		{
+			"name"		"The Crimbo Cap"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec24_crimbo_cap"
+			"item_description"		"#TF_dec24_crimbo_cap_Desc"
+			"equip_region"		"hat"
+			"drop_type"		"drop"
+			"propername"		"1"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/scout/dec24_crimbo_cap/dec24_crimbo_cap"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/scout/dec24_crimbo_cap/dec24_crimbo_cap.mdl"
+			"used_by_classes"
+			{
+				"scout"		"1"
+			}
+		}
+		"31506"
+		{
+			"name"		"The Triple Jumper"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec24_triple_jumper"
+			"item_description"		"#TF_dec24_triple_jumper_Desc"
+			"item_type_name"		"#TF_Wearable_Sweater"
+			"equip_region"		"shirt"
+			"propername"		"1"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"dogtags"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/scout/dec24_triple_jumper/dec24_triple_jumper"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/scout/dec24_triple_jumper/dec24_triple_jumper.mdl"
+			"used_by_classes"
+			{
+				"scout"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31507"
+		{
+			"name"		"Polar Charger"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec24_polar_charger"
+			"item_description"		"#TF_dec24_polar_charger_Desc"
+			"equip_region"		"hat"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/soldier/dec24_polar_charger_style1/dec24_polar_charger_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/soldier/dec24_polar_charger_style1/dec24_polar_charger_style1.mdl"
+			"used_by_classes"
+			{
+				"soldier"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/soldier/dec24_polar_charger_style1/dec24_polar_charger_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_polar_charger_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/soldier/dec24_polar_charger_style2/dec24_polar_charger_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_polar_charger_style2"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/soldier/dec24_polar_charger_style3/dec24_polar_charger_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_polar_charger_style3"
+					}
+					"3"
+					{
+						"model_player"		"models/workshop/player/items/soldier/dec24_polar_charger_style4/dec24_polar_charger_style4.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_polar_charger_style4"
+					}
+				}
+			}
+		}
+		"31508"
+		{
+			"name"		"Field Fatigues"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec24_field_fatigues"
+			"item_description"		"#TF_dec24_field_fatigues_Desc"
+			"item_type_name"		"#TF_Wearable_Coat"
+			"equip_region"		"soldier_coat"
+			"image_inventory"		"backpack/workshop/player/items/soldier/dec24_field_fatigues_style1/dec24_field_fatigues_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/soldier/dec24_field_fatigues_style1/dec24_field_fatigues_style1.mdl"
+			"used_by_classes"
+			{
+				"soldier"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/soldier/dec24_field_fatigues_style1/dec24_field_fatigues_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_field_fatigues_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/soldier/dec24_field_fatigues_style2/dec24_field_fatigues_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_field_fatigues_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31509"
+		{
+			"name"		"Cossack Camo"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec24_cossack_camo"
+			"item_description"		"#TF_dec24_cossack_camo_Desc"
+			"item_type_name"		"#TF_Wearable_Coat"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/heavy/dec24_cossack_camo_style1/dec24_cossack_camo_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/heavy/dec24_cossack_camo_style1/dec24_cossack_camo_style1.mdl"
+			"used_by_classes"
+			{
+				"heavy"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/heavy/dec24_cossack_camo_style1/dec24_cossack_camo_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_cossack_camo_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/heavy/dec24_cossack_camo_style2/dec24_cossack_camo_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_cossack_camo_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31510"
+		{
+			"name"		"Battle Balaclava"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec24_battle_balaclava"
+			"item_description"		"#TF_dec24_battle_balaclava_Desc"
+			"item_type_name"		"#TF_Wearable_Balaclava"
+			"equip_region"		"head_skin"
+			"image_inventory"		"backpack/workshop/player/items/heavy/dec24_battle_balaclava_style1/dec24_battle_balaclava_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/heavy/dec24_battle_balaclava_style1/dec24_battle_balaclava_style1.mdl"
+			"used_by_classes"
+			{
+				"heavy"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/heavy/dec24_battle_balaclava_style1/dec24_battle_balaclava_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_battle_balaclava_style1"
+						"additional_hidden_bodygroups"
+						{
+							"hands"		"1"
+						}
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/heavy/dec24_battle_balaclava_style2/dec24_battle_balaclava_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_battle_balaclava_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31511"
+		{
+			"name"		"The Top Brass"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec24_top_brass"
+			"item_description"		"#TF_dec24_top_brass_Desc"
+			"equip_region"		"hat"
+			"propername"		"1"
+			"image_inventory"		"backpack/workshop/player/items/demo/dec24_top_brass_style1/dec24_top_brass_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/demo/dec24_top_brass_style1/dec24_top_brass_style1.mdl"
+			"used_by_classes"
+			{
+				"demoman"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/demo/dec24_top_brass_style1/dec24_top_brass_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_top_brass_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/demo/dec24_top_brass_style2/dec24_top_brass_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_top_brass_style2"
+					}
+				}
+			}
+		}
+		"31512"
+		{
+			"name"		"Commanding Presence"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec24_commanding"
+			"item_description"		"#TF_dec24_commanding_Desc"
+			"item_type_name"		"#TF_Wearable_Coat"
+			"equip_region"		"shirt"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"grenades"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/demo/dec24_commanding_style1/dec24_commanding_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/demo/dec24_commanding_style1/dec24_commanding_style1.mdl"
+			"used_by_classes"
+			{
+				"demoman"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/demo/dec24_commanding_style1/dec24_commanding_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_commanding_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/demo/dec24_commanding_style2/dec24_commanding_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_commanding_style2"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31513"
+		{
+			"name"		"Mine Sweepers"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec24_mine_sweepers"
+			"item_description"		"#TF_dec24_mine_sweepers_Desc"
+			"item_type_name"		"#TF_Wearable_Boots"
+			"equip_region"		"feet"
+			"item_slot"			"misc2"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"shoes"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/demo/dec24_mine_sweepers/dec24_mine_sweepers"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/demo/dec24_mine_sweepers/dec24_mine_sweepers.mdl"
+			"used_by_classes"
+			{
+				"demoman"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31514"
+		{
+			"name"		"Buck's Brim"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_dec24_bucks_brim"
+			"item_description"		"#TF_dec24_bucks_brim_Desc"
+			"equip_region"		"hat"
+			"image_inventory"		"backpack/workshop/player/items/engineer/dec24_bucks_brim_style1/dec24_bucks_brim_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/dec24_bucks_brim_style1/dec24_bucks_brim_style1.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+			"attributes"
+			{
+				"attach particle effect static"
+				{
+					"attribute_class"		"set_attached_particle_static"
+					"value"		"28"
+				}
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/engineer/dec24_bucks_brim_style1/dec24_bucks_brim_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_bucks_brim_style1"
+						"use_smoke_particle_effect"	"0"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/engineer/dec24_bucks_brim_style2/dec24_bucks_brim_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_bucks_brim_style2"
+						"use_smoke_particle_effect"	"0"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/engineer/dec24_bucks_brim_style3/dec24_bucks_brim_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_bucks_brim_style3"
+					}
+					"3"
+					{
+						"model_player"		"models/workshop/player/items/engineer/dec24_bucks_brim_style4/dec24_bucks_brim_style4.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_bucks_brim_style4"
+						"use_smoke_particle_effect"	"0"
+					}
+				}
+			}
+		}
+		"31515"
+		{
+			"name"		"The Westcoat"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec24_westcoat"
+			"item_description"		"#TF_dec24_westcoat_Desc"
+			"item_type_name"		"#TF_Wearable_Vest"
+			"propername"		"1"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/engineer/dec24_westcoat_style1/dec24_westcoat_style1"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/dec24_westcoat_style1/dec24_westcoat_style1.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/engineer/dec24_westcoat_style1/dec24_westcoat_style1.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_westcoat_style1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/engineer/dec24_westcoat_style2/dec24_westcoat_style2.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_westcoat_style2"
+					}
+					"2"
+					{
+						"model_player"		"models/workshop/player/items/engineer/dec24_westcoat_style3/dec24_westcoat_style3.mdl"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+						"name"		"#TF_dec24_westcoat_style3"
+					}
+				}
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
+		}
+		"31516"
+		{
+			"name"		"Snug Sharpshooter"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_dec24_snug_sharpshooter"
+			"item_description"		"#TF_dec24_snug_sharpshooter_Desc"
+			"item_type_name"		"#TF_Wearable_Sweater"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/sniper/dec24_snug_sharpshooter/dec24_snug_sharpshooter"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/sniper/dec24_snug_sharpshooter/dec24_snug_sharpshooter.mdl"
+			"used_by_classes"
+			{
+				"sniper"		"1"
+			}
+			"mouse_pressed_sound"		"ui/item_hat_pickup.wav"
+			"drop_sound"		"ui/item_hat_drop.wav"
 		}
 
 	}
