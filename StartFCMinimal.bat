@@ -2,6 +2,12 @@
 title FCCL
 if EXIST "drivers\etc\hosts" cd "%~dp0"
 
+if NOT EXIST "gameinfo.txt" (
+	echo Cannot run this script outside of a source mods directory...
+	pause
+	exit
+)
+
 rem Get Resolution of the screen
 for /f "tokens=4,5 delims=. " %%a in ('ver') do set "version=%%a%%b"
 if version lss 62 (
