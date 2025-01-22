@@ -1,7 +1,7 @@
 # Fortress Connected Minimal
 Fortress Connected Minimal is the same code base as Fortress Connected, but minimized to the greatest extent to reduce load times and extra content.
 
-FC is a modified version of Lambda Fortress: Extended to have more features, fixes, and support
+FC is a *heavily* modified version of Lambda Fortress: Extended to have more features, fixes, and support
 
 ### To run the game, you *must* have these installed:
 	Source SDK Base 2013 Multiplayer
@@ -11,7 +11,7 @@ FC is a modified version of Lambda Fortress: Extended to have more features, fix
 
 ### Installation:
 Method 1:
-Download by GitHub Desktop and clone in to "C:\Program Files (x86)\Steam\steamapps\sourcemods\fc_minimal"
+Download by GitHub Desktop and clone in to "C:\Program Files (x86)\Steam\steamapps\sourcemods\fc_minimal" It is recommended to use GitHub Desktop or TortoiseGit so when you need to update, you can just press "Pull" without having to re-download the whole repo.
 
 Method 2:
 Download from the releases and extract to "C:\Program Files (x86)\Steam\steamapps\sourcemods" and *make sure* that the directory is named "fc_minimal"
@@ -37,3 +37,5 @@ Coplay (P2P) fork: https://github.com/ArgonianGuard/coplay Original by Tholp1: h
 Half-Life Resized Maps by MaestroFenix: https://github.com/MaestroFenix/Half-Life-Resized-Maps
 
 Main releases will be on the main FC repo here: https://github.com/Lambdagon/fc
+
+Please see credits.txt for additional credits.
