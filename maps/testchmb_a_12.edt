@@ -1,0 +1,15 @@
+"testchmb_a_12"
+{
+	entity
+	{
+		edit {classname "filter_combineball_type" values {balltype "3"} }
+		create {classname "lfce_weapon_progress"
+			values
+			{
+				targetname "equipment_base"
+				portalgun_progress "2"
+				physcannon_progress "0"
+			}
+		}
+	}
+}
