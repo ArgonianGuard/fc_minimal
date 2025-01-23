@@ -7,6 +7,8 @@ d2_coast_07
 		delete {targetname "train_pusher"} //jeep fall
 		delete {classname "player_loadsaved"}
 		delete {targetname "fall_trigger"}
+		delete {targetname "player_spawn_items"}
+		edit {targetname "player_spawn_items_maker" values {Template01 ""} }
 		edit {classname "func_areaportal" values {targetname "disabledPortal" StartOpen "1"} }
 		edit {classname "func_areaportalwindow" values {targetname "DisabledPortalWindow" FadeStartDist "1000" FadeDist "1500"} }
 
@@ -933,6 +935,14 @@ d2_coast_07
 				spawnflags "1"
 				OnTrigger "bridge_door_2,Unlock,,1,-1"
 				} }
+		
+		create {classname "logic_auto"
+			values
+			{
+				globalstate "bridge_gate_open"
+				OnMapSpawn "syn_shiz,Trigger,,0,-1"
+			}
+		}
 
 		create {classname "logic_relay"
 			values {targetname "syn_shiz"
