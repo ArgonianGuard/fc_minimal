@@ -237,11 +237,8 @@
 
 	"rndwave"
 	{
-		"wave"	"npc/dog/dog_footstep_walk01.wav"
-		"wave"	"npc/dog/dog_footstep_walk03.wav"
-		"wave"	"npc/dog/dog_footstep_walk05.wav"
-		"wave"	"npc/dog/dog_footstep_walk07.wav"
-		"wave"	"npc/dog/dog_footstep_walk09.wav"
+		"wave"	"npc/dog/dog_footstep1.wav"
+		"wave"	"npc/dog/dog_footstep2.wav"
 
 	}
 }
@@ -256,11 +253,8 @@
 
 	"rndwave"
 	{
-		"wave"	"npc/dog/dog_footstep_walk02.wav"
-		"wave"	"npc/dog/dog_footstep_walk04.wav"
-		"wave"	"npc/dog/dog_footstep_walk06.wav"
-		"wave"	"npc/dog/dog_footstep_walk08.wav"
-		"wave"	"npc/dog/dog_footstep_walk10.wav"
+		"wave"	"npc/dog/dog_footstep3.wav"
+		"wave"	"npc/dog/dog_footstep4.wav"
 
 	}
 }
@@ -275,11 +269,10 @@
 
 	"rndwave"
 	{
-		"wave"	"npc/dog/dog_footstep_run01.wav"
-		"wave"	"npc/dog/dog_footstep_run03.wav"
-		"wave"	"npc/dog/dog_footstep_run05.wav"
-		"wave"	"npc/dog/dog_footstep_run07.wav"
-		"wave"	"npc/dog/dog_footstep_run09.wav"
+		"wave"	"npc/dog/dog_footstep_run1.wav"
+		"wave"	"npc/dog/dog_footstep_run2.wav"
+		"wave"	"npc/dog/dog_footstep_run3.wav"
+		"wave"	"npc/dog/dog_footstep_run4.wav"
 
 	}
 }
@@ -294,11 +287,10 @@
 
 	"rndwave"
 	{
-		"wave"	"npc/dog/dog_footstep_run02.wav"
-		"wave"	"npc/dog/dog_footstep_run04.wav"
-		"wave"	"npc/dog/dog_footstep_run06.wav"
-		"wave"	"npc/dog/dog_footstep_run08.wav"
-		"wave"	"npc/dog/dog_footstep_run10.wav"
+		"wave"	"npc/dog/dog_footstep_run5.wav"
+		"wave"	"npc/dog/dog_footstep_run6.wav"
+		"wave"	"npc/dog/dog_footstep_run7.wav"
+		"wave"	"npc/dog/dog_footstep_run8.wav"
 
 	}
 }
