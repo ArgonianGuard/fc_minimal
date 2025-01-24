@@ -158,7 +158,8 @@ d1_canals_01a
 				angles	"0 90 0"
 				targetname	"trav_ss_gman"
 				m_fMoveTo	"1"
-				OnEndSequence "syn_vint_trav_gman,Kill,,0,-1"} }
+				OnEndSequence "syn_vint_trav_gman,Kill,,0,-1"
+				OnEndSequence "syn_vint_exitplatform_barrel2,Ignite,,0,-1"} }
 
 		create {classname "ai_relationship"
 			values {subject "npc_metropolice"
