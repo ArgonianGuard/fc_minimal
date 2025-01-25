@@ -111,21 +111,21 @@ d1_trainstation_05
 		}
 
 		//Trav|Edt - Add breen Gman
-		create {classname "npc_gman"
-			origin "-13351 48 59"
-			values {spawnflags "25110"
-				angles "0 240 0"
-				targetname "syn_vint_trav_gman"} }
+		//create {classname "npc_gman"
+		//	origin "-13351 48 59"
+		//	values {spawnflags "25110"
+		//		angles "0 240 0"
+		//		targetname "syn_vint_trav_gman"} }
 
-		create {classname "trigger_once"
-			origin "-13386 -156 49"
-			values
-			{
-				edt_getbspmodelfor_targetname "Barney_lab_entry_closedoor_1"
-				spawnflags "1"
-				OnTrigger "syn_vint_trav_gman,Kill,,10,-1"
-			}
-		}
+		//create {classname "trigger_once"
+		//	origin "-13386 -156 49"
+		//	values
+		//	{
+		//		edt_getbspmodelfor_targetname "Barney_lab_entry_closedoor_1"
+		//		spawnflags "1"
+		//		OnTrigger "syn_vint_trav_gman,Kill,,10,-1"
+		//	}
+		//}
 
 //Trav|Edt - allow vending machine door to close(works fine unless behind player gets in right when barney spawns, just leaves door open)
 		//edit {targetname "soda_door_areaportal_1" values {StartOpen "0"} } //hmm, i didn't think u could edit defaultkey values :O

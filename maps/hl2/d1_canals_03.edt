@@ -476,52 +476,52 @@ d1_canals_03
 		//	values {texture "vgui/achievements/hl2_find_alllambdas" } }
 
 //Trav|Edt - add gman
-		create {classname "npc_gman"
-			origin	"-1740 880 -796"
-			values {spawnflags "17028"
-				targetname "syn_vint_trav" } }
+		//create {classname "npc_gman"
+		//	origin	"-1740 880 -796"
+		//	values {spawnflags "17028"
+		//		targetname "syn_vint_trav" } }
 
-		create {classname "scripted_sequence"
-			origin	"-1740 880 -832"
-			values {spawnflags	"96"
-				targetname "syn_vint_ss_trav"
-				m_iszEntity	"syn_vint_trav"
-				m_iszPlay	"tiefidget"
-				m_iszNextScript	"syn_vint_ss_trav1"} }
+		//create {classname "scripted_sequence"
+		//	origin	"-1740 880 -832"
+		//	values {spawnflags	"96"
+		//		targetname "syn_vint_ss_trav"
+		//		m_iszEntity	"syn_vint_trav"
+		//		m_iszPlay	"tiefidget"
+		//		m_iszNextScript	"syn_vint_ss_trav1"} }
 
-		create {classname "scripted_sequence"
-			origin	"-1832 968 -784"
-			values {spawnflags	"96"
-				angles	"0 90 0"
-				targetname	"syn_vint_ss_trav1"
-				m_fMoveTo	"1"
-				m_iszNextScript	"syn_vint_ss_trav2"} }
+		//create {classname "scripted_sequence"
+		//	origin	"-1832 968 -784"
+		//	values {spawnflags	"96"
+		//		angles	"0 90 0"
+		//		targetname	"syn_vint_ss_trav1"
+		//		m_fMoveTo	"1"
+		//		m_iszNextScript	"syn_vint_ss_trav2"} }
 
-		create {classname "scripted_sequence"
-			origin	"-1832 1112 -784"
-			values {spawnflags	"96"
-				angles "0 90 0"
-				targetname	"syn_vint_ss_trav2"
-				m_fMoveTo	"1"
-				OnEndSequence "syn_vinttrav,Kill,,0,-1"} }
+		//create {classname "scripted_sequence"
+		//	origin	"-1832 1112 -784"
+		//	values {spawnflags	"96"
+		//		angles "0 90 0"
+		//		targetname	"syn_vint_ss_trav2"
+		//		m_fMoveTo	"1"
+		//		OnEndSequence "syn_vinttrav,Kill,,0,-1"} }
 
-		create {classname "trigger_once"
-			origin "-1574 672 -832"
-			values {
-				//model "*187"
-				edt_mins "-20 -20 -20"
-				edt_maxs "20 20 20"
-				spawnflags "1"
-				OnTrigger "syn_vint_ss_trav,BeginSequence,-1,0,-1" } }
+		//create {classname "trigger_once"
+		//	origin "-1574 672 -832"
+		//	values {
+		//		//model "*187"
+		//		edt_mins "-20 -20 -20"
+		//		edt_maxs "20 20 20"
+		//		spawnflags "1"
+		//		OnTrigger "syn_vint_ss_trav,BeginSequence,-1,0,-1" } }
 
-		create {classname "trigger_once"
-			origin "-1798 592.01 -756"
-			values {
-				//model "*185"
-				edt_mins "-20 -20 -20"
-				edt_maxs "20 20 20"
-				spawnflags "1"
-				OnTrigger "syn_vint_trav,Kill,,0,-1"} }
+		//create {classname "trigger_once"
+		//	origin "-1798 592.01 -756"
+		//	values {
+		//		//model "*185"
+		//		edt_mins "-20 -20 -20"
+		//		edt_maxs "20 20 20"
+		//		spawnflags "1"
+		//		OnTrigger "syn_vint_trav,Kill,,0,-1"} }
 
 //Trav|Edt - add slowers
 		create {classname "prop_physics_override"

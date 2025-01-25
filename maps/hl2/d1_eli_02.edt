@@ -164,40 +164,6 @@ d1_eli_02
 		//values {Damage "10000"
 		//	DamageRadius "25600"} }
 
-//Trav|Edt - add gman
-		create {classname "npc_gman"
-			origin	"-1272 1120 -2245"
-			values {spawnflags "17044"
-				angles "0 225 0"
-				targetname "syn_vint_trav_gman_1" } }
-
-		create {classname "scripted_sequence"
-			origin	"-1272 1120 -2280"
-			values {spawnflags	"96"
-				targetname "syn_vint_trav_ss_gman_1_1"
-				m_iszEntity	"syn_vint_trav_gman_1"
-				m_iszPlay	"tiefidget"
-				m_iszNextScript	"syn_vint_trav_gman_1_2"} }
-
-		create {classname "scripted_sequence"
-			origin	"-975 1136 -2192"
-			values {spawnflags	"96"
-				targetname	"syn_vint_trav_gman_1_2"
-				m_fMoveTo	"1"
-				OnEndSequence "syn_vint_trav_gman_1,Kill,,0,-1"
-				OnEndSequence "syn_vint_trav_ss_gman_1_1,Kill,,0,-1"
-				OnEndSequence "!self,Kill,,0.1,-1"} }
-
-//Trav|Edt - trigger gman
-		create {classname "trigger_once"
-			origin "-1593 -441 -2652"
-			values {
-				//model "*113"
-				edt_getbspmodelfor_classname "trigger_once"
-				edt_getbspmodelfor_origin "-1360 45.08 -2654"
-				spawnflags "1"
-				OnTrigger "syn_vint_trav_ss_gman_1_1,BeginSequence,,8,-1" } }
-
 //Trav|Edt - make dog's ball invuln
 		delete {targetname "ball"}
 
@@ -210,37 +176,6 @@ d1_eli_02
 		create {classname "filter_activator_name"
 			values {targetname "syn_dfilter_null"
 				filtername "null"} }
-
-//Trav|Edt - add final gman in bunker
-		create {classname "npc_gman"
-			origin "-752 1040 -2656"
-			values {spawnflags "16532"
-				targetname "syn_vint_trav_gman_2"
-				sleepstate "3"} }
-
-		create {classname "scripted_sequence"
-			origin "-752 1040 -2656"
-			values {spawnflags "96"
-				targetname "syn_vint_trav_ss_gman_2_1"
-				m_iszEntity "syn_vint_trav_gman_2"
-				m_iszPlay "tiefidget"
-				m_iszNextScript "syn_vint_trav_ss_gman_2_2"} }
-
-		create {classname "scripted_sequence"
-			origin "-784 1136 -2656"
-			values {spawnflags "96"
-				angles "0 90 0"
-				targetname "syn_vint_trav_ss_gman_2_2"
-				m_fMoveTo "1"
-				OnEndSequence "syn_vint_trav_gman_2,Kill,,0,-1"
-				OnEndSequence "syn_vint_trav_ss_gman_2_1,Kill,,0,-1"
-				OnEndSequence "!self,Kill,,0.1,-1"} }
-
-		create {classname "logic_relay"
-			values {spawnflags "1"
-				targetname "logic_disable_airlockB_1"
-				OnTrigger "syn_vint_trav_gman_2,Wake,,0,-1"
-				OnTrigger "syn_vint_trav_ss_gman_2_1,BeginSequence,,8,-1"} }
 
 // hotfix pushy door
 		create {classname "func_brush" origin "-1890 1924 -2683"

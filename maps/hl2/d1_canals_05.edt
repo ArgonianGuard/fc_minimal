@@ -403,6 +403,20 @@ d1_canals_05
 
 //Trav|Edt - stop krazy headcrabness
 		delete {classname "trigger_once" origin "-3264 -1888 -416"}
+		
+		// Balim - freeze planks so it isn't so jittery to walk over on higher ping
+		edit {classname "prop_physics" origin "4367.37 5295.12 -124.801" values {spawnflags "8"} }
+		edit {classname "prop_physics" origin "4388.8 5206.84 -126.094" values {spawnflags "8"} }
+		edit {classname "prop_physics" origin "4203.12 5333.11 -126.141" values {spawnflags "8"} }
+		edit {classname "prop_physics" origin "4198.71 5355.98 -126.137" values {spawnflags "8"} }
+		edit {classname "prop_physics" origin "4196.95 4930.21 -126.122" values {spawnflags "8"} }
+		edit {classname "prop_physics" origin "4351.32 5269.61 -120.749" values {spawnflags "8"} }
+		edit {classname "prop_physics" origin "4178.98 4935.02 -119.892" values {spawnflags "8"} }
+		edit {classname "prop_physics" origin "5735.92 1278.06 -458.585" values {spawnflags "10"} }
+		delete {classname "prop_physics" origin "5566.72 1288.16 -423.364"}
+		delete {classname "prop_physics" origin "4514.39 1060.24 -451.785"}
+		delete {classname "prop_physics" origin "4289 5336.97 -119.575"}
+		
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d1_canals_05"} }

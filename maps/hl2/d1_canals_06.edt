@@ -295,44 +295,44 @@ d1_canals_06
 
 //--Extra--
 //Add G-man sighting
-		create {classname "npc_gman"
-			origin	"-8204 11320 -9"
-			values {spawnflags "17044"
-				angles "0 315 0"
-				targetname "syn_vint_trav"} }
+		//create {classname "npc_gman"
+		//	origin	"-8204 11320 -9"
+		//	values {spawnflags "17044"
+		//		angles "0 315 0"
+		//		targetname "syn_vint_trav"} }
 
-		create {classname "scripted_sequence"
-			origin	"8204 11320 -4"
-			values {spawnflags	"96"
-				angles "0 0 0"
-				targetname "syn_vint_ss_trav"
-				m_iszEntity	"syn_vint_trav"
-				m_iszPlay	"tiefidget"
-				m_iszNextScript	"syn_vint_ss_trav1"} }
+		//create {classname "scripted_sequence"
+		//	origin	"8204 11320 -4"
+		//	values {spawnflags	"96"
+		//		angles "0 0 0"
+		//		targetname "syn_vint_ss_trav"
+		//		m_iszEntity	"syn_vint_trav"
+		//		m_iszPlay	"tiefidget"
+		//		m_iszNextScript	"syn_vint_ss_trav1"} }
 
-		create {classname "scripted_sequence"
-			origin	"-8192 11720 -8"
-			values {spawnflags	"96"
-				angles "0 90 0"
-				targetname	"syn_vint_ss_trav1"
-				m_fMoveTo	"1"
-				OnEndSequence "syn_vint_trav,Kill,-1,0,-1"} }
+		//create {classname "scripted_sequence"
+		//	origin	"-8192 11720 -8"
+		//	values {spawnflags	"96"
+		//		angles "0 90 0"
+		//		targetname	"syn_vint_ss_trav1"
+		//		m_fMoveTo	"1"
+		//		OnEndSequence "syn_vint_trav,Kill,-1,0,-1"} }
 
-		create {classname "ai_relationship"
-			values {subject "npc_metropolice"
-				target "syn_vint_trav"
-				disposition "4"
-				StartActive "1"} }
+		//create {classname "ai_relationship"
+		//	values {subject "npc_metropolice"
+		//		target "syn_vint_trav"
+		//		disposition "4"
+		//		StartActive "1"} }
 
-		create {classname "trigger_once"
-			origin "-7680 10751.9 -85.43"
-			values {
-				//model"*65"
-				edt_mins "-20 -500 -150"
-				edt_maxs "20 520 130"
-				spawnflags "1"
-				targetname "syn_vint"
-				OnTrigger "syn_vint_ss_trav,BeginSequence,-1,0,-1"} }
+		//create {classname "trigger_once"
+		//	origin "-7680 10751.9 -85.43"
+		//	values {
+		//		//model"*65"
+		//		edt_mins "-20 -500 -150"
+		//		edt_maxs "20 520 130"
+		//		spawnflags "1"
+		//		targetname "syn_vint"
+		//		OnTrigger "syn_vint_ss_trav,BeginSequence,-1,0,-1"} }
 
 //Add crate by bluebarrels for no reason
 		create {classname "item_item_crate"
