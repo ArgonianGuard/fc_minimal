@@ -36770,7 +36770,7 @@
 		"9727"
 		{
 			"name"	"Heavy's Hammer"
-			"item_class"	"tf_weapon_allclass"
+			"item_class"	"weapon_melee_allclass"
 			"capabilities"
 			{
 				"nameable"		"1"
