@@ -36770,12 +36770,8 @@
 		"9727"
 		{
 			"name"	"Heavy's Hammer"
-<<<<<<< HEAD
 			"prefab"	"weapon_melee_allclass"
 			"item_class"		"saxxy"
-=======
-			"item_class"	"weapon_melee_allclass"
->>>>>>> eb676e818f01a66e2cff669d382e77725da867c8
 			"capabilities"
 			{
 				"nameable"		"1"
@@ -36813,7 +36809,7 @@
 				{
 					"attribute_class"	"or_minicrit_vs_playercond_burning"
 					"value" "1"
-                }
+				}
 				"damage bonus"
 				{
 					"attribute_class"	"mult_dmg"
