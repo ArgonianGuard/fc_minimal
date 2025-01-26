@@ -36770,7 +36770,8 @@
 		"9727"
 		{
 			"name"	"Heavy's Hammer"
-			"item_class"	"tf_weapon_allclass"
+			"prefab"	"weapon_melee_allclass"
+			"item_class"		"saxxy"
 			"capabilities"
 			{
 				"nameable"		"1"
