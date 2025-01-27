@@ -422,6 +422,14 @@ DESCRIPTION INFO_OPTIONS
 		{ BOOL }
 		{ "1" }
 	}
+	
+	"fc_enable_team_glow"
+	{
+		"#LFEOption_teamglow"
+		"#Tooltip_UseGlowEffect"
+		{ BOOL }
+		{ "1" }
+	}
 
 	//"cl_hud_playerclass_use_playermodel"
 	//{

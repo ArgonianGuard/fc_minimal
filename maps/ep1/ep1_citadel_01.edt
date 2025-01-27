@@ -13,6 +13,17 @@ ep1_citadel_01
 				OnMapTransition "relay_Mapstart,Trigger,,0,1"} }
 		edit {classname "func_areaportal" values {targetname "syn_DisabledPortal" StartOpen "1"} }
 		edit {classname "func_areaportalwindow" values {targetname "syn_DisabledPortalWindow" FadeStartDist "1000" FadeDist "1500"} }
+		
+		// Additional checks for if alyx spawned
+		create {classname "logic_auto"
+			values
+			{
+				spawnflags "1"
+				OnMapSpawn "alyx,AddOutput,OnUser3 template_alyx:kill::0:-1,0,-1"
+				OnMapSpawn "alyx,FireUser3,,3,-1"
+				OnMapSpawn "template_alyx,ForceSpawn,,3.5,-1"
+			}
+		}
 
 		//fix edtbuild
 		delete {targetname "wellwell"}

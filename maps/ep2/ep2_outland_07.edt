@@ -394,11 +394,11 @@ ep2_outland_07
 			}
 		}
 //Force players back in to vehicle while scene is running
-		create {classname "trigger_multiple" origin "-10066 -9898 128"
+		create {classname "trigger_multiple" origin "-9500 -9898 128"
 			values
 			{
-				edt_mins "-50 -50 -50"
-				edt_maxs "50 50 50"
+				edt_mins "-800 -800 -200"
+				edt_maxs "800 800 200"
 				spawnflags "1"
 				targetname "syn_forcevehicle"
 				startdisabled "1"
