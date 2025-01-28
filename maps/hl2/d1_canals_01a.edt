@@ -325,6 +325,8 @@ d1_canals_01a
 				fadeout "1.25"
 				holdtime "2"
 				fxtime "0.25"} }
+		
+		delete {targetname "apc_1_crows"}
 
 //Trav|Edt - Setup Bridge
 	//	delete {classname "phys_hinge" origin "-6047 9032 -132"}
