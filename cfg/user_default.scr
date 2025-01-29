@@ -66,6 +66,13 @@ DESCRIPTION INFO_OPTIONS
 		"#TF_OptionCategory_Extended"
 		{ CATEGORY }
 	}
+	
+	"fc_hud_target_id_shownpc"
+	{
+		"#TFOption_npc_targetid"
+		{ BOOL }
+		{ "1" }
+	}
 
 	"fc_ammobucket"
 	{

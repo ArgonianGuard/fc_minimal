@@ -453,6 +453,9 @@ d1_canals_03
 		//	values {spawnflags "8"
 		//		model "models/props_c17/oildrum001.mdl"
 		//		targetname "trav_barrel_fall"} }
+		
+		// Break multiplayer
+		edit {targetname "stinky_stirrer_debris" values {PerformanceMode "2"} }
 
 //Trav|Edt - secret vent stash
 		create {classname "weapon_crossbow"
