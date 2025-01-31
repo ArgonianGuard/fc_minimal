@@ -1,6 +1,6 @@
 //============================ FGD. ===========================================
 //
-// Purpose: Lambda Fortress: Extended game definition file (.fgd) 
+// Purpose: Fortress Connected definition file (.fgd) 
 //
 //=============================================================================
 @include "base.fgd"
@@ -214,9 +214,13 @@
 		"item_healthkit_full"
 		"item_healthkit_medium"
 		"item_healthkit_small"
+		"item_healthkit_tiny"
+		"item_healthkit_mega"
+		"item_grenadepack"
 		"item_teamflag"
 		"item_bonuspack"
 		"logic_active_autosave"
+		"logic_merchant_relay"
 		"logic_auto"
 		"logic_autosave"
 		"logic_branch"
@@ -727,6 +731,13 @@
 	// Inputs
 	input Toggle(void) : "Toggle the enabled/disabled status of this entity."
 ]
+
+@BaseClass = FadeDistance
+[
+	fademindist(float) : "Start Fade Dist" : -1 : "Distance at which the prop starts to fade (<0 = use fademaxdist)."
+	fademaxdist(float) : "End Fade Dist" : 0 : "Maximum distance at which the prop is visible (0 = don't fade out)."
+]
+
 
 @BaseClass = GameType
 [
@@ -1898,6 +1909,43 @@
 	input SetSpawnFrequency(float) : "Sets how often (in seconds) a new NPC will be spawned."
 ]
 
+@PointClass base(BaseNPCMaker) iconsprite("editor/npc_maker.vmt") = npc_template_maker : 
+	"An entity that creates NPCs. The NPCs it creates are clones of a template NPC. NPCs are spawned around this maker's origin, or at specified destination points."
+[
+	spawnflags(Flags) = 
+	[
+		256 : "Always use radius spawn" : 0
+		512 : "Don't preload template models" : 0
+	]
+
+	TemplateName(target_destination) : "Name of template NPC" : "" : "Template NPC that this maker should be creating clones of."
+
+	Radius(float) : "Radius" : 256 : "Radius around this maker within which NPCs are to be placed. Spawned NPCs will try and find empty space within this radius to spawn."
+
+	DestinationGroup(target_destination) : "Name of Destination Group" : : "If you'd like spawned NPCs to be created at an info_npc_spawn_destination entity, enter the name of that entity here. If you have more than one destination entity by that name, the Destination Criteria will be used to select one from the group."
+	CriterionVisibility(Choices) : "Dest. Criterion: Visible to player?" : 2 : "Should the NPC try to spawn at a destination that the player can see? Only applicable if a Destination Group is being used." =
+	[
+		0 : "Yes"
+		1 : "No"
+		2 : "Don't Care"
+	]
+	CriterionDistance(Choices) : "Dest. Criterion: Distance to player?" : 2 : "Should the NPC try to spawn nearest to or farthest from the player's current location? Only applicable if a Destination Group is being used." =
+	[
+		0 : "Nearest"
+		1 : "Farthest"
+		2 : "Don't Care"
+	]
+
+	MinSpawnDistance(integer) : "Minimum spawn distance from player" : 0 : "The spawn destination node distance to the player will have to be further or equal than this value."
+
+	//Inputs
+	input SpawnNPCInRadius(void) : "Spawn an NPC somewhere within the maker's radius."
+	input SpawnNPCInLine(void) : "Spawn an NPC somewhere within a line behind the maker."
+	input SpawnMultiple(integer) : "Spawn multiple NPCs (uses destination group, else radius)."
+	input ChangeDestinationGroup(string) : "Switch to a different set of Destination entities."
+	input SetMinimumSpawnDistance(integer) : "Set the minimum spawn distance from player to destination node."
+]
+
 @BaseClass base(BaseNPC) = TalkNPC
 [
 	UseSentence(string) : "Use Sentence"
@@ -2474,39 +2522,82 @@
 		2 : "CP HUD"
 		3 : "Payload HUD"
 	]
+	
+	fourteammode(choices) : "4 Team Mode" : 0 : "Sets 4 team mode on." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
 
-	//ctf_overtime(choices) : "CTF Overtime" : 1 : "Allow Overtime for CTF maps." =
-	//[
-	//	0 : "No"
-	//	1 : "Yes"
-	//]
+	ctf_overtime(choices) : "CTF Overtime" : 0 : "Allow Overtime for CTF maps." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
 
 	force_dynamicnpcs(choices) : "Dynamic NPCs" : 0 : "Force Dynamic NPCs System." =
 	[
 		0 : "No"
 		1 : "Yes"
 	]
-
+	
+	nocustomclasses(choices) : "No Custom Classes" : 0 : "Force disables custom classes on this map." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	npc_drop_currency(choices) : "Enable NPCs drop currency" : 0 : "Enables regular NPCs to drop currency." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	npc_drop_currency_chance(float) : "NPC currency drop chance" : 0 : "If set to 0, fc_dropcurrency_ondeath_chance will be used instead." 
+	
+	nomapreload(choices) : "Disable map reload on all players dead" : 0 : "Servers can still disable map reloads with mp_reset." =
+	[
+		0 : "Map Reloads"
+		1 : "No Map Reload"
+	]
+	
 	input SetRedTeamRespawnWaveTime(float) : "Set the RED team's respawn wave time"
 	input SetBlueTeamRespawnWaveTime(float) : "Set the BLU team's respawn wave time"
+	input SetGreenTeamRespawnWaveTime(float) : "Set the Green team's respawn wave time"
+	input SetYellowTeamRespawnWaveTime(float) : "Set the Yellow team's respawn wave time"
 	input AddRedTeamRespawnWaveTime(float) : "Add to the RED team's respawn wave time"
 	input AddBlueTeamRespawnWaveTime(float) : "Add to the BLU team's respawn wave time"
+	input AddGreenTeamRespawnWaveTime(float) : "Add to the Green team's respawn wave time"
+	input AddYellowTeamRespawnWaveTime(float) : "Add to the Yellow team's respawn wave time"
 	input SetRedTeamGoalString(string) : "Set the RED team's goal string to show in the hud"
 	input SetBlueTeamGoalString(string) : "Set the BLU team's goal string to show in the hud"
+	input SetGreenTeamGoalString(string) : "Set the Green team's goal string to show in the hud"
+	input SetYellowTeamGoalString(string) : "Set the Yellow team's goal string to show in the hud"
 	input SetRedTeamRole(integer) : "Set RED team role, 0=none, 1=defenders, 2=attackers"
 	input SetBlueTeamRole(integer) : "Set BLU team role, 0=none, 1=defenders, 2=attackers"
+	input SetGreenTeamRole(integer) : "Set Green team role, 0=none, 1=defenders, 2=attackers"
+	input SetYellowTeamRole(integer) : "Set Yellow team role, 0=none, 1=defenders, 2=attackers"
 	input AddRedTeamScore(integer) : "Add to the RED team score (can be a negative number)"
 	input AddBlueTeamScore(integer) : "Add to the BLU team score (can be a negative number)"
+	input AddGreenTeamScore(integer) : "Add to the Green team score (can be a negative number)"
+	input AddYellowTeamScore(integer) : "Add to the Yellow team score (can be a negative number)"
 	//input SetRequiredObserverTarget(string) : "Sets the given entity (by name) to be the required observer target for all spectators. Must be cleared to allow spectators to cycle through targets normally again."
 	//input SetStalemateOnTimelimit(bool) : "Determines whether mp_timelimit can end the match in the middle of a round."
 	input SetRedKothClockActive(void) : "Set the RED team clock active for KOTH maps."
 	input SetBlueKothClockActive(void) : "Set the BLU team clock active for KOTH maps."
+	input SetGreenKothClockActive(void) : "Set the Green team clock active for KOTH maps."
+	input SetYellowKothClockActive(void) : "Set the Yellow team clock active for KOTH maps."
 	input SetCTFCaptureBonusTime(float) : "Set the length (in seconds) of team crit time for CTF captures. 0 = none"
 	input PlayVORed(string) : "Play the given sound entry via the VO channel"
 	input PlayVOBlue(string) : "Play the given sound entry via the VO channel"
+	input PlayVOGreen(string) : "Play the given sound entry via the VO channel"
+	input PlayVOYellow(string) : "Play the given sound entry via the VO channel"
 	input PlayVO(string) : "Play the given sound entry via the VO channel"
-	//input HandleMapEvent(string) : "Handles map events. This will be different events for different maps."
-	//input SetCustomUpgradesFile(string) : "Specifies the path relative to the game directory to the upgrades file to be used."
+	
+	input HandleMapEvent(string) : "Handles map events. This will be different events for different maps."
+	input SetCustomUpgradesFile(string) : "Specifies the path relative to the game directory to the upgrades file to be used."
+	input SetRoundRespawnFreezeEnabled(integer) : "Enable/disable the player movement freeze period after a round begins."
+	input SetMapForcedTruceDuringBossFight(bool) : "Enable/disable truce between the teams during a fight with Monoculus or Merasmus."
 
 	input InputSetTimeScale(float) : "Set server timescale."
 	input SpawnBoss(void) : "Spawn Dynamic NPC's Bosses."
@@ -2518,7 +2609,17 @@
 
 	output IsHL2BetaEnabled(void) : "Fired when sv_hl2_beta is enabled."
 	output IsDynamicNPCEnabled(void) : "Fired when sv_dynamicnpcs is enabled."
+	
+	output OnStateEnterBetweenRounds(void) : "Fired when entering the between-rounds state (MvM and Competitive)."
+	output OnStateEnterPreRound(void) : "Fired when entering the pre-round state (just before round running)."
+	output OnStateExitPreRound(void) : "Fired when exiting the pre-round state (just before round running)."
+	output OnStateEnterRoundRunning(void) : "Fired when entering the round-running state."
+	//output OnMatchSummaryStart(void) : "Fired when the match summary begins and players are spawned on stage."
+	output OnTruceStart(void) : "Sent when a truce starts."
+	output OnTruceEnd(void) : "Sent when a truce ends."
 ]
+
+@PointClass base(PlayerClass, Angles) studio("models/editor/playerstart.mdl") = info_player_coop : "This entity indicates the position and facing direction at which the player will spawn in co-op modes." []
 
 @PointClass base(Targetname, Parentname, TeamNum, EnableDisable, Angles) studio("models/player/heavy.mdl") = info_player_teamspawn :
 	"This entity marks the spawn point for Team Fortress players."
@@ -2536,10 +2637,22 @@
 		64 :   "Pyro" : 1
 		128 :  "Spy" : 1
 		256 :  "Engineer" : 1
+		//512 :	   "Civilian" : 1
+		//1024 :    "John" : 1
+		//2048 :    "Mercenary" : 1
+		//4096 :    "Repressor" : 1
+		//8192 :    "Enforcer" : 1
+		//16384 :   "Jerry" : 1
+		//32768 :   "Saxton" : 1
+		//65536 :   "Telecon" : 1
+		//131072 :  "Agent" : 1
+		//commented out until someone finds a way to make it so that old player spawns have these flags on by default -spyguy26
 	]
 
  	round_bluespawn(target_destination) : "Blue spawn for round" : : "Blue spawn point when the associated round is being played."
 	round_redspawn(target_destination) : "Red spawn for round" : : "Red spawn point when the associated round is being played."
+ 	round_greenspawn(target_destination) : "Green spawn for round" : : "Green spawn point when the associated round is being played."
+	round_yellowspawn(target_destination) : "Yellow spawn for round" : : "Yellow spawn point when the associated round is being played."
 
 	input RoundSpawn(void) : "Re-find control points"
 ]
@@ -2715,17 +2828,180 @@
 	output OnSetupFinished(void) : "Sent when the setup time is finished."
 ]
 
+@PointClass base(Targetname,EnableDisable) iconsprite("editor/logic_relay.vmt") = info_spawn_manager :
+	"Spawn manager for managing checkpoints and teleporting players."
+[
+	initialcheckpoint(string) : "InitialCheckpoint" : "" : "Sets the initial spawn point when this is created."
+
+	teamnum(choices) : "teamnum" : 0 : "Team that this should manage" =
+	[
+		0 : "Applies to any team if there is no corresponding spawn manager."
+		2 : "Red"
+		3 : "Blue"
+		4 : "Green"
+		5 : "Yellow"
+	]
+	
+	input RespawnPlayers(void) : "Respawn all players on this team (if set)"
+	input SetCheckPoint(string) : "Sets the active checkpoint and clears the others."
+	input TeleportPlayers(string) : "Teleports players to the named entity's origin."
+	input MovePlayers(void) : "Move all players to the !activator's position. Use this on triggers usually."
+	input ClearCheckpoint(void) : "Clears all checkpoints, in the future, this will disable respawning for the team."
+	input AddCheckPoint(string) : "Add a checkpoint for multiple players spawning in an area."
+]
+
+@PointClass base(Targetname,EnableDisable) iconsprite("editor/logic_relay.vmt") = hud_timer :
+	"Hud Timer. Timer starts paused by default."
+[
+	TimerText(string) : "TimerText" : "COUNT DOWN" : "Sets the label displayed on this timer."
+	TimerType(choices) : "TimerType" : 1 : "Sets the type of timer, either count down or up" =
+	[
+		1 : "Count down"
+		2 : "Count up"
+	]
+
+	input Start(integer) : "Starts the timer for the input amount of seconds."
+	input Stop(void) : "Stops the timer."
+	input Change(integer) : "Update the timer time - value is added to current timer time; allows positive and negative values."
+	input SetTimerLabel(string) : "Sets the label displayed on the timer."
+	
+	output OnTimer(void) : "Sent when the timer ends."
+]
+
 //
 // Items
 //
 
+@BaseClass color(0 0 200) base(Targetname, TeamNum, EnableDisable, Toggle, Angles, PlayerTouch, FadeDistance) = Item
+[
+	powerup_model(string) : "Model" : "" : "Change the model to something other than the default model." 
+	respawntime(integer) : "Respawn Time" : 10 : "Changes the time, in seconds, before the item respawns."
+	respawndelay(integer) : "Initial Spawn Delay" : 0 : "Makes the item spawn after a initial delay."
+	spawn_sound(sound): "Spawn Sound" : "Item.Materialize" : "Sound to play when Pickup Spawns."
+	HiddenWhenRespawning(boolean) : "Hidden while Respawning?" : 1 : "Whether or not the pickup becomes hidden on pickup."	
+	AutoMaterialize(choices) : "Auto-Materialize" : 1 : "The pickup should automatically materialize after being picked up." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+
+	output OnPlayerTouch(void) : "Fires when the player touches this item."
+	//output OnCacheInteraction(void) : "This output fires when the player proves they have 'found' this item. Fires on: Player Touch (whether or not player actually acquires the item) or picked up by +USE."
+	output OnRespawn(void) : "Fires when the item respawns."	
+
+]
+
 @PointClass base(Item) studio("models/items/medkit_large.mdl") = item_healthkit_full : "Health Kit Full" []
 @PointClass base(Item) studio("models/items/medkit_small.mdl") = item_healthkit_small :	"Health Kit Small" []
 @PointClass base(Item) studio("models/items/medkit_medium.mdl") = item_healthkit_medium : "Health Kit Medium" []
+@PointClass base(Item) studio("models/items/medkit_mega.mdl") = item_healthkit_mega : "Health Kit Mega" []
+
+//@PointClass base(Item) studio("models/items/medkit_large.mdl") sphere(fademindist) sphere(fademaxdist) = item_healthkit_full :
+//	"Health Kit Full"
+//[
+//	powerup_model(choices) : "Model" : "" : "Change the model to something other than the default model. Not shown in Hammer." =
+//	[
+//		"" : "Default"
+//		"models/props_halloween/halloween_medkit_large.mdl" : "Halloween Soup Cauldron"
+//	]
+//]
+//
+//@PointClass base(Item) studio("models/items/medkit_small.mdl") sphere(fademindist) sphere(fademaxdist) = item_healthkit_small :
+//	"Health Kit Small"
+//[
+//	powerup_model(choices) : "Model" : "" : "Change the model to something other than the default model. Not shown in Hammer." =
+//	[
+//		"" : "Default"
+//		"models/props_halloween/halloween_medkit_small.mdl" : "Halloween Candy Bar"
+//	]
+//]
+//
+//@PointClass base(Item) studio("models/items/medkit_medium.mdl") sphere(fademindist) sphere(fademaxdist) = item_healthkit_medium :
+//	"Health Kit Medium"
+//[
+//	powerup_model(choices) : "Model" : "" : "Change the model to something other than the default model. Not shown in Hammer." =
+//	[
+//		"" : "Default"
+//		"models/props_halloween/halloween_medkit_medium.mdl" : "Halloween Pumpkin Candy Tin"
+//		"models/props_medieval/medieval_meat.mdl" : "Medieval Ham"
+//	]
+//]
+
+//@PointClass base(Item) studio("models/items/medkit_mega.mdl") sphere(fademindist) sphere(fademaxdist) = item_healthkit_mega :
+//	"Health Kit Mega"
+//[
+//	powerup_model(choices) : "Model" : "" : "Change the model to something other than the default model. Not shown in Hammer." =
+//	[
+//		"" : "Default"
+//		"models/props_halloween/halloween_medkit_mega.mdl" : "Halloween Pumpkin Candy Tin"
+//		"models/props_medieval/medieval_meat.mdl" : "Medieval Ham"
+//		"models/pickups/pickup_powerup_megahealth.mdl" : "Megahealth Powerup"
+//	]
+//	
+//	respawntime(integer) : "Respawn Time" : 10 : "Changes the time, in seconds, before the item respawns."
+//	respawndelay(integer) : "Initial Spawn Delay" : 0 : "Makes the item spawn after a initial delay."
+//	spawn_sound(sound): "Spawn Sound" : "Item.Materialize" : "Sound to play when Pickup Spawns."
+//	HiddenWhenRespawning(boolean) : "Hidden while Respawning?" : 1 : "Whether or not the pickup becomes hidden on pickup."	
+//	AutoMaterialize(boolean) : "Auto-Materialize?" : 1 : "The pickup should automatically materialize after being picked up."
+//	
+//	output OnPlayerTouch(void) : "Fires when the player touches this item."
+//	output OnRespawn(void) : "Fires when the item respawns."
+//	
+//]
+
+@PointClass base(Item) size(-1 -1 -48, 1 1 1) studioprop() = item_healthkit_tiny :	
+    "Overheal health kit for players." 
+[
+	model(studio) : "Model" : "models/items/medkit_overheal.mdl" : "The model this entity should appear as. 128-character limit."
+	pickup_sound(sound): "Pickup Sound" : "" : "Sound to play when picking up this pill."
+]
+
 
 @PointClass base(Item) studio("models/items/ammopack_large.mdl") = item_ammopack_full :	"Ammo Pack Full" []
 @PointClass base(Item) studio("models/items/ammopack_small.mdl") = item_ammopack_small : "Ammo Pack Small" []
 @PointClass base(Item) studio("models/items/ammopack_medium.mdl") = item_ammopack_medium : "Ammo Pack Medium" []
+
+@PointClass base(Item) studio("models/items/grenade_pack.mdl") = item_grenadepack : "Grenade Pack" []
+
+@PointClass base(Item) studio("models/items/item_armor.mdl") = item_armor : "Armor Pack" []
+
+@PointClass base(Item) studio("models/props_halloween/hwn_spellbook_flying.mdl") sphere(fademindist) sphere(fademaxdist) = tf_spell_pickup : "Spell"
+[
+	tier(choices) : "Spell Tier" : 0 : "Tier of spells that would be randomly assigned to the player" =
+	[
+		0 : "Common"
+		1 : "Rare"
+	]
+]
+
+@PointClass color(0 0 200) base(Targetname, TeamNum, EnableDisable, Toggle, Angles, PlayerTouch, FadeDistance) studio("models/crafting/moustachium.mdl") sphere(fademindist) sphere(fademaxdist) = item_bonuspack : "Bonus Pack"
+[
+	powerup_model(string) : "Model" : "" : "Change the model to something other than the default model." 
+]
+
+@PointClass base(Item, Parentname) studio("models/items/target_duck.mdl") sphere(fademindist) sphere(fademaxdist) = tf_halloween_pickup : "Halloween pickup"
+[
+
+	//AutoMaterialize(boolean) : "Auto-Materialize?" : 1 : "The pickup should automatically materialize after being picked up."
+
+	pickup_sound(string) : "Sound Effect" : "" : "The sound script entry that is played when the item is picked up." 
+	pickup_particle(string) : "Particle Effect" : "" : "The particle effect that is displayed when the item is picked up." 
+
+	output OnRedPickup(void) : "Sent when Red picks-up the item."
+	output OnBluePickup(void) : "Sent when Blue picks-up the item."
+]
+
+@PointClass base(Targetname, EnableDisable) studio("models/pickups/pickup_powerup_regen.mdl") sphere(fademindist) sphere(fademaxdist) = info_powerup_spawn : "Powerup spawn location. Only one of each type of Powerup will spawn in a game, so some Powerup spawn locations may not be used in some rounds. Locations and Powerup types are chosen at random. Will only spawn if tf_powerup_mode is set"
+[
+	team(choices) : "Owner Team" : -2 : "Teams can own spawn points. When Powerups are dropped, they resposition themselves after timing out. They will try to pick a spawn point based on what team designation they had when they repositioned. Set to Everyone to have no team bias in spawn positioning" =
+	[
+		-2 : "Everyone"
+		2 : "Red"
+		3 : "Blue"
+	]
+]
+@PointClass base(Targetname, EnableDisable) studio("models/pickups/pickup_powerup_crit.mdl") sphere(fademindist) sphere(fademaxdist) = item_powerup_crit :	"Temporary Crit Powerup. Powerup effect wears off. Powerup respawns automatically" []
+@PointClass base(Targetname, EnableDisable) studio("models/pickups/pickup_powerup_uber.mdl") sphere(fademindist) sphere(fademaxdist) = item_powerup_uber :	"Temporary Uber Powerup. Powerup effect wears off. Powerup respawns automatically" []
 
 //
 // Filters
@@ -2875,6 +3151,46 @@
 	output IsAprilFools(void) : ""
 ]
 
+@PointClass base(Targetname, EnableDisable) iconsprite("editor/logic_relay.vmt") = logic_difficulty : "Fires various outputs based on the current difficulty setting and number of active players."// for difficulty-based events.
+[
+	LowerPlayer(float) : "Lower Player Range" : 3 : "If the number of players is less than X, 'Low' Outputs will fire. ('Med' will fire between Lower and Upper ranges, inclusive.)"
+	UpperPlayer(float) : "Upper Player Range" : 5 : "If the number of players is greater than X, 'High' Outputs will fire."
+
+	input CheckSkill(void) : "Fires all applicable outputs based on the current difficulty and number of players."
+
+	output OnEasy(void) : "Fires when CheckSkill reports, Difficulty: Easy, PlayerCount: Any."
+		output OnEasyLow(void) : "Fires when CheckSkill reports, Difficulty: Easy, PlayerCount: Low."
+		output OnEasyMed(void) : "Fires when CheckSkill reports, Difficulty: Easy, PlayerCount: Medium."
+		output OnEasyHigh(void) : "Fires when CheckSkill reports, Difficulty: Easy, PlayerCount: High."
+	output OnNormal(void) : "Fires when CheckSkill reports, Difficulty: Normal, PlayerCount: Any."
+		output OnNormalLow(void) : "Fires when CheckSkill reports, Difficulty: Normal, PlayerCount: Low."
+		output OnNormalMed(void) : "Fires when CheckSkill reports, Difficulty: Normal, PlayerCount: Medium."
+		output OnNormalHigh(void) : "Fires when CheckSkill reports, Difficulty: Normal, PlayerCount: High."
+	output OnHard(void) : "Fires when CheckSkill reports, Difficulty: Hard, PlayerCount: Any."
+		output OnHardLow(void) : "Fires when CheckSkill reports, Difficulty: Hard, PlayerCount: Low."
+		output OnHardMed(void) : "Fires when CheckSkill reports, Difficulty: Hard, PlayerCount: Medium."
+		output OnHardHigh(void) : "Fires when CheckSkill reports, Difficulty: Hard, PlayerCount: High."
+
+	output OnUnusual(void) : "Fires when CheckSkill reports, Difficulty: Unusual, PlayerCount: Any."
+		output OnUnusualLow(void) : "Fires when CheckSkill reports, Difficulty: Unusual, PlayerCount: Low."
+		output OnUnusualMed(void) : "Fires when CheckSkill reports, Difficulty: Unusual, PlayerCount: Medium."
+		output OnUnusualHigh(void) : "Fires when CheckSkill reports, Difficulty: Unusual, PlayerCount: High."
+
+	output OnHaunted(void) : "Fires when CheckSkill reports, Difficulty: Haunted, PlayerCount: Any."
+		output OnHauntedLow(void) : "Fires when CheckSkill reports, Difficulty: Haunted, PlayerCount: Low."
+		output OnHauntedMed(void) : "Fires when CheckSkill reports, Difficulty: Haunted, PlayerCount: Medium."
+		output OnHauntedHigh(void) : "Fires when CheckSkill reports, Difficulty: Haunted, PlayerCount: High."
+
+	output OnLow(void) : "Fires when CheckSkill reports, Difficulty: Any, PlayerCount: Low."
+	output OnMed(void) : "Fires when CheckSkill reports, Difficulty: Any, PlayerCount: Medium."
+	output OnHigh(void) : "Fires when CheckSkill reports, Difficulty: Any, PlayerCount: High."
+
+	spawnflags(flags) =
+	[
+		1: "Remove on fire" : 1
+	]
+]
+
 //
 // Solid Classes
 //
@@ -2916,6 +3232,12 @@
 		0 : "Grey"
 		2 : "RED"
 		3 : "BLU"
+	]
+
+	OnlyPlayersCollide(Choices) : "Only collide with players" : 0 =
+	[
+		0 : "All Collisions"
+		1 : "Only players"
 	]
 	
 	input SimpleDisable(void) : "Disable without func_antirush features."
@@ -2976,6 +3298,26 @@
 		0 : "No"
 		1 : "Yes"
 	]
+	
+	AllowBouncepads(choices) : "Allow Bouncepads" : 0 : "Bouncepads are allowed to be built in this volume" =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+]
+
+@SolidClass base(Targetname, TeamNum, EnableDisable, Toggle) = func_croc : "Crocs live here!"
+[
+	filtername(filterclass) : "Filter Name" : : "Optional filter to use to see if activator triggers me."
+
+	croc_model(string) : "Model" : "models/props_island/crocodile/crocodile.mdl" : "The model to be used for this entity."
+
+	// Outputs
+	output OnEat(void) : "Sent when the crocs eat a player."
+	output OnEatRed(void) : "Sent when the crocs eat a player on team RED."
+	output OnEatBlue(void) : "Sent when the crocs eat a player on team BLU."
+	output OnEatGreen(void) : "Sent when the crocs eat a player on team GRN."
+	output OnEatYellow(void) : "Sent when the crocs eat a player on team YLW."
 ]
 
 @SolidClass base(Targetname, TeamNum, EnableDisable, Toggle) = func_regenerate :
@@ -3049,7 +3391,7 @@
 
 
 //====================================================================================================================
-// CAPTURE POINT HANDLING
+// CAPTURE POINT HANDLING // FIXED BY THE REAL FISHMAN NOT THAT FAKE ASS BITCH
 //====================================================================================================================
 @PointClass base(Targetname, EnableDisable, Angles, Parentname) studio("models/effects/cappoint_hologram.mdl") = team_control_point :
 	"Control Point"
@@ -3100,22 +3442,32 @@
 	team_capsound_0(sound) : "Reset Sound" : "" : "Sound made when point resets."
 	team_capsound_2(sound) : "Red Capture Sound" : "" : "Sound made when RED captures."
 	team_capsound_3(sound) : "Blue Capture Sound" : "" : "Sound made when BLUE captures."
+	team_capsound_4(sound) : "Green Capture Sound" : "" : "Sound made when GREEN captures."
+	team_capsound_5(sound) : "Yellow Capture Sound" : "" : "Sound made when YELLOW captures."
 
 	team_model_0(studio) 	: "Reset Model" : "models/effects/cappoint_hologram.mdl" : "Model when point reset."
 	team_model_2(studio) 	: "RED Model" : "models/effects/cappoint_hologram.mdl" : "Model when RED owns the point."
 	team_model_3(studio) 	: "BLUE Model" : "models/effects/cappoint_hologram.mdl" : "Model when BLUE owns the point."
+	team_model_4(studio) 	: "GREEN Model" : "models/effects/cappoint_hologram.mdl" : "Model when GREEN owns the point."
+	team_model_5(studio) 	: "YELLOW Model" : "models/effects/cappoint_hologram.mdl" : "Model when YELLOW owns the point."
 
 	team_bodygroup_0(integer) : "Reset model bodygroup" : 3
 	team_bodygroup_2(integer) : "RED model bodygroup" : 1
 	team_bodygroup_3(integer) : "BLUE model bodygroup" : 1
+	team_bodygroup_4(integer) : "GREEN model bodygroup" : 1
+	team_bodygroup_5(integer) : "YELLOW model bodygroup" : 1
 
 	team_icon_0(material)	: "HUD icon neutral" : "sprites/obj_icons/icon_obj_neutral" : "HUD icon material when no one owns the point."
 	team_icon_2(material)	: "HUD icon RED" : "sprites/obj_icons/icon_obj_red" : "HUD icon material when RED owns the point."
 	team_icon_3(material)	: "HUD icon BLUE" : "sprites/obj_icons/icon_obj_blu" : "HUD icon material when BLUE owns the point."
+	team_icon_4(material)	: "HUD icon GREEN" : "sprites/obj_icons/icon_obj_grn" : "HUD icon material when GREEN owns the point."
+	team_icon_5(material)	: "HUD icon YELLOW" : "sprites/obj_icons/icon_obj_ylw" : "HUD icon material when YELLOW owns the point."
 
 	team_overlay_0(material) : "HUD overlay neutral" : "" : "HUD material that will overlay the icon when no one owns the point."
 	team_overlay_2(material) : "HUD overlay RED" : "" : "HUD material that will overlay the icon when RED owns the point."
 	team_overlay_3(material) : "HUD overlay BLUE" : "" : "HUD material that will overlay the icon when BLUE owns the point."
+	team_overlay_4(material) : "HUD overlay GREEN" : "" : "HUD material that will overlay the icon when GREEN owns the point."
+	team_overlay_5(material) : "HUD overlay YELLOW" : "" : "HUD material that will overlay the icon when YELLOW owns the point."
 
  	team_previouspoint_2_0(target_source) : "RED Previous Required Point 1" : "" : "The name of a previous capture point that RED must own to be able to capture this point. If empty, the team must own all points preceding this one."
 	team_previouspoint_2_1(target_source) : "RED Previous Required Point 2" : "" : "The name of a second previous capture point that RED must own to be able to capture this point."
@@ -3123,6 +3475,13 @@
 	team_previouspoint_3_0(target_source) : "BLUE Previous Required Point 1" : "" : "The name of a previous capture point that BLUE must own to be able to capture this point. If empty, the team must own all points preceding this one."
 	team_previouspoint_3_1(target_source) : "BLUE Previous Required Point 2" : "" : "The name of a second previous capture point that BLUE must own to be able to capture this point."
 	team_previouspoint_3_2(target_source) : "BLUE Previous Required Point 3" : "" : "The name of a third previous capture point that BLUE must own to be able to capture this point."
+
+	team_previouspoint_4_0(target_source) : "GREEN Previous Required Point 1" : "" : "The name of a previous capture point that GREEN must own to be able to capture this point. If empty, the team must own all points preceding this one."
+	team_previouspoint_4_1(target_source) : "GREEN Previous Required Point 2" : "" : "The name of a second previous capture point that GREEN must own to be able to capture this point."
+	team_previouspoint_4_2(target_source) : "GREEN Previous Required Point 3" : "" : "The name of a third previous capture point that GREEN must own to be able to capture this point."
+	team_previouspoint_5_0(target_source) : "YELLOW Previous Required Point 1" : "" : "The name of a previous capture point that YELLOW must own to be able to capture this point. If empty, the team must own all points preceding this one."
+	team_previouspoint_5_1(target_source) : "YELLOW Previous Required Point 2" : "" : "The name of a second previous capture point that YELLOW must own to be able to capture this point."
+	team_previouspoint_5_2(target_source) : "YELLOW Previous Required Point 3" : "" : "The name of a third previous capture point that YELLOW must own to be able to capture this point."
 
 	// Outputs
 	output OnOwnerChangedToTeam1(void) : "Sent when owner is changed to RED."
@@ -3229,11 +3588,28 @@
 		0 : "No"
 	]
 	
+	team_cancap_4(choices) : "Can GREEN Cap?" : 1 =
+	[
+		1 : "Yes"
+		0 : "No"
+	]
+	team_cancap_5(choices) : "Can YELLOW Cap?" : 1 =
+	[
+		1 : "Yes"
+		0 : "No"
+	]
+	
 	team_startcap_2(integer) : "Number of RED players to start capping" : 1 
 	team_startcap_3(integer) : "Number of BLUE players to start capping" : 1 
 
 	team_numcap_2(integer) : "Number of RED players to cap" : 1
 	team_numcap_3(integer) : "Number of BLUE players to cap" : 1
+	
+	team_startcap_4(integer) : "Number of GREEN players to start capping" : 1 
+	team_startcap_5(integer) : "Number of YELLOW players to start capping" : 1 
+
+	team_numcap_4(integer) : "Number of GREEN players to cap" : 1
+	team_numcap_5(integer) : "Number of YELLOW players to cap" : 1
 
 	team_spawn_2(integer) : "Red Spawn Adjust" : 0 : "Adjust the minimum respawn time for the red team by this amount (in seconds) when red captures this point. If the red team owns this point when blue captures it, this adjustment is reversed."
 	team_spawn_3(integer) : "Blue Spawn Adjust" : 0 : "Adjust the minimum respawn time for the blue team by this amount (in seconds) when blue captures this point. If the blue team owns this point when red captures it, this adjustment is reversed."
@@ -3418,6 +3794,137 @@
 	output OnDestroyed(void) : "Fired when this entity is destroyed."
 ]
 
+@PointClass base(Targetname) = bot_roster : "Entity specifies what classes TFBots can choose"
+[
+	team(choices) : "Team" : "auto" : "Team" =
+	[
+		"auto" : "Any"
+		"red" : "Red"
+		"blue" : "Blue"
+		"green" : "Green"
+		"yellow" : "Yellow"
+	]
+
+	allowClassChanges(choices) : "Allow Class Changes" : 1 : "Allow TFBots to choose a new class when they respawn." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+
+	allowScout(choices) : "Allow Scout" : 1 : "Allow TFBots to choose Scouts as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowSniper(choices) : "Allow Sniper" : 1 : "Allow TFBots to choose Snipers as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowSoldier(choices) : "Allow Soldier" : 1 : "Allow TFBots to choose Soldiers as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowDemoman(choices) : "Allow Demoman" : 1 : "Allow TFBots to choose Demoman as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowMedic(choices) : "Allow Medics" : 1 : "Allow TFBots to choose Medics as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowHeavy(choices) : "Allow Heavy" : 1 : "Allow TFBots to choose Heavy as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowPyro(choices) : "Allow Pyro" : 1 : "Allow TFBots to choose Pyro as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowSpy(choices) : "Allow Spy" : 1 : "Allow TFBots to choose Spy as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowEngineer(choices) : "Allow Engineer" : 1 : "Allow TFBots to choose Engineer as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	allowCivilian(choices) : "Allow " : 1 : "Allow TFBots to choose Civilian as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowJohn(choices) : "Allow " : 1 : "Allow TFBots to choose John as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowMercenary(choices) : "Allow " : 1 : "Allow TFBots to choose Mercenary as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowCombine(choices) : "Allow " : 1 : "Allow TFBots to choose Repressor as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowZombie(choices) : "Allow " : 1 : "Allow TFBots to choose Enforcer as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowAntlion(choices) : "Allow " : 1 : "Allow TFBots to choose Jerry as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowSaxton(choices) : "Allow " : 1 : "Allow TFBots to choose Saxton as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowRobo(choices) : "Allow " : 1 : "Allow TFBots to choose Telecon as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowAgent(choices) : "Allow " : 1 : "Allow TFBots to choose Agent as a class." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	// Inputs
+	input SetAllowScout(bool) : "Sets whether TFBots can choose Scouts as a class. 0 = No, 1 = Yes"
+	input SetAllowSniper(bool) : "Sets whether TFBots can choose Snipers as a class. 0 = No, 1 = Yes"
+	input SetAllowSoldier(bool) : "Sets whether TFBots can choose Soldiers as a class. 0 = No, 1 = Yes"
+	input SetAllowDemoman(bool) : "Sets whether TFBots can choose Demoman as a class. 0 = No, 1 = Yes"
+	input SetAllowMedic(bool) : "Sets whether TFBots can choose Medics as a class. 0 = No, 1 = Yes"
+	input SetAllowHeavy(bool) : "Sets whether TFBots can choose Heavy as a class. 0 = No, 1 = Yes"
+	input SetAllowPyro(bool) : "Sets whether TFBots can choose Pyro as a class. 0 = No, 1 = Yes"
+	input SetAllowSpy(bool) : "Sets whether TFBots can choose Spy as a class. 0 = No, 1 = Yes"
+	input SetAllowEngineer(bool) : "Sets whether TFBots can choose Engineer as a class. 0 = No, 1 = Yes"
+	
+	input SetAllowCivilian(bool) : "Sets whether TFBots can choose Civilian as a class. 0 = No, 1 = Yes"
+	input SetAllowJohn(bool) : "Sets whether TFBots can choose John as a class. 0 = No, 1 = Yes"
+	input SetAllowMercenary(bool) : "Sets whether TFBots can choose Mercenary as a class. 0 = No, 1 = Yes"
+	input SetAllowCombine(bool) : "Sets whether TFBots can choose Repressor as a class. 0 = No, 1 = Yes"
+	input SetAllowZombie(bool) : "Sets whether TFBots can choose Enforcer as a class. 0 = No, 1 = Yes"
+	input SetAllowAntlion(bool) : "Sets whether TFBots can choose Jerry as a class. 0 = No, 1 = Yes"
+	input SetAllowSaxton(bool) : "Sets whether TFBots can choose Saxton as a class. 0 = No, 1 = Yes"
+	input SetAllowRobo(bool) : "Sets whether TFBots can choose Telecon as a class. 0 = No, 1 = Yes"
+	input SetAllowAgent(bool) : "Sets whether TFBots can choose Agent as a class. 0 = No, 1 = Yes"
+]
+
 @SolidClass base(Trigger, Targetname, DamageTypeP) = trigger_hurt :
 	"A trigger volume that damages entities that touch it."
 [
@@ -3493,6 +4000,158 @@
 	input AddBlueTimer(integer)	:	"Add time to the BLUE timer."
 
 ]	
+
+@PointClass base(Targetname,Parentname,Angles ) studio("models/bots/bot_worker/bot_worker_a.mdl")= tf_robot_destruction_robot_spawn : "Robot Destruction Robot spawn point."
+[	
+	health(integer) : "Health" : 500 : "The health for the robot"
+	gibs(integer) : "Gibs" : 0 : "The number of point-giving gibs to spawn on death"
+	type(choices) : "Robot Style" : 0 =
+	[
+		0 : "Frustum"
+		1 : "Sphere"
+		2 : "King"
+		3 : "Finale"
+	]
+	spawngroup(target_source) : "Spawn Group" : : "Which group this spawn belongs to"
+	startpath(target_source) : "Start Path" : : "Which path_track to head towards first"
+
+	input SpawnRobot(void)	:	"Spawn a robot on this spawnpoint.  Does nothing if there's already a robot."
+	output OnRobotKilled(void) : "Sent when this spawn point's robot dies."
+]
+
+
+@PointClass base(Targetname) = tf_robot_destruction_spawn_group : "Robot Destruction spawn group. This groups the Robot Destruction spawn points"
+[	
+	respawn_time(float) : "Respawn Time" : 0 : "Respawn time for this group"
+	group_number(integer) : "Group Number" : 0 : "This group's number.  Affect's UI position and spawn priority"
+	team_number(choices) : "Team Number" : 2 =
+	[
+		2 : "Red"
+		3 : "Blue"
+		4 : "Green"
+		5 : "Yellow"
+	]
+	hud_icon(string) : "HUD Icon Name" : "../HUD/hud_bot_worker_outline_blue" : "HUD icon to use for this group"
+	respawn_reduction_scale(float) : "Team Respawn Reduction Scale" : 0 : "Scale the owning team's respawn time by this amount when this group is dead."
+
+	output OnRobotsRespawn(void) : "Sent when this group's robots respawn."
+	output OnAllRobotsDead(void ) : "Sent when the last robot alive in this group dies."
+]
+
+@BaseClass = RobotDestruction
+[	
+
+]
+
+@PointClass base(Targetname,RobotDestruction) = tf_logic_robot_destruction : "Robot Destruction Entity. This is used to detect a Robot Destruction map."
+[
+	score_interval(float) : "Robot Scoring Interval (in seconds)" : 1 : "How often a robot should score a point while hacking."
+	loser_respawn_bonus_per_bot(float) : "Loser Respawn Bonus Per Bot (percentage)" : 0 : "How much faster the losing team will respawn per bot difference."
+	red_respawn_time(float) : "Red Respawn Time (in seconds)" : 10 : "Respawn times for Red"
+	blue_respawn_time(float) : "Blue Respawn Time (in seconds)" : 10 : "Respawn times for Blue"
+	green_respawn_time(float) : "Green Respawn Time (in seconds)" : 10 : "Respawn times for Green"
+	yellow_respawn_time(float) : "Yellow Respawn Time (in seconds)" : 10 : "Respawn times for Yellow"
+	max_points(integer) : "Max Points" : 200 : "The number of points a team must get to unlock their win condition."
+	finale_length(float) : "Finale Length" : 30 : "The amount of time from after max score is reached a team will win."
+	res_file(string) : "HUD Res File" : "resource/UI/HudObjectiveRobotDestruction.res" : "What res file to use for the HUD"
+	
+	output OnBlueHitMaxPoints(void) : "Sent when Blue hits the max points."
+	output OnRedHitMaxPoints(void) : "Sent when Red hits the max points."
+	output OnBlueLeaveMaxPoints(void) : "Sent when blue goes from max points to fewer."
+	output OnRedLeaveMaxPoints(void) : "Sent when red goes from max points to fewer."
+	output OnBlueHitZeroPoints(void) : "Sent when Blue hits 0 points."
+	output OnRedHitZeroPoints(void) : "Sent when Red hits 0 points"
+	output OnBlueHasPoints(void) : "Sent when Blue goes from 0 to any points"
+	output OnRedHasPoints(void) : "Sent when Red goes from 0 to any points"
+
+	output OnRedFinalePeriodEnd(void) : "Sent when the red finale period ends."
+	output OnBlueFinalePeriodEnd(void) : "Sent when the blue finale period ends."
+
+	output OnRedFirstFlagStolen(void) : "Sent when red's first flag gets stolen."
+	output OnRedFlagStolen(void) : "Sent when a flag gets stolen from red."
+	output OnRedLastFlagReturned(void) : "Sent when red's last stolen flag gets returned."
+	output OnBlueFirstFlagStolen(void) : "Sent when blue's first flag gets stolen."
+	output OnBlueFlagStolen(void) : "Sent when a flag gets stolen from blue."
+	output OnBlueLastFlagReturned(void) : "Sent when blue's last stolen flag gets returned."
+
+
+	output OnGreenHitMaxPoints(void) : "Sent when Green hits the max points."
+	output OnYellowHitMaxPoints(void) : "Sent when Yellow hits the max points."
+	output OnGreenLeaveMaxPoints(void) : "Sent when blue goes from max points to fewer."
+	output OnYellowLeaveMaxPoints(void) : "Sent when red goes from max points to fewer."
+	output OnGreenHitZeroPoints(void) : "Sent when Green hits 0 points."
+	output OnYellowHitZeroPoints(void) : "Sent when Yellow hits 0 points"
+	output OnGreenHasPoints(void) : "Sent when Green goes from 0 to any points"
+	output OnYellowHasPoints(void) : "Sent when Yellow goes from 0 to any points"
+
+	output OnYellowFinalePeriodEnd(void) : "Sent when the red finale period ends."
+	output OnGreenFinalePeriodEnd(void) : "Sent when the blue finale period ends."
+
+	output OnYellowFirstFlagStolen(void) : "Sent when red's first flag gets stolen."
+	output OnYellowFlagStolen(void) : "Sent when a flag gets stolen from red."
+	output OnYellowLastFlagReturned(void) : "Sent when red's last stolen flag gets returned."
+	output OnGreenFirstFlagStolen(void) : "Sent when blue's first flag gets stolen."
+	output OnGreenFlagStolen(void) : "Sent when a flag gets stolen from blue."
+	output OnGreenLastFlagReturned(void) : "Sent when blue's last stolen flag gets returned."
+
+
+]
+
+@PointClass base(Targetname) = tf_logic_player_destruction : "Player Destruction Entity. This is used to detect a Player Destruction map."
+[
+	prop_model_name(studio) : "Prop Model Name" : "models/flag/flag.mdl" : "model of prop that drops from player on death"
+	prop_drop_sound(sound) : "Prop Drop Sound" : "" : "sound when player drops prop"
+	prop_pickup_sound(sound) : "Prop Pickup Sound" : "" : "sound when player picks up prop"
+	input ScoreRedPoints(void) : "Score points for red."
+	input ScoreBluePoints(void) : "Score points for blue."
+	input EnableMaxScoreUpdating(void) : "Allow the max score to update based on player count."
+	input DisableMaxScoreUpdating(void) : "Disallow the max score to update based on player count."
+	input SetCountdownTimer(integer) : "Set the countdown time and start the timer."
+	input SetCountdownImage(string) : "Set the countdown image."
+	input SetFlagResetDelay(integer) : "Set the length of time (in seconds) before a dropped flag resets."
+	input SetPointsOnPlayerDeath(integer) : "Set number of points per flag dropped upon player death."
+
+	red_respawn_time(float) : "Red Respawn Time (in seconds)" : 10 : "Respawn times for Red"
+	blue_respawn_time(float) : "Blue Respawn Time (in seconds)" : 10 : "Respawn times for Blue"
+	min_points(integer) : "Min Points" : 10 : "The minimum points to win"
+	points_per_player(integer) : "Point Per Player" : 5 : "How many points to increase the max points by per player"
+	finale_length(float) : "Finale Length" : 30 : "The amount of time from after max score is reached a team will win."
+	res_file(string) : "HUD Res File" : "resource/UI/HudObjectivePlayerDestruction.res" : "What res file to use for the HUD"
+	flag_reset_delay(integer) : "Flag Reset Delay (in seconds)" : 60 : "Length of time (in seconds) before a dropped flag resets."
+	heal_distance(integer) : "Heal Distance" : 450 : "The distance for the team leader's ability to heal teammates."
+	
+	output OnBlueHitMaxPoints(void) : "Sent when Blue hits the max points."
+	output OnRedHitMaxPoints(void) : "Sent when Red hits the max points."
+	output OnBlueLeaveMaxPoints(void) : "Sent when blue goes from max points to fewer."
+	output OnRedLeaveMaxPoints(void) : "Sent when red goes from max points to fewer."
+	output OnBlueHitZeroPoints(void) : "Sent when Blue hits 0 points."
+	output OnRedHitZeroPoints(void) : "Sent when Red hits 0 points"
+	output OnBlueHasPoints(void) : "Sent when Blue goes from 0 to any points"
+	output OnRedHasPoints(void) : "Sent when Red goes from 0 to any points"
+
+	output OnRedFinalePeriodEnd(void) : "Sent when the red finale period ends."
+	output OnBlueFinalePeriodEnd(void) : "Sent when the blue finale period ends."
+
+	output OnRedFirstFlagStolen(void) : "Sent when red's first flag gets stolen."
+	output OnRedFlagStolen(void) : "Sent when a flag gets stolen from red."
+	output OnRedLastFlagReturned(void) : "Sent when red's last stolen flag gets returned."
+	output OnBlueFirstFlagStolen(void) : "Sent when blue's first flag gets stolen."
+	output OnBlueFlagStolen(void) : "Sent when a flag gets stolen from blue."
+	output OnBlueLastFlagReturned(void) : "Sent when blue's last stolen flag gets returned."
+
+	output OnRedScoreChanged(float) : "Send when score changes, and is a value representing total progress from [0..1]."
+	output OnBlueScoreChanged(float) : "Send when score changes, and is a value representing total progress from [0..1]."
+
+	output OnCountdownTimerExpired(void) : "Sent when the countdown timer expires."
+]
+
+@SolidClass base(Trigger, Targetname, TeamNum) = trigger_rd_vault_trigger :
+	"A trigger used to mark where players can steal credits."
+[
+	output OnPointsStolen(void) : "Sent during every point stealing 'pulse'."
+	output OnPointsStartStealing(void) : "Sent when points start being stolen."
+	output OnPointsEndStealing(void) : "Send when points stop being stolen."
+]
 	
 	
 @SolidClass base(Targetname) = func_nav_blocker : "A brush entity that can block nav areas touching its AABB." 
@@ -3505,6 +4164,8 @@
 		-1 : "Everyone"
 		2 : "Red"
 		3 : "Blue"
+		4 : "Green"
+		5 : "Yellow"
 	]
 	
 	affectsFlow(choices) : "Affects Flow?" : 0 : "Does this func_nav_blocker block flow in the level? Only func_nav_blockers with this enabled will cause flow recomputation on blocking/unblocking." =
@@ -3523,6 +4184,8 @@
 		-2 : "Everyone"
 		2 : "Red"
 		3 : "Blue"
+		4 : "Green"
+		5 : "Yellow"
 	]
 
 	start_disabled(choices) : "Start Disabled" : 0 =
@@ -3545,6 +4208,8 @@
 		-2 : "Everyone"
 		2 : "Red"
 		3 : "Blue"
+		4 : "Green"
+		5 : "Yellow"
 	]
 
 	start_disabled(choices) : "Start Disabled" : 0 =
@@ -3969,9 +4634,11 @@
 	input TeleportPlayers(void) : "Teleport the team's players."
 ]
 
-@PointClass base(Targetname) iconsprite("editor-lfe/lfe_logic_coop.vmt") = lfe_logic_coop : "Forced Co-Op Logic" []
+@PointClass base(Targetname) iconsprite("editor-lfe/lfe_logic_coop.vmt") = fc_logic_coop : "Forced Co-Op Logic" []
 
-@PointClass base(Targetname) iconsprite("editor-lfe/lfe_logic_blucoop.vmt") = lfe_logic_blucoop : "Forced BLU Co-Op Logic" []
+@PointClass base(Targetname) iconsprite("editor-lfe/lfe_logic_coop.vmt") = fc_logic_zombie : "Forced Zombie Co-op Logic" []
+
+@PointClass base(Targetname) iconsprite("editor-lfe/lfe_logic_blucoop.vmt") = fc_logic_blucoop : "Forced BLU Co-Op Logic" []
 
 @PointClass base(Targetname) iconsprite("editor-lfe/lfe_logic_vs.vmt") = lfe_logic_vs : "Forced Versus Logic" []
 
@@ -3983,6 +4650,16 @@
 	//input ForceFinaleStart(void) : "Force Finale Event."
 	//input StartIntro(void) : "Start Cutscene intro."
 	//input FinishIntro(void) : "Finish Cutscene intro."
+]
+
+@PointClass base(Targetname) iconsprite("editor/logic_relay.vmt") = fc_logic_deathmatch : "Deathmatch Logic"
+[
+	FragLimit(integer) : "Frag Limit" : : "How many frags per round."
+	Rounds(integer) : "Rounds" : : "How many rounds there are before map change."
+	
+	// Outputs
+	output OnDeathmatchRoundStart(void)	: "Fired on deathmatch round started."
+	output OnDeathmatchRoundEnd(void)	: "Fired on deathmatch round end."
 ]
 
 @PointClass base(Targetname, Origin, EnableDisable, Angles) iconsprite("editor-lfe/lfe_vehiclespawner.vmt") = lfe_vehiclespawner : "Vehicle spawner."
@@ -4097,6 +4774,10 @@
 ]
 
 @NPCClass base(BaseCombine) studio("models/cremator_npc.mdl") = npc_crematorred : "Rebel Cremator"
+[
+]
+
+@NPCClass base(BaseCombine) studio("models/fassassin.mdl") = npc_assassin : "Combine Assassin"
 [
 ]
 
@@ -4357,8 +5038,33 @@
 	output OnPhysGunDrop(void) : "Released by physgun"
 ]
 
-@NPCClass base(BaseNPC) studio("models/missile_defense.mdl") = npc_missiledefense : "Missile Defense"
+//@NPCClass base(BaseNPC) studio("models/missile_defense.mdl") = npc_missiledefense : "Missile Defense"
+//[
+//]
+
+@NPCClass base(BaseNPC) studio("models/missile_defense.mdl") = npc_missiledefense : "A turret who takes down rockets from the player"
 [
+	spawnflags(flags) = 
+	[
+		65536  :  "Vulnerable to bullets" : 0
+	]
+
+	Health(Integer) : "Health" : 10
+	TurretModel(studio) : "Turret Model" : "models/missile_defense.mdl"
+	GibModel(studio) : "Gib Model" : "models/gibs/missile_defense_gibs.mdl"
+	FireSound(sound) : "Fire Sound" : "npc/turret_floor/shoot1.wav"
+	RotateSound(sound) :	"Rotate Sound": "npc/turret_floor/ping.wav"
+	ReloadSound(sound) :	"Reload Sound": "vehicles/tank_readyfire1.wav"
+	
+	StartOn(choices) : "Start On" : 1 =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	// Inputs
+	input TurnOn(void) : "Turn on: Look for enemies"
+	input TurnOff(void) : "Turn off: Stop looking for enemies"
 ]
 
 @NPCClass base(BaseNPC) studio("models/combine_soldier.mdl") = npc_sniper : "Sniper"
@@ -5489,6 +6195,10 @@
 [
 ]
 
+@NPCClass base(BaseNPC, BaseZombie) studio("models/zombie_s/zombie.mdl") = npc_zombie_s : "Survival Zombie"
+[
+]
+
 @NPCClass base(BaseNPC, BaseZombie) studio("models/Zombie/Classic_torso.mdl") = npc_zombie_torso : "Zombie Torso"
 [
 ]
@@ -5508,6 +6218,10 @@
 		2 : "2 Crabs"
 		3 : "3 Crabs"
 	]
+]
+
+@NPCClass base(BaseNPC, BaseZombie) studio("models/Zombie/female_classic.mdl") = npc_rusher : "Rusher"
+[
 ]
 
 @NPCClass base(BaseNPC) studio("models/combine_scanner.mdl") = npc_cscanner : "City Scanner"
@@ -6980,7 +7694,15 @@
 @PointClass base(HLItem) studio("models/items/BoxBuckshot.mdl")= item_box_buckshot : "Box Buckshot" []
 @PointClass base(HLItem) studio("models/weapons/w_missile_closed.mdl")= item_rpg_round : "RPG Round" []
 @PointClass base(HLItem) studio("models/items/AR2_Grenade.mdl")= item_ammo_smg1_grenade : "SMG1 Grenade" []
-@PointClass base(HLItem) studio("models/items/battery.mdl") = item_battery : "HEV battery" []
+//@PointClass base(HLItem) studio("models/items/battery.mdl") = item_battery : "HEV battery" []
+@PointClass base(HLItem) studio("models/items/battery.mdl") = item_battery : "HEV battery"
+[
+	powerup_model(choices) : "Model" : "" : "Change the model to something other than the default model. Not shown in Hammer." =
+	[
+		"" : "Default"
+		"models/w_battery.mdl" : "Hl1 Battery"
+	]
+]
 @PointClass base(HLItem) studio("models/items/healthkit.mdl") = item_healthkit : "Small Health Kit" []
 @PointClass base(HLItem) studio("models/healthvial.mdl") = item_healthvial : "Personal Health Kit" []
 @PointClass base(HLItem) studio("models/items/combine_rifle_ammo01.mdl") = item_ammo_ar2_altfire : "AR2 Alt-fire Round" []
@@ -7381,6 +8103,51 @@
 		0 : "Do Nothing"
 		1 : "Cancel Script and return to AI"
 	]
+]
+
+@PointClass base(Targetname) iconsprite("editor-fc/logic_merchant_relay") = logic_merchant_relay : "Usefull for entity based merchants."
+[
+
+    StartDisabled(choices) : "Start Disabled?" : 0 =
+    [
+        0 : "No"
+        1 : "Yes"
+    ]
+
+    IsShared(choices) : "Is Shared?" : 0 : "Can all players chip in to buy this?" =
+    [
+        0 : "No"
+        1 : "Yes"
+    ]
+
+    AnnounceCashNeeded(choices) : "Announce Cash Needed?" : 1 : "Tell the players how much cash they still need to purchase?" =
+    [
+        0 : "No"
+        1 : "Yes"
+    ]
+
+    purchasesound(sound) : "Purchase Sound" : "" : "Name of the GameSound entry for the sound to play on purchase. Also supports direct .wav filenames."
+    CostOf(integer) : "Cost of Purchase" : 5
+	CostType(choices) : "CostType" : 0 : "Type of currency to use" =
+	[
+		0 : "Currency"
+		1 : "Frags"
+	]
+    MaxPointsTake(integer) : "Max Points to take ( Shared Only )" : 0 : "How many points should be taken from the player when they input purchase? 0 Means as much as needed."
+    PurchaseName(string) : "Name of Purchase" : "A New Car!" : "Name of the purchase, which will appear in relay messages from this entity."
+
+    // Inputs
+    input SetPurchaseCost(integer) : "Sets the cost of the purchase."
+    input SetPurchaseName(string) : "Sets the name of the purchase."
+    input Purchase(void) : "Purchases item, or puts points towards a purchase if shared."
+    input Enable(void) : "Enables this entity."
+    input Disable(void) : "Disables this entity from use."
+
+    // Outputs
+    output OnPurchased(void) : "Fired when purchase is successful. Usefull for spawning your custom purchase."
+    output OnNotEnoughCash(void) : "Fired when the non-shared item is too expensive for the player."
+    output OnCashReduced(void) : "Fired when the shared items price has lowered from chip-ins."
+    output OnDisabled(void) : "Fired when purchase input has been given, but the relay is disabled."
 ]
 
 @PointClass color(0 0 255) base(Targetname) iconsprite("editor/choreo_manager.vmt") = logic_scene_list_manager :
@@ -7884,7 +8651,14 @@
 
 	input CreateLinkController(void) : "Automatically builds and attaches a link controller to the car, which cuts the node connections under the car while the car is standing still."
 	input DestroyLinkController(void) : "Destroys the link controller created by CreateLinkController."
+	
+	input EnableGun(bool) : "Enables or disables the gun and associated crosshair."
 
+	EnableGun(choices) : "Has Gun" : 0 : "Whether the airboat's gun is enabled or disabled." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
 	
 	CargoVisible(choices): "Hopper Visible" : 0 : "Is the striderbuster cargo hopper visible?" =
 	[
@@ -7895,6 +8669,12 @@
 	spawnflags(Flags) = 
 	[
 		1 : "HUD Locator Precache" : 0
+	]
+	
+	spawnwithextraseat(choices) : "Spawn With Legacy Seat" : 0 : "Enables spawning with an attached seat that you can't fire from." =
+	[
+		0 : "No"
+		1 : "Yes"
 	]
 
 	
@@ -7918,6 +8698,11 @@
 	model(studio) : "World model" : "models/airboat.mdl"
 	vehiclescript(string) : "Vehicle Script File" : "scripts/vehicles/airboat.txt"
 	EnableGun(choices) : "Has Gun" : 0 : "Whether the airboat's gun is enabled or disabled." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	spawnwithextraseat(choices) : "Spawn With Legacy Seat" : 0 : "Enables spawning with an attached seat that you can't fire from." =
 	[
 		0 : "No"
 		1 : "Yes"
@@ -8212,7 +8997,6 @@
 	input Disable(void) : "Pauses the countdown due to a temporary malfunction. A warning sign will appear on the linked vgui screens."
 	input Enable(void) : "Restarts the countdown since the malfunction is finished."
 ]
-
 
 
 @PointClass base(BaseDriveableVehicle, Parentname) studioprop() = prop_vehicle_choreo_generic :
@@ -9128,7 +9912,14 @@
 	model(studio) : "model"
 ]
 
-@NPCClass base(BaseNPC) studio("models/roach.mdl") = monster_cockroach : "Cockroach" []
+@NPCClass base(BaseNPC) studio("models/roach.mdl") = monster_cockroach : "Cockroach" 
+[
+	model(choices) : "Model" : "" : "Change the model to something other than the default model. Not shown in Hammer." =
+	[
+		"" : "Default"
+		"models/tf2_roach.mdl" : "TF2 styled cockroach"
+	]
+]
 @PointClass base(Targetname, RenderFields, Angles) studio("models/light.mdl") = xen_plantlight : "Xen Plant Light" []
 @PointClass base(Targetname, RenderFields, Angles) studio("models/hair.mdl") = xen_hair : "Xen Hair" 
 [
@@ -9324,16 +10115,30 @@
 	target(target_destination) : "Vehicle Name" : : "The target Vehicle to control when the player uses these controls."
 ]
 
-@PointClass base(Item) = lfe_weapon_custom : "Custom Weapon" 
+@PointClass base(Item)  studio("models/weapons/w_models/w_shotgun.mdl") = lfe_weapon_custom : "Custom Weapon" 
 [
 	itemid(integer) : "Item ID" : 1 : "ID of Weapon"
 	itemclassname(string) : "Item Classname" : "" : "Classname of Weapon"
 
-	//skipbaseattribute(choices) : "Skip Base Attributes" : "0" : "" =
-	//[
-	//	0 : "No"
-	//	1 : "Yes"
-	//]
+	skipbaseattribute(choices) : "Skip Base Attributes" : "0" : "" =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	noweapondrop(choices) : "No Weapon Drop" : "0" : "Prevents dropping weapon in the slot that this would use." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	norotate(choices) : "Disable Rotating" : "0" : "" =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	//respawntime(float) : "RespawnTime" : "0.0" : "RespawnTime after being picked up."
 
 	at1(integer) : "Attributes 1" : 0 : "Index of The Attribute"
 	at2(integer) : "Attributes 2" : 0 : "Index of The Attribute"
@@ -9370,9 +10175,9 @@
 	atv16(float) : "Attributes Value 16" : "0" : "Value of The Attribute"
 ]
 
-@PointClass base(Targetname) iconsprite("editor-lfe/lfe_weapon_progress.vmt") = lfe_weapon_progress : 
+@PointClass base(Targetname) iconsprite("editor-lfe/lfe_weapon_progress.vmt") = lfce_weapon_progress : 
 "'Weapon progression' disables the automatic "+
-"giveaway of weapons on the beggining of a 'round'. "+
+"giveaway of weapons on the beginning of a 'round'. "+
 "Players have to earn weapons by picking them up in the map. "+
 "This entity can also be used for automatically giving "+
 "a Gravity Gun at the beggining of a round. This is isolated "+
@@ -9383,15 +10188,32 @@
 		0 : "Unarmed"
 		1 : "Melee"
 		2 : "All weapons (default)"
+		3 : "Melee and secondary"
 	]
 	
 	physcannon_progress(choices) : "Give the Gravity Gun on round start?" : 0 : "Gives the Gravity Gun to all players on the beginning of a round." =
 	[
 		0 : "No"
-		1 : "Yes"
+		1 : "Regular Physcannon"
+		2 : "Mega"
 	]
 	
-	input SetWeaponProgress(integer) : "Sets weapon progress." // either buggy or I fecked something up
+	portalgun_progress(choices) : "Give the Portal Gun on spawn" : 0 : "Gives the Portal gun on spawn." =
+	[
+		0 : "No"
+		1 : "Blue Portal Only"
+		2 : "Both Portals"
+	]
+	
+	progression_paused(choices) : "Progression Paused" : 0 : "Pause progression at the current stage." =
+	[
+		0 : "Enable progression"
+		1 : "Pause progression"
+	]
+	
+	input SetWeaponProgress(integer) : "Sets weapon progress."
+	input SetPhyscannonProgress(integer) : "Sets Physcannon progress."
+	input SetProgressionPaused(integer) : "Prevent or allow weapon progression."
 ]
 
 @PointClass base(Targetname) iconsprite("editor-lfe/lfe_weapon_progress.vmt") = lfe_team_weapon_manager : ""
@@ -9497,11 +10319,13 @@
 		1 : "Percentage"
 	]
 
-	//UseHud(choices) : "Use HUD" : 1 : "Should we use the HUD to display the number of players?" =
-	//[
-	//	0 : "No"
-	//	1 : "Yes"
-	//]
+	UseHud(choices) : "Use HUD" : 1 : "Use HUD to display the number of players?" =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	Target(string) : "Sets the target entity to teleport players to when using TeleportPlayersNotTouching"
 
 	PlayerValue(integer) : "Number of Players" : 50 : "The value this trigger will use to compare with.  Use value range of 0 - 100 for percentage."
 
@@ -9509,6 +10333,50 @@
 	output OnPlayersOut(void) : "This gets fired after the player count drops below the requirement."
 	
 	input Toggle(void) : "Toggles this trigger between enabled and disabled states."
+	input TeleportPlayersNotTouching(void) : "Toggles this trigger between enabled and disabled states."
+]
+
+@PointClass base(Targetname, Angles) color(0 255 0) studio() = info_vehicle_spawn : "Vehicle Spawn Entity keeps a vehicle for every player, with options to relocate vehicles upon certain conditions."
+[
+	model(studio) : "Vehicle Model Name" : ""
+
+	StartEnabled(choices) : "Start Enabled" : 1 : "Initial state of the vehicle spawn." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	StartGunEnabled(choices) : "Start with gun enabled" : 1 : "Vehicles will spawn with guns." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+
+	VehicleType(choices) : "Vehicle Type" : 1 : "Type of vehicle this spawn will use." =
+	[
+		1 : "Jeep"
+		2 : "Airboat"
+		3 : "Jalopy"
+		4 : "Jeep again"
+	]
+
+	//RespawnVehicle(choices) : "Respawn Vehicle" : 0 : "Respawn vehicles if the players die." =
+	//[
+	//	0 : "No"
+	//	1 : "Yes"
+	//]
+
+	VehicleScript(string) : "Vehicle Script" : "scripts/vehicles/jeep_test.txt" : "Vehicle Script File"
+	VehicleSize(integer) : "Vehicle Spawn Size" : 192 : "Radius at which active vehicle must exit before spawning the next vehicle."
+
+	input Enable(void) : "Enable the use of the vehicles."
+	input Disable(void) : "Disable use of the vehicles."
+	input EnableGun(void) : "Enables vehicles from this spawner to have mounted guns."
+	input DisableGun(void) : "Disables vehicles from this spawner from having mounted guns."
+	input ResetEmpty(void) : "Removes vehicles spawned by this spawner that have nobody in them."
+	input ResetAll(void) : "Removed vehicles spawned by this spawner and kicks players out."
+
+	output OnSpawnVehicle(void) : "Fired when a vehicle is spawned, the !activator will be the vehicle."
 ]
 
 @PointClass base(Targetname, Parentname) = logic_mirror_movement :
@@ -9531,16 +10399,18 @@
 	output OnCoOp(void) : "Fired when the map spawns in coop games."
 	output OnBluCoOp(void) : "Fired when the map spawns in blu coop games."
 	output OnVersus(void) : "Fired when the map spawns in versus games."
-	//output OnHorde(void) : "Fired when the map spawns in horde games."
+	output OnHorde(void) : "Fired when the map spawns in horde games."
 	output OnFree(void) : "Fired when the map spawns in free mode."
 	output OnInfection(void) : "Fired when the map spawns in infection mode."
+	output OnDeathmatch(void) : "Fired when the map spawns in deathmatch mode."
 
 	output OnCoOpPostIO(void) : "Fired after all entity IO generated by OnCoOp has finished."
 	output OnBluCoOpPostIO(void) : "Fired after all entity IO generated by OnBluCoOp has finished."
 	output OnVersusPostIO(void) : "Fired after all entity IO generated by OnVersus has finished."
-	//output OnHordePostIO(void) : "Fired after all entity IO generated by OnHorde has finished."
+	output OnHordePostIO(void) : "Fired after all entity IO generated by OnHorde has finished."
 	output OnFreePostIO(void) : "Fired after all entity IO generated by OnFree has finished."
 	output OnInfectionPostIO(void) : "Fired after all entity IO generated by OnInfection has finished."
+	output OnDeathmatchPostIO(void) : "Fired after all entity IO generated by OnDeathmatch has finished."
 
 	//output OnNavAnalyze(void) : "Fired when the map is loaded with -navanalyze on the command line."
 ]
@@ -9855,6 +10725,12 @@
 
 @PointClass base(Targetname, Parentname, BaseNPC, Angles, EnableDisable, TeamNum) studio("models/bots/skeleton_sniper/skeleton_sniper.mdl") = tf_zombie : "Skeleton" []
 
+@PointClass base(Targetname, Parentname, BaseNPC, Angles, EnableDisable, TeamNum) studio("models/zombie/merczombie.mdl") = npc_zombie_fc : "Zombie Merc" []
+
+@PointClass base(Targetname, Parentname, BaseNPC, Angles, EnableDisable, TeamNum) studio("models/zombie/merczombie.mdl") = npc_infected_fc : "Infected Merc" []
+
+@PointClass base(Targetname, Parentname, BaseNPC, Angles, EnableDisable, TeamNum) studio("models/Zombie/Classic.mdl") = npc_infected : 	"L4D1 Infected" []
+
 @PointClass base(Targetname) studio("models/items/ammopack_medium.mdl") = tf_ammo_pack : "Dropped AmmoPack"
 [
 	model(studio) : "Model" : "" : "Change the model to something other than the default model." 
@@ -9882,6 +10758,28 @@
 	input SetMaxActiveZombies(integer) : "Max number of zombies"
 ]
 
+@PointClass base(Targetname, Angles) studio("models/zombie/merczombie.mdl") = fc_zombie_spawner : "Entity that spawns the merc zombie whooo scary."
+[
+	zombie_scale(float) : "Merc Scale" : 1 : "Scale the merc"
+	zombie_lifetime(float) : "Merc Life Time" : 0 : "Merc life time in seconds. 0 means zombies will stay alive until they're dead."
+	max_zombies(integer) : "Merc Count" : 1 : "Number of underpaid undead men this point can have active in the world."
+	infinite_zombies(choices)		: "Infinite Spawn"		: 0	: "If Yes, keep spawning the silly man." =
+	[
+		0 : "NO"
+		1 : "Yes"
+	]
+	zombie_type(choices)		: "Zombie Type"		: 0	: "Type of Merc." =
+	[
+		0 : "NORMAL"
+		1 : "TEST"
+	]
+
+	// Inputs
+	input Enable(void) : "Enable zombie spawn point."
+	input Disable(void) : "Disable zombie spawn point."
+	input SetMaxActiveZombies(integer) : "Max number of zombies"
+]
+
 @PointClass base(Item) studio("models/items/currencypack_large.mdl") = item_currencypack_large : "Large Credits Pickup" []
 
 @PointClass base(Item) studio("models/items/currencypack_medium.mdl") = item_currencypack_medium : "Medium Credits Pickup" []
@@ -9889,6 +10787,139 @@
 @PointClass base(Item) studio("models/items/currencypack_small.mdl") = item_currencypack_small : "Small Credits Pickup" []
 
 @PointClass base(Item) studio("models/items/currencypack_small.mdl") = item_currencypack_custom : "Custom Credits Pickup" []
+
+@PointClass base(Targetname) iconsprite("editor/logic_relay.vmt") = logic_currencymanager :
+	"An entity that is used to give currency to the activator or all players"
+[
+	input GiveCurrency(integer) : "Give this much currency to the activator."
+	input GiveCurrencyToAll(integer) : "Give this much currency to all players."
+]
+
+@PointClass base(Targetname,Parentname) iconsprite("editor/bullseye.vmt") = halloween_zapper : 
+	"Halloween Hell Zapper" 
+[
+	touch_trigger(target_destination) : "Custom Touch Trigger"
+	ParticleEffect(string)	: "Particle Effect"	: ""	: "The particle effect to be played when we fired."
+	ZapperType(choices) : "Zapper Type" : 0 : "Type of zapper." =
+	[
+		0 : "Zap on touch"
+		1 : "Zap only on input"
+	]
+
+	input ZapTouching(void) : "Zap all touching players."
+]
+
+@SolidClass base(Trigger, Targetname, EnableDisable, Toggle) = trigger_player_respawn_override : "Respawn Override"
+[
+	RespawnTime(float) : "Respawn Time" : -1 : "The number of seconds before players that die inside the volume of this trigger can respawn.  Setting -1 will allow the game to decide."
+	RespawnName(string) : "Respawn Entity Name" : "" : "The name of the player team spawn(s) to use when a player dies in this volume."
+
+	// Inputs
+	input SetRespawnTime(float) : "The number of seconds before players that die inside the volume of this trigger can respawn."
+	input SetRespawnName(string) : "The name of the info_player_teamspawn to use when players die inside the volume of this trigger."
+	input Enable(void) : "Enable"
+	input Disable(void) : "Disable"
+]
+
+@PointClass base(Targetname, Studiomodel) = prop_soccer_ball : "Soccer Ball"
+[
+	trigger_name(string) : "Trigger Name" : "" : "The name of the trigger(s) to try and touch"
+]
+
+@BaseClass = MiniGame
+[	
+	// Inputs
+	input ReturnFromMinigame(void) : "Force players to return from the current minigame."
+	input TeleportToMinigame(integer) : "Teleport to a specific minigame."
+	input TeleportToRandomMinigame(void) : "Teleport to a random minigame"
+	input SetAdvantageTeam(string) : "Set which team has the advantage."
+]
+
+@PointClass base(Targetname,MiniGame) = tf_logic_minigames : "Minigame mode logic."
+[
+]
+
+@PointClass base(Targetname) = tf_base_minigame : "Base minigame"
+[
+	RedSpawn(target_source) : "Red Spawn Name" : "" : "The name of the spawnpoints for RED for this minigame"
+	BlueSpawn(target_source) : "Blue Spawn Name" : "" : "The name of the spawnpoints for BLUE for this minigame"
+	InRandomPool(choices) : "Put in Random Pool" : 1 : "If Yes, allowed to be chosen when told to go to a random minigame" =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	MaxScore(integer) : "Max Score" : 5 : "When a team hits this score, the On<Team>HitMaxScore output will be fired"
+	hud_res_file(string) : "HUD Res File" : "" : "Res file to use for this minigame"
+	your_team_score_sound(string) : "Your Team Score Sound" : "" : "Sound file to play when your team scores a point"
+	enemy_team_score_sound(string) : "Enemy Team Score Sound" : "" : "Sound file to play when the enemy team scores a point"
+	ScoreType(choices) : "Scoring Type" : 0 : "What to use for scoring" =
+	[
+		0 : "Points"
+		1 : "Players alive"
+	]
+	SuddenDeathTime(float) : "Sudden Death Time" : -1 : "Time til sudden death starts (-1 for sudden death)"
+
+	// Inputs
+	input ScoreTeamRed(integer) : "Give points to team RED"
+	input ScoreTeamBlue(integer) : "Give points to team BLUE"
+	input ReturnFromMinigame(void) : "Force players to return from the current minigame."
+	input ChangeHudResFile(string) : "Change the HUD resource file."
+
+	// Outputs
+	output OnReturnFromMinigame(void) : "Sent when players return from this minigame."
+	output OnTeleportToMinigame(void) : "Sent when players arrive in this minigame."
+	output OnRedHitMaxScore(void) : "Sent RED hits the max score for this minigame."
+	output OnBlueHitMaxScore(void) : "Sent BLUE hits the max score for this minigame."
+	output OnAllRedDead(void) : "Sent when the entire RED team is dead."
+	output OnAllBlueDead(void) : "Send when the entire BLUE team is dead."
+	output OnSuddenDeathStart(void) : "Sent when sudden death starts."
+]
+
+@PointClass base(Targetname,tf_base_minigame) = tf_halloween_minigame : "Halloween 2014 Minigame"
+[
+	MinigameType(choices) : "Minigame Type" : 1 : "Which minigame is this" =
+	[
+		1 : "Halloween Collection"
+		2 : "Halloween Platforms"
+		3 : "Halloween Soccer"
+	]
+
+	input KartWinAnimationRed(void) : "Play win animation for all players in kart on team RED"
+	input KartWinAnimationBlue(void) : "Play win animation for all players in kart on team BLUE"
+	input KartLoseAnimationRed(void) : "Play lose animation for all players in kart on team RED"
+	input KartLoseAnimationBlue(void) : "Play lose animation for all players in kart on team BLUE"
+
+	input EnableSpawnBoss(string) : "Spawn Halloween boss HHH at specified target entity"
+	input DisableSpawnBoss(void) : "Stop spawning Halloween boss"
+]
+
+@PointClass base(Targetname,tf_halloween_minigame) = tf_halloween_minigame_falling_platforms : "Halloween 2014 Falling Platform Minigame"
+[
+	input ChoosePlatform(void) : "Fire to get the next SAFE platform and the next platform that wont come back"
+
+	output OutputSafePlatform(void) : "Sends the index of the SAFE platform."
+	output OutputRemovePlatform(void) : "Sends the index of the platform that shouldn't come back."
+]
+
+@PointClass base(Targetname,Origin,Angles) studio("models/bots/merasmus/merasmas_misfortune_teller.mdl") = halloween_fortune_teller : "Halloween Fortune Teller trigger" 
+[
+	red_teleport(string) : "Red Teleport Entity" : "" :  "Where to teleport the red team"
+	blue_teleport(string) : "Blue Teleport Entity" : "" : "Where to teleport the blue team"
+
+	input EnableFortuneTelling( void) :"Enable fortune telling"
+	input DisableFortuneTelling( void) :"Disable fortune telling"
+	input StartFortuneTelling(void) : "Start fortune telling"
+	input EndFortuneTelling(void) : "Stop the current fortune" 
+
+	output OnFortuneWarning(void) : "Sent before a fortune will be told."
+	output OnFortuneTold(void) : "Sent when a fortune is told."
+	output OnFortuneCurse(void) : "Sent when a fortune curse all players"
+	output OnFortuneEnd(void) : "Sent when a fortune is ended."
+]
+
+@PointClass base(Targetname,Origin,Angles) = tf_teleport_location : "Players teleport locations which will be delete on round start"
+[
+]
 
 @PointClass base(Targetname) = point_event_proxy : "An entity that allows fires simple game events from map logic"
 [
@@ -9916,42 +10947,41 @@
 	input GenerateGameEvent(void) : "Generate my game event. (This entity is sent as the SUBJECT)"
 ]
 
-@PointClass base(Targetname) iconsprite("editor/env_instructor_hint.vmt") = env_instructor_hint : "An entity that allows for creation and control of instructor lessons by map logic"
+@PointClass base(Targetname) = env_instructor_hint : "An entity that allows for creation and control of instructor lessons by map logic"
 [
+	hint_replace_key(string) : "Replace Key" : : "Unique name so that messages with the same key will replace each other."
 	hint_target(target_destination) : "Target Entity" : : "The entity to show this hint on top of. The entity used must exist on the client, info_target_instructor_hint can be parented to server only entities for this purpose."
-
-	hint_name(string) : "Lesson Name" : : "Hints with the same lesson name use a common base and are treated as instances the same lesson type."
-
 	hint_static(Choices) : "Positioning" : 0 : "Either show at the position of the Target Entity. Or show the hint directly on the hud at a fixed position." =
 	[
 		0 : "Follow the Target Entity"
 		1 : "Show on the hud"
 	]
-
+	
 	hint_allow_nodraw_target(Choices) : "Allow invisible target" : 1 : "Do we allow the hint to follow entites with nodraw set?" =
 	[
 		0 : "End immediately on nodraw"
 		1 : "Yes"
 	]
-
+	
 	hint_caption(string) : "Caption" : : "The text of your hint."
+	hint_activator_caption(string) : "Activator Caption" : : "The text of your hint shown to only the activating player."
 	hint_color(color255) : "Caption Color" : "255 255 255" : "The color of the caption text"
 	hint_forcecaption(Choices) : "Force caption" : 0 : "Do we show the caption text even if the hint is occluded by a wall?" =
 	[
 		0 : "No"
 		1 : "Show when occluded"
 	]
-
+	
 	hint_icon_onscreen(Choices) : "Onscreen Icon" : "icon_tip" : "The icon to use when the hint is within the player's view." =
 	[
-		"icon_tip" : "icon_tip"
-		"icon_info" : "icon_info"
-		"icon_shield" : "icon_shield"
+		"icon_bulb" : "icon_bulb"
+		"icon_caution" : "icon_caution"
 		"icon_alert" : "icon_alert"
 		"icon_alert_red" : "icon_alert_red"
 		"icon_tip" : "icon_tip"
 		"icon_skull" : "icon_skull"
 		"icon_no" : "icon_no"
+		"icon_run" : "icon_run"
 		"icon_interact" : "icon_interact"
 		"icon_button" : "icon_button"
 		"icon_door" : "icon_door"
@@ -9960,19 +10990,21 @@
 		"icon_arrow_plain_white_up" : "icon_arrow_plain_white_up"
 		"icon_arrow_up" : "icon_arrow_up"
 		"icon_arrow_right" : "icon_arrow_right"
+		"icon_fire" : "icon_fire"
+		"icon_present" : "icon_present"
 		"use_binding" : "show key bindings"
 	]
-
+	
 	hint_icon_offscreen(Choices) : "Offscreen Icon" : "icon_tip" : "The icon to use when the hint is outside the player's view." =
 	[
-		"icon_tip" : "icon_tip"
-		"icon_info" : "icon_info"
-		"icon_shield" : "icon_shield"
+		"icon_bulb" : "icon_bulb"
+		"icon_caution" : "icon_caution"
 		"icon_alert" : "icon_alert"
 		"icon_alert_red" : "icon_alert_red"
 		"icon_tip" : "icon_tip"
 		"icon_skull" : "icon_skull"
 		"icon_no" : "icon_no"
+		"icon_run" : "icon_run"
 		"icon_interact" : "icon_interact"
 		"icon_button" : "icon_button"
 		"icon_door" : "icon_door"
@@ -9981,14 +11013,16 @@
 		"icon_arrow_plain_white_up" : "icon_arrow_plain_white_up"
 		"icon_arrow_up" : "icon_arrow_up"
 		"icon_arrow_right" : "icon_arrow_right"
+		"icon_fire" : "icon_fire"
+		"icon_present" : "icon_present"
 	]
-
+	
 	hint_nooffscreen(Choices) : "Show offscreen" : 0 : "When the hint is offscreen, do we show an icon and arrow?" =
 	[
 		0 : "Show"
 		1 : "Don't show"		
 	]
-
+	
 	hint_binding(string) : "Bound Command" : : "If using 'show key bindings' for the onscreen icon, this field should be the command we want to show bindings for"
 	hint_icon_offset(float) : "Icon Height Offset" : 0 : "A height offset from the target entity's origin to display the hint"
 	hint_pulseoption(Choices) : "Size Pulsing" : 0 : "The icon size can pulsate" =
@@ -9998,7 +11032,7 @@
 		2 : "Fast Pulse"
 		3 : "Urgent Pulse"
 	]
-
+	
 	hint_alphaoption(Choices) : "Alpha Pulsing" : 0 : "The icon alpha can pulsate" =
 	[
 		0 : "No Pulse"
@@ -10006,7 +11040,7 @@
 		2 : "Fast Pulse"
 		3 : "Urgent Pulse"
 	]
-
+	
 	hint_shakeoption(Choices) : "Shaking" : 0 : "The icon can shake" =
 	[
 		0 : "No Shaking"
@@ -10014,32 +11048,12 @@
 		2 : "Wide Shake"
 	]
 
+	hint_local_player_only(boolean) : "Only Local Player" : "No" : "The hint will only be shown to the local player."
+	
 	hint_timeout(integer) : "Timeout" : 0 : "The automatic timeout for the hint. 0 will persist until stopped with EndHint."
-	hint_display_limit(integer) : "Display Limit" : 0 : "The number of times a hint can be seen. 0 means unlimited."
-	hint_range(float) : "Display Range" : 0 : "The visible range of the hint. 0 will show it at any distance."
-
-	// New field - setting default to 2 to match the default for all previously shipped instances of this entity
-	hint_instance_type(Choices) : "Instance Type" : 2 : "How many instances of a single lesson type can be open or active at the same time" =
-	[
-		0 : "Multiple"
-		1 : "Single Open"
-		2 : "Fixed Replace"
-		3 : "Single Active"
-	]
-
-	hint_auto_start(Choices) : "Show on First Sight" : 1 : "When the player first sees it, it will automatically show for them." =
-	[
-		0 : "No"
-		1 : "Yes"
-	]
-
-	hint_suppress_rest(Choices) : "Suppress rest before moving" : 0 : "Suppress the initial icon display in center of screen?" =
-	[
-		0 : "No"
-		1 : "Yes"
-	]
-
-	input ShowHint(void) : "Start showing the hint. If an entity name is passed as a parameter, the hint is shown only to that entity."	
+	hint_range(float) : "Display Range" : 0 : "The visible range of the hint."	
+	
+	input ShowHint(string) : "Start showing the hint. If an entity name is passed as a parameter, the hint is shown only to that entity."	
 	input EndHint(void) : "Stop showing the hint if it hasn't already timed out."
 ]
 
@@ -10173,4 +11187,17 @@
 
 	// Outputs
 	output OnFoundEntity(void) : "Fired when FindEntity is input and an entity was found. Passes the found entity as !Caller."
+]
+
+@PointClass base(Item)  studio("models/weapons/w_models/w_shotgun.mdl") = tf_weapon_spawner :
+	"Shit Weapon spawner."
+[
+	model(studio) : "Model" : "" : "Overwrite the default model with a custom one."
+	itemid(integer) : "Item ID" : 1 : "The weapon id (from items_game.txt) to use for the spawner."
+	itemcost(integer) : "Price" : 0 : "The cost of the weapon, default if 0."
+
+	output OnPurchaseSuccessful(void) : ""
+	output OnPurchaseFailure(void) : ""
+	output OnAmmoTaken(void) : ""
+	output OnItemTaken(void) : ""
 ]
