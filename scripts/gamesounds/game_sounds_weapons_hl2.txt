@@ -500,7 +500,7 @@
 
 "Weapon_PhysCannon.OpenClaws"
 {
-	"channel"		"CHAN_VOICE"
+	"channel"		"CHAN_WEAPON"
 	"volume"		"0.2"
 	"soundlevel"	"SNDLVL_NORM"
 
@@ -509,7 +509,7 @@
 
 "Weapon_PhysCannon.CloseClaws"
 {
-	"channel"		"CHAN_VOICE"
+	"channel"		"CHAN_WEAPON"
 	"volume"		"0.2"
 	"soundlevel"	"SNDLVL_NORM"
 
@@ -556,7 +556,7 @@
 
 "Weapon_MegaPhysCannon.ChargeZap"
 {
-	"channel"		"CHAN_VOICE"
+	"channel"		"CHAN_WEAPON"
 	"volume"		"0.1"
 	"soundlevel"	"SNDLVL_NORM"
 	"pitch"		"90,110"
@@ -1159,7 +1159,7 @@
 
 "WeaponFrag.Throw"
 {
-	"channel"	"CHAN_VOICE"
+	"channel"	"CHAN_WEAPON"
 	"volume"	"0.7"
 	"soundlevel"  "SNDLVL_75dB"
 
@@ -1168,7 +1168,7 @@
 
 "WeaponFrag.Roll"
 {
-	"channel"	"CHAN_VOICE"
+	"channel"	"CHAN_WEAPON"
 	"volume"	"0.7"
 	"soundlevel"  "SNDLVL_75dB"
 
