@@ -1,0 +1,38 @@
+"gamemounting.txt"
+{
+	"Entropy Zero 2"
+	{
+		"appid"	"1583720"
+		"required"	"0"
+		"sourcemod"	"0"
+		"showinmenu"	"1"
+		"contenttag"	"ezero2"
+		// Blue Co-op
+		"gamemode"	"3"
+
+		"paths"
+		{
+			"path"			"mapbase/episodic/episodic_mapbase_content_dir.vpk"
+			"path"			"mapbase/episodic/episodic_materials_dir.vpk"
+			"path"			"mapbase/episodic/episodic_scenes_dir.vpk"
+			"path"			"mapbase/hl2"
+			"path"			"mapbase/hl2/hl2_mapbase_content_dir.vpk"
+			"path"			"mapbase/hl2/hl2_materials_dir.vpk"
+			"path"			"mapbase/hl2/hl2_scenes_dir.vpk"
+			"path"			"mapbase/hl2/lostcoast_materials_dir.vpk"
+			"path"			"mapbase/css_weapons_in_hl2/content"
+			"path"			"mapbase/css_weapons_in_hl2/content/css_weapons_in_hl2_content_dir.vpk"
+			"path"			"mapbase/shared"
+			"path"			"mapbase/shared/shared_content_v7_0.vpk"
+			"path"			"entropyzero2/ez2/ez2_dir.vpk"
+			"path"			"entropyzero2/ez2"
+			"path"			"entropyzero2"
+			"path"			"mapbase/episodic"
+			"path"			"hl2/hl2_lv.vpk"
+			"path"			"ep2/ep2_english_dir.vpk"
+			"path"			"ep2/ep2_pak_dir.vpk"
+			"path"			"episodic/ep1_english_dir.vpk"
+			"path"			"episodic/ep1_pak_dir.vpk"
+		}
+	}
+}

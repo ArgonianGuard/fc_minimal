@@ -59,6 +59,9 @@
 			"dedicated"		"hl2/hl2_textures_dir.vpk"
 			"dedicated"		"hl2/hl2_pak_dir.vpk"
 			"dedicated"		"hl2"
+			"dedicated"		"lostcoast/lostcoast_sound_vo_english.vpk"
+			"dedicated"		"lostcoast/lostcoast_pak.vpk"
+			"dedicated"		"lostcoast"
 		}
 	}
 
@@ -70,13 +73,9 @@
 		
 		"paths"
 		{
-			"local"			"lostcoast"
-			"local"			"lostcoast/lostcoast_sound_vo_english.vpk"
-			"local"			"lostcoast/lostcoast_pak.vpk"
-			
-			"dedicated"		"lostcoast"
-			"dedicated"		"lostcoast/lostcoast_sound_vo_english.vpk"
-			"dedicated"		"lostcoast/lostcoast_pak.vpk"
+			"path"			"lostcoast/lostcoast_sound_vo_english.vpk"
+			"path"			"lostcoast/lostcoast_pak.vpk"
+			"path"			"lostcoast"
 		}
 	}
 

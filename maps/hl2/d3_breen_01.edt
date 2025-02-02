@@ -256,10 +256,10 @@ d3_breen_01
 		}
 		
 		//balimbanana fix
-		create {classname "func_tracktrain" origin "-2436 -1406 159" values {targetname "syn_podtrain" target "syn_podpath1" angles "90 -90 0" speed "70" orientationtype "1"} }
-		edit {targetname "pod" values {DisableShadows "1" parentname "syn_podtrain"} }
-		create {classname "path_track" origin "-2430 -1386 110" values {targetname "syn_podpath1" angles "0 0 0" target "syn_podpath2"} }
-		create {classname "path_track" origin "-2430 -1386 667" values {targetname "syn_podpath2" angles "0 0 0" target "syn_podpath3" OnPass "pod,SetParent,Breen_arm_player,1,-1" OnPass "pod,SetParentAttachment,eli_pod_inner_attachment,1.1,-1"} }
+		//create {classname "func_tracktrain" origin "-2436 -1406 159" values {targetname "syn_podtrain" target "syn_podpath1" angles "90 -90 0" speed "70" orientationtype "1"} }
+		//edit {targetname "pod" values {DisableShadows "1" parentname "syn_podtrain"} }
+		//create {classname "path_track" origin "-2430 -1386 110" values {targetname "syn_podpath1" angles "0 0 0" target "syn_podpath2"} }
+		//create {classname "path_track" origin "-2430 -1386 667" values {targetname "syn_podpath2" angles "0 0 0" target "syn_podpath3" OnPass "pod,SetParent,Breen_arm_player,1,-1" OnPass "pod,SetParentAttachment,eli_pod_inner_attachment,1.1,-1"} }
 
 
 		// do not do the getup scene
@@ -490,6 +490,8 @@ d3_breen_01
 		edit {targetname "target_follow_camera" values {spawnflags "1"} }
 		edit {targetname "target_measure_player_2" values {spawnflags "1"} }
 		edit {targetname "target_follow_camera_2" values {spawnflags "1"} }
+		
+		edit {classname "logic_measure_movement" values {spawnflags "16"} }
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d3_breen_01"} }
