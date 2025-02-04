@@ -59,6 +59,7 @@ d1_trainstation_01
 		create {classname "info_player_coop" origin "-14576 -14208 -1300"
 			values {angles "0 0 0" targetname "syn_spawn_player_1"} }
 			
+		create {classname "fc_logic_coop"}
 		create {classname "fc_weapon_progress"
 			values
 			{

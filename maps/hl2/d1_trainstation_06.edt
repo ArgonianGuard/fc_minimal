@@ -21,6 +21,7 @@ d1_trainstation_06
 			}
 		}
 		
+		create {classname "fc_logic_coop"}
 		create {classname "fc_weapon_progress"
 			values
 			{
