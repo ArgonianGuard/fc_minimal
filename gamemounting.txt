@@ -7,19 +7,12 @@
 		
 		"paths"
 		{
-			"local"			"tf/tf2_sound_misc_dir.vpk"
-			"local"			"tf/tf2_textures_dir.vpk"
-			"local"			"tf/tf2_misc_dir.vpk"
-			"local"			"tf/tf2_sound_vo_english_dir.vpk"
-			"local"			"tf/downloads"
-			"local"			"tf"
-
-			"dedicated"		"tf/tf2_sound_misc_dir.vpk"
-			"dedicated"		"tf/tf2_textures_dir.vpk"
-			"dedicated"		"tf/tf2_misc_dir.vpk"
-			"dedicated"		"tf/tf2_sound_vo_english_dir.vpk"
-			"dedicated"		"tf/downloads"
-			"dedicated"		"tf"
+			"path"			"tf/tf2_sound_misc_dir.vpk"
+			"path"			"tf/tf2_textures_dir.vpk"
+			"path"			"tf/tf2_misc_dir.vpk"
+			"path"			"tf/tf2_sound_vo_english_dir.vpk"
+			"path"			"tf/downloads"
+			"path"			"tf"
 		}
 	}
 
@@ -86,14 +79,10 @@
 		"notmainmenu"	"1"
 		
 		"paths"
-		{                                                
-                        "local"                 "portal/portal_sound_vo_english.vpk"
-			"local"			"portal/portal_pak.vpk"
-			"local"			"portal"
-			
-                        "dedicated"             "portal/portal_sound_vo_english.vpk"
-			"dedicated"		"portal/portal_pak.vpk"
-			"dedicated"		"portal"
+		{
+			"path"			"portal/portal_sound_vo_english.vpk"
+			"path"			"portal/portal_pak.vpk"
+			"path"			"portal"
 		}
 	}
 }
