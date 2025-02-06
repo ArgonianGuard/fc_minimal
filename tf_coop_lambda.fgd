@@ -2619,7 +2619,7 @@
 	output OnTruceEnd(void) : "Sent when a truce ends."
 ]
 
-@PointClass base(PlayerClass, Angles) studio("models/editor/playerstart.mdl") = info_player_coop : "This entity indicates the position and facing direction at which the player will spawn in co-op modes." []
+@PointClass base(Targetname, PlayerClass, Angles) studio("models/player/spy.mdl") = info_player_coop : "This entity indicates the position and facing direction at which the player will spawn in co-op modes." []
 
 @PointClass base(Targetname, Parentname, TeamNum, EnableDisable, Angles) studio("models/player/heavy.mdl") = info_player_teamspawn :
 	"This entity marks the spawn point for Team Fortress players."
@@ -3490,14 +3490,20 @@
 	// Outputs
 	output OnOwnerChangedToTeam1(void) : "Sent when owner is changed to RED."
 	output OnOwnerChangedToTeam2(void) : "Sent when owner is changed to BLUE."
+	output OnOwnerChangedToTeam3(void) : "Sent when owner is changed to GREEN."
+	output OnOwnerChangedToTeam4(void) : "Sent when owner is changed to YELLOW."
 
 	output OnCapReset(void) : "Sent when owner is changed to neutral."
 
 	output OnRoundStartOwnedByTeam1(void) : "Sent when a round is starting and the point is owned by RED."
 	output OnRoundStartOwnedByTeam2(void) : "Sent when a round is starting and the point is owned by BLUE."
+	output OnRoundStartOwnedByTeam3(void) : "Sent when a round is starting and the point is owned by GREEN."
+	output OnRoundStartOwnedByTeam4(void) : "Sent when a round is starting and the point is owned by YELLOW."
 
 	output OnCapTeam1(void) : "Sent when RED capture this point."
 	output OnCapTeam2(void) : "Sent when BLUE capture this point."
+	output OnCapTeam3(void) : "Sent when GREEN capture this point."
+	output OnCapTeam4(void) : "Sent when YELLOW capture this point."
 
 	output OnUnlocked(void) : "Sent when point is unlocked via the SetLocked(0) or SetUnlockTime inputs."
 	
@@ -3619,6 +3625,12 @@
 	team_spawn_3(integer) : "Blue Spawn Adjust" : 0 : "Adjust the minimum respawn time for the blue team by this amount (in seconds) when blue captures this point. If the blue team owns this point when red captures it, this adjustment is reversed."
 
 	area_time_to_cap(integer) : "Time to cap (sec)" : 5
+	
+	spawnflags(flags) = 
+	[
+		1: "Players Only" : 0
+		2: "NPCs Only" : 0
+	]
 
 	// Outputs
 	output OnStartTeam1(void) : "Sent when RED start capture."
@@ -4659,11 +4671,17 @@
 		2 : "Jeep"
 		3 : "Jalopy"
 	]
+	enablegun(choices) : "Vehicles have turrets" : 0 =
+	[
+		0 : "Disabled"
+		1 : "Enabled"
+	]
 	
 	input EnableVehicles(void) : "Enable spawning vehicles."
 	input DisableVehicles(void) : "Disable spawning vehicles."
 	input ToggleVehicles(void) : "Toggle spawning vehicles."
 	input SetVehicleType(integer) : "Set type of vehicle to spawn, if set to 0 spawning is disabled."
+	input SetVehicleEnableGun(integer) : "Turns vehicle turrets on or off."
 ]
 
 @PointClass base(Targetname) iconsprite("editor-lfe/lfe_logic_coop.vmt") = fc_logic_zombie : "Forced Zombie Co-op Logic" []
@@ -6430,6 +6448,60 @@
 	output OnStunnedPlayer(void) : "Fires when the player is hit by a stunstick by this NPC."
 	output OnCupCopped(void) : "Fires if the player hits me with the cupcop can. ONLY use for x360 achievement."
 ]
+
+@NPCClass base(BaseNPC,RappelNPC) studio("models/elitepolice.mdl") = npc_elitepolice : "ElitePolice"
+[
+	additionalequipment(choices) : "Weapons" : "weapon_pistol" =
+	[
+		"weapon_pistol" : "Pistol"
+		"weapon_smg1"  : "SMG1"
+		"weapon_ar2"  : "AR2"
+		"weapon_stunstick"  : "Stun Stick"
+		"weapon_crowbar"  : "Crowbar"
+		"weapon_shotgun"  : "Shotgun"
+		"weapon_357"  : "357"
+		"weapon_crossbow"  : "Crossbow"
+		"weapon_rpg"  : "RPG"
+		"0"  : "Nothing"
+	]
+
+	manhacks(Choices) : "Number of Manhacks" : 0 =
+	[
+		1 : "1"
+		2 : "2"
+		3 : "3"
+		4 : "4"
+		5 : "5"
+		999999999999999999999999 : "Infinite"
+	]
+
+	weapondrawn(Choices) : "Pistol starts drawn" : 0 =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	spawnflags(Flags) =
+	[
+		262144 : "Rappel (UNCHECK THIS IF IT IS CHECKED!)" : 0
+		524288 : "Always stitch" : 0
+		1048576 : "No chatter" : 0
+		4194304 : "No far stitching" : 0
+		8388608 : "Prevent manhack toss" : 0
+		16777216: "Allowed to respond to thrown objects" : 0
+		33554432: "Mid-range attacks (halfway between normal + long-range)" : 0
+	]
+	  
+	// Inputs
+	input EnableManhackToss(void) : "Enables manhack toss (which had been disabled by the spawnflag)"
+	input SetPoliceGoal(string) : "Causes the NPC to police the area defined by an ai_goal_police"
+	input ActivateBaton(void) : "Set the baton to active"
+
+	// Outputs
+	output OnStunnedPlayer(void) : "Fires when the player is hit by a stunstick by this NPC."
+	output OnCupCopped(void) : "Fires if the player hits me with the cupcop can. ONLY use for x360 achievement."
+]
+
 
 @NPCClass base(BaseNPC) studio("models/Synth.mdl") = npc_crabsynth : "Crab Synth"
 [
@@ -8519,6 +8591,8 @@
 		"ACHIEVEMENT_EVENT_PORTAL_KILL_COMPANIONCUBE"					: "[PORTAL] Do whatever it takes to survive."
 		"ACHIEVEMENT_EVENT_PORTAL_ESCAPE_TESTCHAMBERS"					: "[PORTAL] Make the correct party escort submission position decision."
 		"ACHIEVEMENT_EVENT_PORTAL_BEAT_GAME"					: "[PORTAL] Complete Portal."
+		
+		"ACHIEVEMENT_EVENT_FC_SAVETUNNELGUY"					: "[FC] Save the massacre tunnel guy."
 	]
 
 	// Inputs
@@ -10374,7 +10448,7 @@
 	input TeleportPlayersNotTouching(void) : "Toggles this trigger between enabled and disabled states."
 ]
 
-@PointClass base(Targetname, Angles) color(0 255 0) studio() = info_vehicle_spawn : "Vehicle Spawn Entity keeps a vehicle for every player, with options to relocate vehicles upon certain conditions."
+@PointClass base(Targetname, Angles) color(0 255 0) iconsprite("editor-lfe/lfe_vehiclespawner.vmt") = info_vehicle_spawn : "Vehicle Spawn Entity keeps a vehicle for every player, with options to relocate vehicles upon certain conditions."
 [
 	model(studio) : "Vehicle Model Name" : ""
 
