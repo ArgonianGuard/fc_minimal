@@ -3106,7 +3106,7 @@
 			"act_as_wearable" "1"
 			"used_by_classes"
 			{
-				"soldier"	"1"
+				//"soldier"	"1"
                                 "demoman"       "primary"
 			}
 			"attributes"
@@ -36803,7 +36803,7 @@
 			"model_player"	"models/weapons/c_models/c_reserve_shooter/c_reserve_shooter.mdl"
 			"used_by_classes"
 			{
-				"heavy"	"secondary"
+				//"heavy"	"secondary"
 				"spy"	"primary"
 			}
 			"visuals"
