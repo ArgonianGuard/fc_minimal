@@ -51,7 +51,7 @@ DESCRIPTION SERVER_OPTIONS
 	{
 		"#Valve_Hostname"
 		{ STRING }
-		{ "Fortress Connected" }
+		{ "Fortress Connected Minimal" }
 	}
 
 	"maxplayers"
@@ -77,7 +77,8 @@ DESCRIPTION SERVER_OPTIONS
 		{
 			LIST
 			"#coplay_joinfilter_off"		"-1"
-			"#coplay_joinfilter_inviteonly"	"0"
+			// Only works on lobbies
+			//"#coplay_joinfilter_inviteonly"	"0"
 			"#coplay_joinfilter_friends"	"1"
 			"#coplay_joinfilter_anyone"		"2"
 		}
@@ -126,12 +127,12 @@ DESCRIPTION SERVER_OPTIONS
 		{ "1" }
 	}
 	
-	"fc_armor_enabled"
-	{
-		"Allow Armor"
-		{ BOOL }
-		{ "1" }
-	}
+	//"fc_armor_enabled"
+	//{
+	//	"Allow Armor"
+	//	{ BOOL }
+	//	{ "0" }
+	//}
 	
 	"mp_reset"
 	{
@@ -155,7 +156,7 @@ DESCRIPTION SERVER_OPTIONS
 	{
 		"#lfce_IdleKickTime"
 		{ NUMBER 0 60 }
-		{ "3" }
+		{ "10" }
 	}
 
 	"tf_weapon_criticals"
@@ -231,7 +232,7 @@ DESCRIPTION SERVER_OPTIONS
 	{
 		"#lfce_HL2Hull"
 		"#Tooltip_lfce_HL2Hull"
-		{ BOOL }
+		{ NUMBER 0 2 }
 		{ "1" }
 	}
 
@@ -352,13 +353,13 @@ DESCRIPTION SERVER_OPTIONS
 		{ "0" }
     }
 
-	"sv_hl1_hd"
-	{
-		"#lfce_HL1HDModels"
-		"#Tooltip_lfce_HL1HDModels"
-		{ BOOL }
-		{ "0" }
-	}
+	//"sv_hl1_hd"
+	//{
+	//	"#lfce_HL1HDModels"
+	//	"#Tooltip_lfce_HL1HDModels"
+	//	{ BOOL }
+	//	{ "0" }
+	//}
 	
 	"category3"
 	{
@@ -428,7 +429,55 @@ DESCRIPTION SERVER_OPTIONS
 		{ NUMBER -1 32 }
 		{ "-1" }
 	}
-
+	
+	//"fc_classlimit_civilian"
+	//{
+	//	"#TF_Class_Name_Civilian"
+	//	{ NUMBER -1 32 }
+	//	{ "-1" }
+	//}
+	
+	//"fc_classlimit_john"
+	//{
+	//	"#TF_Class_Name_John"
+	//	{ NUMBER -1 32 }
+	//	{ "-1" }
+	//}
+	
+	//"fc_classlimit_mercenary"
+	//{
+	//	"#TF_Class_Name_Mercenary"
+	//	{ NUMBER -1 32 }
+	//	{ "-1" }
+	//}
+	
+	//"fc_classlimit_combine"
+	//{
+	//	"#TF_Class_Name_Combine"
+	//	{ NUMBER -1 32 }
+	//	{ "-1" }
+	//}
+	
+	//"fc_classlimit_enforcer"
+	//{
+	//	"#TF_Class_Name_ZombieFast"
+	//	{ NUMBER -1 32 }
+	//	{ "-1" }
+	//}
+	
+	//"fc_classlimit_antlion"
+	//{
+	//	"#TF_Class_Name_Antlion"
+	//	{ NUMBER -1 32 }
+	//	{ "-1" }
+	//}
+	
+	//"fc_classlimit_saxton"
+	//{
+	//	"#TF_Class_Name_Saxton"
+	//	{ NUMBER -1 32 }
+	//	{ "-1" }
+	//}
 	"tf_bot_quota"
 	{
 		"#createserver_tf_bot_quota"
