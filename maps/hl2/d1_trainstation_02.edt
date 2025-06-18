@@ -31,15 +31,15 @@ d1_trainstation_02
 		create {classname "info_spawn_manager"
 			values {targetname "syn_spawn_manager"} }
 
-		create {classname "info_player_coop" origin "-4192 288 -63"
-			values {angles "0 225 0" targetname "syn_spawn_player_1"} }
+		create {classname "info_player_coop" origin "-4258 -100 -63"
+			values {angles "0 270 0" targetname "syn_spawn_player_1"} }
 		
 		create {classname "fc_logic_coop"}
 		create {classname "fc_weapon_progress"
 			values
 			{
 				targetname "weapon_progress"
-				wpnprogress "0"
+				wpnprogress "1"
 				physcannon_progress "0"
 			}
 		}
@@ -86,7 +86,7 @@ d1_trainstation_02
 				m_iszPostIdle "plazalean"} }
 
 		create {classname "npc_metropolice"
-			origin "-2144 -5072 87"
+			origin "-2144 -5072 100"
 			values {spawnflags "8708"//532
 				angles "0 120 0"
 				targetname "syn_vint_diff_cosmetic"
@@ -103,15 +103,11 @@ d1_trainstation_02
 				targetname "syn_vint_diff_cosmetic2"
 				angles "0 180 0"
 				model "models/combine_super_soldier.mdl"
-				additionalequipment "weapon_ar2" } }
-
-		create {classname "npc_combine_s"
-			origin "-2208 -1728 2"
-			values {spawnflags "418324"
-				angles "0 180 0"
-				targetname "syn_vint_diff_cosmetic2"
-				model "models/combine_super_soldier.mdl"
-				additionalequipment "weapon_ar2" } }
+				additionalequipment "weapon_ar2"
+				OnDamagedByPlayer "!self,AddOutput,spawnflags 0,0,-1"
+				
+				}
+			}
 
 //Trav|Edt - autirush
 		create {classname "trigger_coop"
@@ -168,6 +164,70 @@ d1_trainstation_02
 				fadeout "1.25"
 				holdtime "2"
 				fxtime "0.25"} }
+		
+		edit {targetname "apc_cop2" values {additionalequipment "weapon_pistol"} }
+		create {classname "ai_relationship" values {subject "npc_combine_s" target "npc_citizen" disposition "4" rank "99" Reciprocal "1" StartActive "1"} }
+		create {classname "logic_auto"
+			values
+			{
+				spawnflags "1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer gordon_criminal_global:TurnOff::1:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer shop_cop_dismount:CancelSequence::0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer playground_wallcop_script:CancelSequence::0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer apcidlescript2:CancelSequence::0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer terminal_side_police_goal:kill::0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer apc_police_goal:kill::0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer syn_vint_diff_cosmetic_1_ss:CancelSequence::0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer moraddedoutputs:Trigger::0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer npc_metropolice:SetEnemyFilter:notcitizens:0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer npc_citizen:SetRelationship:player D_FR 99:0:-1,0,-1"
+				OnMapSpawn "playground_cop_template,AddOutput,OnEntitySpawned setupdamaged:Trigger::1:-1,0,-1"
+			}
+		}
+		edit {classname "npc_metropolice" values {enemyfilter "notcitizens"} }
+		create {classname "logic_relay"
+			values
+			{
+				targetname "setupdamaged"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer gordon_criminal_global:TurnOff::1:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer playground_wallcop_script:CancelSequence::0:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer npc_metropolice:SetEnemyFilter:notcitizens:0:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer moraddedoutputs:Trigger::0:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer npc_citizen:SetRelationship:player D_FR 99:0:-1,0,-1"
+			}
+		}
+		create {classname "logic_relay"
+			values
+			{
+				targetname "moraddedoutputs"
+				OnTrigger "npc_combine_s,AddOutput,spawnflags 8192,0,-1"
+				OnTrigger "npc_combine_s,SetEnemyFilter,notcitizens,0,-1"
+			}
+		}
+		create {classname "filter_activator_class"
+			values
+			{
+				targetname "notcitizens"
+				filterclass "npc_citizen"
+				Negated "1"
+			}
+		}
+		
+		// Transition setup
+		create {classname "logic_auto"
+			values
+			{
+				globalstate "gordon_precriminal"
+				OnMapSpawn "moraddedoutputs,Disable,,0,-1"
+				OnMapSpawn "moraddedoutputs,Enable,,1.1,-1"
+			}
+		}
+		create {classname "logic_auto"
+			values
+			{
+				OnMapSpawn "moraddedoutputs,Trigger,,1,-1"
+			}
+		}
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d1_trainstation_02"} }

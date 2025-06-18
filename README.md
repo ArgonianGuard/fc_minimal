@@ -4,10 +4,12 @@ Fortress Connected Minimal is the same code base as Fortress Connected, but mini
 FC is a *heavily* modified version of Lambda Fortress: Extended to have more features, fixes, and support
 
 ### To run the game, you *must* have these installed:
-	Source SDK Base 2013 Multiplayer
+	Source SDK Base 2013 Multiplayer SET TO BETA: "previous2021"
 	Team Fortress 2
 	Half-Life 2
 	If you wish to play with Portal or Half-Life Source content, you must also have those installed.
+### Source SDK Base 2013 Multiplayer **MUST** be set to "previous2021" in **PROPERTIES** > **BETAS** > **DOWN ARROW** > SELECT "previous2021"
+Do not opt-in to any betas for Half-Life 2, this mod was designed to work with the current latest HL2 Anniversary update.
 
 ### Installation:
 Method 1:
@@ -35,7 +37,5 @@ NOTE: Fortress Connected Minimal is not affiliated with Concussion Studios or Ni
 Coplay (P2P) fork: https://github.com/ArgonianGuard/coplay Original by Tholp1: https://github.com/CoaXioN-Games/coplay
 
 Half-Life Resized Maps by MaestroFenix: https://github.com/MaestroFenix/Half-Life-Resized-Maps
-
-Main releases will be on the main FC repo here: https://github.com/Lambdagon/fc
 
 Please see credits.txt for additional credits.

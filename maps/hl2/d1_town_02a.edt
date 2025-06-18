@@ -269,6 +269,16 @@ d1_town_02a
 			"targetname"	"graveyard_exit_momentary_wheel"
 			"values" { "spawnflags" "65" }
 		}
+		
+		edit {classname "npc_monk" values {enemyfilter "notball"} }
+		create {classname "filter_activator_name"
+			values
+			{
+				targetname "notball"
+				Negated "1"
+				filtername "ball"
+			}
+		}
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d1_town_02a"} }

@@ -73,7 +73,7 @@ d1_trainstation_05
 			values
 			{
 				targetname "weapon_progress"
-				wpnprogress "0"
+				wpnprogress "1"
 				physcannon_progress "0"
 			}
 		}
@@ -177,6 +177,12 @@ d1_trainstation_05
 			values {targetname "trav_filter_barney"
 				//Negated "1"
 				filtername "barney"} }
+		
+		create {classname "filter_activator_name"
+			values {targetname "blocklamarrdmg"
+				//Negated "1"
+				filtername "NULL"} }
+		edit {classname "generic_actor" values {damagefilter "blocklamarrdmg"} }
 
 		create {classname "func_brush"//*32 barney close
 			origin "-6485 -1054.5 46"

@@ -62,7 +62,7 @@ d1_canals_01a
 				edt_getbspmodelfor_classname "func_brush"
 				edt_getbspmodelfor_origin "364 5796 -8"
 				spawnflags "2"
-				targetname "trav_clips"} }
+				targetname "syn_antirush_clip1"} }
 
 		create {classname "func_brush"
 			origin "924 6372 120"
@@ -71,7 +71,7 @@ d1_canals_01a
 				edt_getbspmodelfor_classname "func_brush"
 				edt_getbspmodelfor_origin "364 5796 -8"
 				spawnflags "2"
-				targetname "trav_clips"} }
+				targetname "syn_antirush_clip1"} }
 
 		create {classname "func_brush"
 			origin "1444 6236 136"
@@ -80,20 +80,23 @@ d1_canals_01a
 				edt_getbspmodelfor_classname "func_brush"
 				edt_getbspmodelfor_origin "364 5796 -8"
 				spawnflags "2"
-				targetname "trav_clips"} }
+				targetname "syn_antirush_clip1"} }
 
 //Trav|Edt - Hold at turreted fort for longer battle, prevent players from rushing, add gman and cliping brushes
-		create {classname "logic_relay"
-			values {//spawnflags "1"
-			targetname "_syn_vint"
-				OnTrigger "vintage_temp,ForceSpawn,,1,-1"
-				OnTrigger "exitplatform_boards_*,SetHealth,50,1,-1"} }
+		create {classname "logic_auto"
+			values
+			{
+				spawnflags "1"
+				targetname "syn_antirush_auto"
+				OnTrigger "exitplatform_boards_*,AddOutput,max_health 0,1,-1"
+			}
+		}
 
 		create {classname "point_template"
 			values {spawnflags "2"
-				targetname "vintage_temp"
+				targetname "syn_antirush_barrel_temp"
 				Template01 "exitplatform_barrel2"
-				OnEntitySpawned "exitplatform_barrel2,AddOutput,OnBreak trav_clips:Disable::0:-1,0.1,-1"} }
+				OnEntitySpawned "exitplatform_barrel2,AddOutput,OnBreak syn_antirush_clip1:Disable::0:-1,0.1,-1"} }
 
 		//delete {targetname "exitplatform_barrel2"}
 //#
@@ -107,7 +110,7 @@ d1_canals_01a
 				disableshadows "1"
 				model "models/props_c17/oildrum001_explosive.mdl"
 				OnBreak "exitplatform_relay,Trigger,,0,-1"
-				OnBreak "trav_clips,Disable,,0,-1"} }//2delay
+				OnBreak "syn_antirush_clip1,Disable,,0,-1"} }//2delay
 
 		create {classname "point_template"
 			values {spawnflags "2"
@@ -122,10 +125,10 @@ d1_canals_01a
 				targetentityname "syn_vint_exitplatform_barrel2"
 				magnitude "15" } }
 
-		edit {targetname "exitplatform_boards_right1" values {classname "prop_physics_override" health "0"} }
-		edit {targetname "exitplatform_boards_right2" values {classname "prop_physics_override" health "0"} }
-		edit {targetname "exitplatform_boards_left1" values {classname "prop_physics_override" health "0"} }
-		edit {targetname "exitplatform_boards_left2" values {classname "prop_physics_override" health "0"} }
+		edit {targetname "exitplatform_boards_right1" values {classname "prop_physics_override" health "50"} }
+		edit {targetname "exitplatform_boards_right2" values {classname "prop_physics_override" health "50"} }
+		edit {targetname "exitplatform_boards_left1" values {classname "prop_physics_override" health "50"} }
+		edit {targetname "exitplatform_boards_left2" values {classname "prop_physics_override" health "50"} }
 
 		create {classname "trigger_once"
 			origin "2282.66 6204 68.36"
@@ -173,7 +176,7 @@ d1_canals_01a
 				//model "*131"
 				edt_getbspmodelfor_classname "func_brush"
 				edt_getbspmodelfor_origin "364 5796 -8"
-				targetname "trav_clips"
+				targetname "syn_antirush_clip1"
 				Solidity "2"} }
 
 		create {classname "func_brush"
@@ -182,7 +185,7 @@ d1_canals_01a
 				//model "*126"
 				edt_getbspmodelfor_classname "func_brush"
 				edt_getbspmodelfor_origin "394 6304 30"
-				targetname "trav_clips"} }
+				targetname "syn_antirush_clip1"} }
 //modi: copy from d2_coast_04 Trav|Edt - save major network usage by removeing prop_ragdoll cars
 		create {classname "logic_auto"
 			values {spawnflags "1"

@@ -465,6 +465,7 @@ d2_coast_10
 				"OnMapSpawn" "garage_exit_trigger,AddOutput,OnTrigger MPVS_SPAWN:Kill::0.1:-1,0,-1"
 				//"OnMapSpawn" "garage_exit_trigger,AddOutput,OnTrigger syn_spawn_manager:MovePlayers::0.2:-1,0,-1"
 				"OnMapSpawn" "lighthouse_secret_door,AddOutput,OnOpen afterlighthouse:Enable::0:-1,0,-1"
+				"OnMapSpawn" "logic_start_leader_exit,AddOutput,OnTrigger ss_lighthouse_exit:BeginSequence::20:-1,0,-1"
 			}
 		}
 		//create { classname "logic_relay"
@@ -481,7 +482,21 @@ d2_coast_10
 
 		edit { classname "npc_antlion_maker" values { "spawntarget" "!rndplayer" } }
 
-
+		create {classname "filter_activator_class"
+			values
+			{
+				targetname "nodmg"
+				filterclass "null"
+			}
+		}
+		edit {targetname "citizen_3" values {damagefilter "nodmg"} }
+		edit {targetname "ss_lighthouse_exit" values {m_fMoveTo "2"} }
+		edit {targetname "citizen_greeter" values {origin "5038.26 -78.2663 918"} }
+		edit {targetname "greeter_wave" values {origin "4920 -296 1088.82"} }
+		edit {targetname "greeter_1" values {origin "4824 -168 1083.82"} ]
+		edit {targetname "greeter_2" values {origin "4856 -168 1088.82"} }
+		edit {targetname "greeter_3" values {origin "4888 -168 1088.82"} }
+		edit {targetname "greeter_briefing" values {origin "4920 -192 1088.82"} }
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d2_coast_10"} }

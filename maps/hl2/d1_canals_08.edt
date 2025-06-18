@@ -263,7 +263,7 @@ d1_canals_08
 				edt_getbspmodelfor_classname "trigger_once"
 				edt_getbspmodelfor_origin "-1456 -2456 -240"
 				spawnflags "1"
-				targetname "trav_exploit_push"
+				targetname "syn_antirush_exploit_push"
 				pushdir "0 180 0"
 				speed "350"} }
 
@@ -274,7 +274,7 @@ d1_canals_08
 				edt_getbspmodelfor_classname "trigger_once"
 				edt_getbspmodelfor_origin "-1456 -2456 -240"
 				spawnflags "1"
-				targetname "trav_exploit_push"
+				targetname "syn_antirush_exploit_push"
 				//pushdir "0 0 0"
 				speed "350"} }
 
@@ -285,7 +285,7 @@ d1_canals_08
 				edt_getbspmodelfor_classname "trigger_once"
 				edt_getbspmodelfor_origin "-1456 -2456 -240"
 				spawnflags "1"
-				targetname "trav_exploit_push_rail"
+				targetname "syn_antirush_exploit_push_rail"
 				//pushdir "0 0 0"
 				speed "350"} }
 
@@ -296,7 +296,7 @@ d1_canals_08
 				edt_getbspmodelfor_classname "trigger_once"
 				edt_getbspmodelfor_origin "-701 -2552.06 -316"
 				spawnflags "1"
-				OnTrigger "trav_exploit_push_rail,Kill,,0,-1"} }
+				OnTrigger "syn_antirush_exploit_push_rail,Kill,,0,-1"} }
 
 //--Extra--
 	

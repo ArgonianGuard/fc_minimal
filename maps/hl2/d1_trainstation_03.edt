@@ -35,7 +35,7 @@ d1_trainstation_03
 			values
 			{
 				targetname "weapon_progress"
-				wpnprogress "0"
+				wpnprogress "1"
 				physcannon_progress "0"
 			}
 		}
@@ -92,8 +92,7 @@ d1_trainstation_03
 				OnPlayersIn "syn_wait01_trig1,Trigger,,0,1"
 				OnPlayersIn "syn_wait01_trig2,Trigger,,0.5,1"
 				OnPlayersIn "!self,TeleportPlayersNotTouching,,0,1"
-				OnPlayersIn "!self,,,0,1"
-				OnPlayersIn "!self,Disable,,0,1"
+				OnPlayersIn "!self,Disable,,0.1,1"
 			}
 		}
 
@@ -113,27 +112,10 @@ d1_trainstation_03
 				CountType "1"
 				PlayerValue "50"
 				OnPlayersIn "syn_wait02_blocker,Kill,,0,1"
-				OnPlayersIn "!self,TeleportPlayersNotTouching,,0.5,1"
+				OnPlayersIn "!self,TeleportPlayersNotTouching,,0.1,1"
 				OnPlayersIn "trigger_PreRaid_Peeker_retreat,Trigger,1,0,1"// TODO remove flag
 				OnPlayersIn "trigger_rush_start,Trigger,,1,1"
-				OnPlayersIn "song25_Teleporter,PlaySound,,2,-1"
-				OnPlayersIn "!self,Disable,,0,1"
-			}
-		}
-		
-		create 
-		{
-			classname "ambient_generic"
-			values 
-			{
-				origin "-4078 -4488 442"
-				pitchstart "100"
-				pitch "100"
-				health "10"
-				message "song25" // HL2_song25_teleporter - Miscount Detected
-				targetname "song25_Teleporter"
-				spawnflags "49"
-				radius "1250"
+				OnPlayersIn "!self,Disable,,0.5,1"
 			}
 		}
 
@@ -220,6 +202,26 @@ d1_trainstation_03
 				//OnTrigger "!player,SetHealth,100,0,-1"
 				OnTrigger "ss_DoorBracer_ShutDoor,MoveToPosition,,0,-1"
 				OnTrigger "brush_staircase_block,Disable,,0,-1"
+			}
+		}
+		
+		create {classname "logic_auto"
+			values
+			{
+				spawnflags "1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer setupbrokesequence:Trigger::0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDeath setupbrokesequence:Trigger::0:-1,0,-1"
+			}
+		}
+		create {classname "logic_relay"
+			values
+			{
+				targetname "setupbrokesequence"
+				OnTrigger "gordon_criminal_global,TurnOff,,0,-1"
+				OnTrigger "ai_breakin_cop3goal3_blockplayer2,kill,,0,-1"
+				OnTrigger "brush_breakin_blockplayer1,kill,,0,-1"
+				OnTrigger "SS_Kickin,CancelSequence,,0,-1"
+				OnTrigger "SS_Kickin_Runin,CancelSequence,,0,-1"
 			}
 		}
 

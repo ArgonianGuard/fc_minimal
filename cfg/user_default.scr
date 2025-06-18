@@ -96,6 +96,14 @@ DESCRIPTION INFO_OPTIONS
 		{ "0" }
 	}
 	
+	"sv_pausable"
+	{
+		"Enable Pausing"
+		"Players can pause the game on listen servers"
+		{ BOOL }
+		{ "1" }
+	}
+	
 	"cl_wpn_sway_interp"
 	{
 		"Weapon sway interp"

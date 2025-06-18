@@ -563,11 +563,6 @@ d2_prison_07
 			origin "4232 -3904 -494"
 			values {angles " 0 270 0"} }
 
-//Trav|Edt - change ammo type
-		edit {classname "item_ammo_crate"
-			origin "4078 -4360 -527" //use -527z if u want it to work//z-523
-			values {AmmoType "4"} }//4 - shotgun 6 - 357 //DEFAULT:SMG1
-
 //Trav|Edt - Add Synergy deagle spawn ^^^^ (TEMP) [server only]
 	//	create {classname "info_player_equip"
 	//		values {targetname "syn_new_weapons"
@@ -701,6 +696,8 @@ d2_prison_07
 				PlayerValue "50"
 				wait "1.5"
 				OnTrigger "syn_antirush_text,Display,,0,-1"
+				OnTrigger "failsavechange,kill,,0,-1"
+				OnTrigger "command,kill,,0,-1"
 				OnPlayersIn "syn_antirush_wall,Kill,,0,1"
 				OnPlayersIn "syn_antirush_push,Kill,,0,1"
 				//OnPlayersIn "syn_antirush_light,TurnOff,,0,1"
@@ -739,6 +736,22 @@ d2_prison_07
 
 		// do not let the door close
 		"delete" { "classname" "trigger_once" "origin" "-440 -2908 -172" }
+		
+		// failsave
+		edit {classname "trigger_changelevel" values {edt_map "d2_prison_08" edt_landmark "landmark_d2_prison_07-08" targetname "changeto08" OnChangeLevel "failsavechange,kill,,0,-1"} }
+		create {classname "trigger_once" origin "4700 -4334 -625"
+			values
+			{
+				targetname "failsavechange"
+				spawnflags "1"
+				edt_mins "-100 -100 -100"
+				edt_maxs "100 100 100"
+				OnTrigger "changeto08,ChangeLevel,,2,1"
+				OnTrigger "command,Command,changelevel hl2 d2_prison_08 landmark_d2_prison_07-08,5,1"
+				OnTrigger "command,Kill,,6,-1"
+			}
+		}
+		create {classname "point_servercommand" values {targetname "command"} }
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d2_prison_07"} }

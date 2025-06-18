@@ -14,7 +14,7 @@
 		"enabled"			"1"
 	}
 
-		"TitleBanner"
+	"TitleBanner"
     {
         "ControlName"    "ImagePanel"
         "fieldName"        "TitleBanner"
@@ -146,7 +146,7 @@
 		"ypos"				"125"
 		"zpos"				"3"
 		"wide"				"260"
-		"tall"				"234"
+		"tall"				"262"
 		"visible"			"1"
 		"enabled"			"1"
 		"bgcolor_override"	"0 0 0 210"
@@ -253,6 +253,38 @@
 		}
 	}
 	// IN LEVEL START
+	
+	"SaveGameButton"
+	{
+		"ControlName"			"CTFButton"
+		"fieldName"				"SaveGameButton"
+		//"xpos"					"35"
+		"xpos"				"70"
+		"ypos"				"155"
+		"zpos"					"5"
+		"wide"					"248"
+		"tall"					"28"
+		"visible"				"1"
+		"enabled"				"1"
+		"bordervisible"			"1"
+		"command"				"savemenu"
+
+		"labelText" 			"#GameUI_GameMenu_SaveGame"
+		"xshift" 				"0"
+		"yshift" 				"-2"
+		"textAlignment"			"west"
+		"font"					"HudFontSmallBold"
+		"border_default"		"AdvRoundedButtonDefault"
+		"border_armed"			"AdvRoundedButtonArmed"
+		"border_depressed"		"AdvRoundedButtonDepressed"
+		"paintbackground"       "0"
+
+		"SubImage"
+		{
+			"image" 			"resource/icon_folder"
+			"imagewidth"		"16"
+		}
+	}
 
 	"ResumeButton"
 	{
@@ -387,7 +419,7 @@
 		"fieldName"				"ServerBrowserButton"
 		//"xpos"					"35"
 		"xpos"				"70"
-		"ypos"				"155"
+		"ypos"				"183"
 		"zpos"					"5"
 		"wide"					"248"
 		"tall"					"28"
@@ -419,7 +451,7 @@
 		"fieldName"				"CreateServerButton"
 		//"xpos"					"35"
 		"xpos"				"70"
-		"ypos"				"183"
+		"ypos"				"211"
 		"zpos"					"5"
 		"wide"					"248"
 		"tall"					"28"
@@ -452,7 +484,7 @@
 		"ControlName"			"CTFButton"
 		"fieldName"				"LoadoutButton"
 		"xpos"					"70"
-		"ypos"					"211"
+		"ypos"					"239"
 		"zpos"					"5"
 		"wide"					"248"
 		"tall"					"28"
@@ -483,7 +515,7 @@
 		"ControlName"			"CTFButton"
 		"fieldName"				"AchievementsButton"
 		"xpos"					"70"
-		"ypos"					"239"
+		"ypos"					"267"
 		"zpos"					"5"
 		"wide"					"248"
 		"tall"					"28"
@@ -514,7 +546,7 @@
 		"ControlName"			"CTFButton"
 		"fieldName"				"StatsButton"
 		"xpos"					"70"
-		"ypos"					"267"
+		"ypos"					"295"
 		"zpos"					"5"
 		"wide"					"248"
 		"tall"					"28"
@@ -560,7 +592,7 @@
 		"ControlName"			"CTFButton"
 		"fieldName"				"StatsButton"
 		"xpos"					"70"
-		"ypos"					"295"
+		"ypos"					"323"
 		"zpos"					"5"
 		"wide"					"248"
 		"tall"					"28"
@@ -592,7 +624,7 @@
 		"ControlName"			"CTFButton"
 		"fieldName"				"QuitButton"
 		"xpos"					"70"
-		"ypos"					"323"
+		"ypos"					"351"
 		"zpos"					"5"
 		"wide"					"248"
 		"tall"					"28"

@@ -521,6 +521,16 @@ d2_coast_01
 		//}
 
 		edit { classname "npc_antlion_maker" values { "spawntarget" "!rndplayer" } }
+		
+		edit {classname "npc_citizen" values {enemyfilter "notball"} }
+		create {classname "filter_activator_name"
+			values
+			{
+				targetname "notball"
+				Negated "1"
+				filtername "ball"
+			}
+		}
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d2_coast_01"} }

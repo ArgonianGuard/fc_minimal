@@ -338,6 +338,20 @@ DESCRIPTION SERVER_OPTIONS
 		{ BOOL }
 		{ "1" }
 	}
+	
+	"sk_apc_rocket_barrage_size"
+	{
+		"APC Rocket Barrage Size"
+		{
+			LIST
+			"1"		"1"
+			"2"		"2"
+			"3"		"3"
+			"4"		"4"
+			"5"		"5"
+		}
+		{ "1" }
+	}
 
 	"category2"
 	{
@@ -653,6 +667,20 @@ DESCRIPTION SERVER_OPTIONS
 		"#createserver_mapcyclefile"
 		{ STRING }
 		{ "mapcycle.txt" }
+	}
+	
+	"mp_antirush_disable"
+	{
+		"Disable Antirush"
+		{ BOOL }
+		{ "1" }
+	}
+	
+	"mp_vintage_mode"
+	{
+		"Disable additional enemies"
+		{ BOOL }
+		{ "0" }
 	}
 	
 	"mp_timelimit"

@@ -270,8 +270,24 @@ d1_eli_01
 		
 		//prevent players from blocking the door
 		create {classname "logic_auto"
-			values {OnMapSpawn	"airlock_south_door,AddOutput,dmg 200,0,0"
-				OnMapSpawn	"airlock_south_doorb,AddOutput,dmg 200,0,0"
+			values
+			{
+				OnMapSpawn "airlock_south_door,AddOutput,dmg 200,0,0"
+				OnMapSpawn "airlock_south_doorb,AddOutput,dmg 200,0,0"
+			}
+		}
+		
+		delete {targetname "logic_timer_lookaround_enable_1"}
+		create {classname "logic_relay"
+			values
+			{
+				targetname "logic_timer_lookaround_enable_1"
+				OnTrigger "conditions_breen,Enable,,0,-1"
+				// Reducing to half
+				OnTrigger "logic_timer_lookaround_killswitch_1,Trigger,,12,-1"
+				OnTrigger "conditions_thing,Enable,,1.5,-1"
+				OnTrigger "conditions_teleport,Enable,,1.2,-1"
+				OnTrigger "conditions_photo,Enable,,0.7,-1"
 			}
 		}
 

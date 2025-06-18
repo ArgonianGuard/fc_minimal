@@ -23,6 +23,14 @@ d3_breen_01
 				weapon_physcannon	"1"
 			} }
 			
+		create {classname "fc_weapon_progress"
+			values
+			{
+				wpnprogress "0"
+				physcannon_progress "0"
+			}
+		}
+			
 //Game Over text
 		delete {targetname "message_breenwins"}
 		create {classname "logic_auto"
@@ -457,8 +465,11 @@ d3_breen_01
 
 				"OnTrigger" "syn_get_physcannon,Enable,,0,-1"
 				"OnTrigger" "syn_get_physcannon,EquipAllPlayers,,0.1,-1"
+				"OnTrigger" "fc_weapon_progress,SetWeaponProgress,2,0.2,-1"
+				"OnTrigger" "fc_weapon_progress,SetPhyscannonProgress,2,0.2,-1"
 			}
 		}
+		edit {targetname "w_physgun" values {OnPlayerUse "relay_physgunpickup,Trigger,,0,1"} }
 		
 //modi: fix exploit of blocking "digger" on the teleport part
 		create {
@@ -492,6 +503,10 @@ d3_breen_01
 		edit {targetname "target_follow_camera_2" values {spawnflags "1"} }
 		
 		edit {classname "logic_measure_movement" values {spawnflags "16"} }
+		
+		create {classname "ambient_generic" values {message "weapons/stunstick/spark1.wav"} }
+		create {classname "ambient_generic" values {message "weapons/stunstick/spark2.wav"} }
+		create {classname "ambient_generic" values {message "weapons/stunstick/spark3.wav"} }
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d3_breen_01"} }

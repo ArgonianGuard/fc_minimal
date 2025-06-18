@@ -398,17 +398,22 @@ d2_coast_07
 		edit {targetname "gunship_trigger_11" values {classname "trigger_once"} }
 
 //Trav|Edt - Doors: Open Only
-		edit {targetname "bridge_door_2" values {spawnflags "2048" returndelay "-1"} }//
+		edit {targetname "bridge_door_2" values {returndelay "-1"} }
 	//	edit {classname "prop_door_rotating" values {spawnflags "0" returndelay "-1"} }//this will not override previous entries
 //end_door open forward only
 		create {classname "logic_auto"
 			values {spawnflags "1"
 				OnMapSpawn "bridge_door_2,AddOutput,opendir 1,0,-1"} }
+		
+		create {classname "logic_auto"
+			values {spawnflags "1"
+				targetname "syn_antirush_doorlock"
+				OnMapSpawn "bridge_door_2,Lock,,1,1"} }
 
 //disable antiskip if field is turned off (failsafe)
 		create {classname "logic_auto"
 			values {spawnflags "1"
-				OnMapSpawn "gunship_trigger_10,AddOutput,OnTrigger syn_antiskip_hurt:Disable::0:-1,0,-1"} }
+				OnMapSpawn "gunship_trigger_10,AddOutput,OnTrigger syn_antirush_hurt:Disable::0:-1,0,-1"} }
 
 //If a NewGame starts on coast_08, Fix the return trip to this level
 		create {classname "logic_auto"
@@ -685,7 +690,7 @@ d2_coast_07
 				//model "*136"
 				edt_getbspmodelfor_targetname "gunship_trigger_12"
 				spawnflags "1"
-				targetname "syn_antiskip_hurt"
+				targetname "syn_antirush_hurt"
 				damage "1000"
 				//damagetype "262144"//rad
 				nodmgforce "1"} }
@@ -695,7 +700,7 @@ d2_coast_07
 				//model "*136"
 				edt_getbspmodelfor_targetname "gunship_trigger_12"
 				spawnflags "1"
-				targetname "syn_antiskip_hurt"
+				targetname "syn_antirush_hurt"
 				damage "1000"
 				//damagetype "262144"//rad
 				nodmgforce "1"} }
@@ -951,7 +956,7 @@ d2_coast_07
 				OnTrigger "syn_spawn_player_4,Enable,,0,-1"
 				OnTrigger "syn_spawn_manager,SetCheckpoint,syn_spawn_player_4,0,-1"
 				OnTrigger "syn_moreplayersthird,CheckSkill,,5,-1"
-				OnTrigger "syn_antiskip_hurt,Disable,,0,-1"
+				OnTrigger "syn_antirush_hurt,Disable,,0,-1"
 				OnTrigger "bridge_door_2,Close,,1,-1"
 				OnTrigger "bridge_door_2,Lock,,2,-1"
 				OnTrigger "bridge_field_02,Disable,,0,1" //disable shield if it was not disabled by gunship_trigger_10

@@ -74,7 +74,7 @@ d3_c17_01
 				edt_getbspmodelfor_classname "trigger_once"
 				edt_getbspmodelfor_origin "-6480 -624 56"
 				spawnflags "1"
-				OnTrigger "syn_intro_hud_timer,Start,10,0.1,-1"} }
+				OnTrigger "syn_intro_hud_timer,Start,5,0.1,-1"} }
 
 		create {classname "logic_relay"
 			values {targetname "syn_intro_relay"
@@ -165,11 +165,6 @@ d3_c17_01
 			origin	"-6372 -576 17"
 			values {angles	"0 180 0"
 				AmmoType	"2" } }
-
-		create {classname "item_ammo_crate"
-			origin	"-6372 -672 17"
-			values {angles	"0 180 0"
-				AmmoType	"4" } }
 
 		create {classname "item_ammo_crate"
 			origin	"-6572 -548 17"
@@ -269,6 +264,8 @@ d3_c17_01
 				"OnTrigger" "global_friendly_encounter,TurnOff,,1,-1"
 			}
 		}
+		
+		edit {classname "trigger_changelevel" values {edt_map "d3_c17_02" edt_landmark "d3_c17_01-02" origin "0 0 -64"} }
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d3_c17_01"} }

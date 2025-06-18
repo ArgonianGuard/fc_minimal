@@ -282,7 +282,7 @@ d1_canals_10
 			origin "3840 9220 -108"
 			values {angles "0 90 0"
 				model "models/props_c17/Handrail04_long.mdl"
-				targetname "syn_vint"
+				targetname "syn_antirush_rail"
 				solid "6"
 				disableshadows "1"} }
 
@@ -290,7 +290,7 @@ d1_canals_10
 			origin "3712 9220 -108"
 			values {angles "0 90 0"
 				model "models/props_c17/Handrail04_long.mdl"
-				targetname "syn_vint"
+				targetname "syn_antirush_rail"
 				solid "6"
 				disableshadows "1"} }
 
@@ -298,7 +298,7 @@ d1_canals_10
 			origin "3584 9220 -108"
 			values {angles "0 90 0"
 				model "models/props_c17/Handrail04_long.mdl"
-				targetname "syn_vint"
+				targetname "syn_antirush_rail"
 				solid "6"
 				disableshadows "1"} }
 
@@ -306,7 +306,7 @@ d1_canals_10
 			origin "3456 9220 -108"
 			values {angles "0 90 0"
 				model "models/props_c17/Handrail04_long.mdl"
-				targetname "syn_vint"
+				targetname "syn_antirush_rail"
 				solid "6"
 				disableshadows "1"} }
 
@@ -314,7 +314,7 @@ d1_canals_10
 			origin "3328 9220 -108"
 			values {angles "0 90 0"
 				model "models/props_c17/Handrail04_long.mdl"
-				targetname "syn_vint"
+				targetname "syn_antirush_rail"
 				solid "6"
 				disableshadows "1"} }
 
@@ -322,7 +322,7 @@ d1_canals_10
 			origin "3200 9220 -108"
 			values {angles "0 90 0"
 				model "models/props_c17/Handrail04_long.mdl"
-				targetname "syn_vint"
+				targetname "syn_antirush_rail"
 				solid "6"
 				disableshadows "1"} }
 
@@ -330,7 +330,7 @@ d1_canals_10
 			origin "3104 9220 -108"
 			values {angles "0 90 0"
 				model "models/props_c17/Handrail04_medium.mdl"
-				targetname "syn_vint"
+				targetname "syn_antirush_rail"
 				solid "6"
 				disableshadows "1"} }
 
@@ -338,21 +338,21 @@ d1_canals_10
 			origin "3055 9220 -108"
 			values {angles "0 90 0"
 				model "models/props_c17/Handrail04_short.mdl"
-				targetname "syn_vint"
+				targetname "syn_antirush_rail"
 				solid "6"
 				disableshadows "1"} }
 
 		create {classname "prop_dynamic"
 			origin "3024 9238 -128"
 			values {model "models/props_c17/Handrail04_corner.mdl"
-				targetname "syn_vint"
+				targetname "syn_antirush_rail"
 				solid "6"
 				disableshadows "1"} }
 
 		create {classname "prop_dynamic"
 			origin "3009 9283 -108"
 			values {model "models/props_c17/Handrail04_medium.mdl"
-				targetname "syn_vint"
+				targetname "syn_antirush_rail"
 				solid "6"
 				disableshadows "1"} }
 
@@ -360,7 +360,7 @@ d1_canals_10
 			origin "3027 9331 -128"
 			values {angles "0 270 0"
 				model "models/props_c17/Handrail04_corner.mdl"
-				targetname "syn_vint"
+				targetname "syn_antirush_rail"
 				solid "6"
 				disableshadows "1"} }
 
@@ -377,7 +377,7 @@ d1_canals_10
 				model "models/synergy/tools/syn_transition.mdl"
 				solid "6"
 				DisableShadows "1"
-				targetname "syn_vint"
+				targetname "backtrack_wall"
 				startdisabled "1"
 			}
 		}
@@ -396,7 +396,7 @@ d1_canals_10
 				//model "*41"
 				edt_getbspmodelfor_classname "trigger_multiple"
 				edt_getbspmodelfor_origin "8064 2368 -352"
-				targetname "syn_vint"} }
+				targetname "syn_antirush"} }
 
 // Enable gib collisions on smokestack
 		create {classname "logic_auto"

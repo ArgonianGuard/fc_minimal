@@ -244,7 +244,7 @@ d3_c17_10a
 				edt_getbspmodelfor_origin "-2692 7528 572"
 				spawnflags "1"
 				targetname "trav_push_capitol"
-				pushdir "0 180 0"
+				pushdir "0 0 0"
 				speed "750"} }
 
 		//create {classname "func_brush"

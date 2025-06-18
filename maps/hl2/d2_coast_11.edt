@@ -628,5 +628,8 @@ d2_coast_11
 				angles "0 -5 0"
 			}
 		}
+		
+		edit {targetname "hudhint_throwbait" values {message "Use voice GO to send antlions"} }
+		edit {targetname "hudhint_squeezebait" values {message "Use voice HELP to recall antlions"} }
 	}
 }

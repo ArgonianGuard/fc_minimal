@@ -383,7 +383,7 @@ d3_c17_08
 			}
 		}
 		edit {targetname "ambush_soldier_1_ss_1" values {m_iszPlay ""} }
-		create {classname "info_target" origin "933 -135 65" values {targetname "syn_breakcatwalktarg"} }
+		create {classname "info_target" origin "853 -185 120" values {targetname "syn_breakcatwalktarg"} }
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d3_c17_08"} }

@@ -13,11 +13,6 @@ d2_coast_03
 		edit {classname "func_areaportal" values {targetname "disabledPortal" StartOpen "1"} }
 		edit {classname "func_areaportalwindow" values {targetname "DisabledPortalWindow" FadeStartDist "1000" FadeDist "2500"} }
 
-//remove jeep from prev level
-		create {classname "logic_auto"
-			values {spawnflags "1"
-				OnMapSpawn "jeep,Kill,,0,-1"} }
-
 //Prevent Backtracking
 		create {classname "prop_dynamic" origin "-6912 -14704 1024"
 			values {model "models/synergy/tools/syn_transition.mdl"
@@ -799,9 +794,6 @@ d2_coast_03
 
 //End of Trav|Edt
 
-
-		// delete old buggy and create new ones
-		"delete" { "targetname" "jeep" }
 
 //Trav|Edt - disable normal jeep spawn
 //Trav|Edt - move jeep (ORIGINAL ORIGIN "-6913.57 -13638.2 1026", ANGLES "0 0 0")

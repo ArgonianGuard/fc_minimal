@@ -154,7 +154,7 @@ d2_prison_05
 		//	origin "-2848 424 784"
 		//	values {model "*58"
 		//		spawnflags "1"
-		//		targetname "trav_guardnotdead_push"
+		//		targetname "syn_antirush_guardnotdead_push"
 		//		pushdir "0 90 0"
 		//		speed "750"} }
 
@@ -173,7 +173,7 @@ d2_prison_05
 			}
 		}
 
-		create {classname "syn_transition_wall" origin "-3104 440 536" values {angles "0 90 0" targetname "trav_guardnotdead_push"} }
+		create {classname "syn_transition_wall" origin "-3104 440 536" values {angles "0 90 0" targetname "syn_antirush_guardnotdead_push"} }
 
 		delete {targetname "showers_guard"}
 
@@ -184,7 +184,7 @@ d2_prison_05
 				targetname "showers_guard"
 				startburrowed "0"
 				OnDeath "soldiers_vs_player,RevertRelationship,,0,1"
-				OnDeath "trav_guardnotdead_push,Kill,,0,-1"} }
+				OnDeath "syn_antirush_guardnotdead_push,Kill,,0,-1"} }
 
 //Trav|Edt - moveplayers at wall
 		//delete {targetname "point_of_no_return"}

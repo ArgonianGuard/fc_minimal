@@ -82,7 +82,7 @@ d1_trainstation_04
 			values
 			{
 				targetname "weapon_progress"
-				wpnprogress "0"
+				wpnprogress "1"
 				physcannon_progress "0"
 			}
 		}
@@ -254,6 +254,134 @@ d1_trainstation_04
 			}
 		}
 		delete {classname "trigger_once" origin "-5800 -4296 592.5"}
+		
+		create {classname "math_counter"
+			values
+			{
+				targetname "counter_killedcops"
+				min "0"
+				max "4"
+				OnHitMax "template_alyx,ForceSpawn,,0,1"
+				OnHitMax "breakable_alyxwindow,Break,,0,1"
+				OnHitMax "global_gordon_invulnerable,TurnOff,,0,-1"
+				OnHitMax "lcs_alyxgreet01,Start,,0.1,-1"
+				OnHitMax "mic_alyx,Enable,,0,-1"
+				OnHitMax "relationship_cops_hate_player,RevertRelationship,,0,1"
+				OnHitMax "alyx,StartScripting,,0.1,-1"
+				OnHitMax "ss_alyx_intro_bendover,kill,,0,-1"
+				OnHitMax "alyx,AddOutput,angles 0 90 0,0.1,-1"
+			}
+		}
+		
+		// Remake the knockout cops
+		delete {targetname "npc_knockout_cop1"}
+		create {classname "npc_metropolice" origin "-7460 -3996 385"
+			values
+			{
+				"weapondrawn" "0"
+				"waitingtorappel" "No"
+				"targetname" "npc_knockout_cop1"
+				"squadname" "squad_knockoutcops"
+				"spawnflags" "8324"
+				"rendermode" "0"
+				"renderfx" "0"
+				"rendercolor" "255 255 255"
+				"renderamt" "255"
+				"physdamagescale" "0.001"
+				"manhacks" "0"
+				"hintlimiting" "0"
+				"disableshadows" "0"
+				"disablereceiveshadows" "0"
+				"angles" "0 0 0"
+				"additionalequipment" "weapon_stunstick"
+				"hammerid" "495252"
+				"OnStunnedPlayer" "!player,SetHealth,300,0,-1"
+				"OnStunnedPlayer" "counter_knockout_hitcount,Add,1,0,-1"
+				"OnDamaged" "npc_knockout_cop1,SetHealth,10,0,1"
+				"OnDeath" "counter_killedcops,Add,1,0,-1"
+			}
+		}
+		delete {targetname "npc_knockout_cop2"}
+		create {classname "npc_metropolice" origin "-7520 -4056 387"
+			values
+			{
+				"weapondrawn" "0"
+				"waitingtorappel" "No"
+				"targetname" "npc_knockout_cop2"
+				"squadname" "squad_knockoutcops"
+				"spawnflags" "8196"
+				"rendermode" "0"
+				"renderfx" "0"
+				"rendercolor" "255 255 255"
+				"renderamt" "255"
+				"physdamagescale" "0.001"
+				"manhacks" "0"
+				"hintlimiting" "0"
+				"disableshadows" "0"
+				"disablereceiveshadows" "0"
+				"angles" "0 51 0"
+				"additionalequipment" "weapon_stunstick"
+				"hammerid" "495265"
+				"OnStunnedPlayer" "!player,SetHealth,300,0,-1"
+				"OnStunnedPlayer" "counter_knockout_hitcount,Add,1,0,-1"
+				"OnDamaged" "npc_knockout_cop2,SetHealth,10,0,1"
+				"OnDeath" "counter_killedcops,Add,1,0,-1"
+			}
+		}
+		delete {targetname "npc_knockout_cop_kickdoor"}
+		create {classname "npc_metropolice" origin "-7025 -3993 385"
+			values
+			{
+				"weapondrawn" "0"
+				"waitingtorappel" "No"
+				"targetname" "npc_knockout_cop_kickdoor"
+				"squadname" "squad_knockoutcops"
+				"spawnflags" "8324"
+				"rendermode" "0"
+				"renderfx" "0"
+				"rendercolor" "255 255 255"
+				"renderamt" "255"
+				"physdamagescale" "0.001"
+				"manhacks" "0"
+				"hintlimiting" "0"
+				"disableshadows" "0"
+				"disablereceiveshadows" "0"
+				"angles" "0 183 0"
+				"additionalequipment" "weapon_stunstick"
+				"hammerid" "495340"
+				"OnStunnedPlayer" "!player,SetHealth,300,0,-1"
+				"OnStunnedPlayer" "counter_knockout_hitcount,Add,1,0,-1"
+				"OnDamaged" "npc_knockout_cop_kickdoor,SetHealth,0,10,1"
+				"OnDeath" "counter_killedcops,Add,1,0,-1"
+			}
+		}
+		delete {targetname "npc_kickdoor_policer"}
+		create {classname "npc_metropolice" origin "-6960 -4040 385"
+			values
+			{
+				"weapondrawn" "0"
+				"waitingtorappel" "No"
+				"targetname" "npc_kickdoor_policer"
+				"squadname" "squad_knockoutcops"
+				"spawnflags" "8196"
+				"rendermode" "0"
+				"renderfx" "0"
+				"rendercolor" "255 255 255"
+				"renderamt" "255"
+				"physdamagescale" "0.001"
+				"manhacks" "0"
+				"hintlimiting" "0"
+				"disableshadows" "0"
+				"disablereceiveshadows" "0"
+				"angles" "0 163 0"
+				"additionalequipment" "weapon_stunstick"
+				"hammerid" "612568"
+				"OnStunnedPlayer" "!player,SetHealth,300,0,-1"
+				"OnStunnedPlayer" "counter_knockout_hitcount,Add,1,0,-1"
+				"OnDamaged" "npc_kickdoor_policer,SetHealth,0,10,1"
+				"OnDeath" "counter_killedcops,Add,1,0,-1"
+			}
+		}
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d1_trainstation_04"} }

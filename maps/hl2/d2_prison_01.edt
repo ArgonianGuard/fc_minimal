@@ -242,6 +242,22 @@ d2_prison_01
 		// create some RPGs
 		"create" { "classname" "weapon_rpg" "origin" "2133.69 -1437.23 1624" }
 		"create" { "classname" "weapon_rpg" "origin" "2148.58 -1510.38 1624" }
+		
+		create {classname "logic_auto"
+			values
+			{
+				spawnflags "1"
+				OnMapSpawn "gunship_spawner_penn,AddOutput,OnSpawnNPC setupearlydead:Trigger::0.1:-1,0,-1"
+			}
+		}
+		create {classname "logic_relay"
+			values
+			{
+				targetname "setupearlydead"
+				OnTrigger "penn,AddOutput,OnDeath propanetank_blowup:Enable::0:-1,0,-1"
+				OnTrigger "penn,AddOutput,OnDeath propanetank_blowup:Trigger::1:-1,0,-1"
+			}
+		}
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d2_prison_01"} }

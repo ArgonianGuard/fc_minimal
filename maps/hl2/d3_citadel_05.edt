@@ -256,6 +256,10 @@ d3_citadel_05
 				"OnTrigger" "cit05_to_breen01_changelevel,ChangeLevel,,0.1,-1"
 			}
 		}
+		
+		create {classname "ambient_generic" values {message "weapons/stunstick/spark1.wav"} }
+		create {classname "ambient_generic" values {message "weapons/stunstick/spark2.wav"} }
+		create {classname "ambient_generic" values {message "weapons/stunstick/spark3.wav"} }
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d3_citadel_05"} }

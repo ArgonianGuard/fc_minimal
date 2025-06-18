@@ -271,13 +271,13 @@ d1_canals_03
 		create {classname "prop_physics" origin "-1328 1056 -805"
 			values {spawnflags "8"
 				angles "0 315 -65"
-				targetname "syn_vint"
+				targetname "syn_antirush"
 				model "models/props_junk/wood_pallet001a.mdl"} }
 
 		create {classname "prop_physics" origin "-1336 1048 -805"
 			values {spawnflags "8"
 				angles "0 315 -65"
-				targetname "syn_vint"
+				targetname "syn_antirush"
 				model "models/props_junk/wood_pallet001a.mdl"} }
 
 //Trav|Edt - remove cleanup trigger

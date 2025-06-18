@@ -4,14 +4,27 @@ d2_prison_08
 //--Setup--
 		delete {classname "logic_auto" origin "-2442.96 3061.35 988"}
 		create {classname "logic_auto"
-			values {spawnflags "1"
+			values
+			{
+				spawnflags "1"
 				OnMapSpawn "combine_door_2,SetAnimation,open,0,-1"
 				OnMapSpawn "combine_door_1,SetAnimation,open,0,-1"
 				OnMapSpawn "prop_cameras,SetAnimation,idlealert,0,-1"
 				OnMapSpawn "teleport_lift_platform_1,SetAnimation,close,0,-1"
 				OnMapSpawn "alyx_goal_follow_1,Activate,,1,-1"
 				OnMapSpawn "prop_camerasx,SetAnimation,idlealert,0,-1"
-				OnNewGame "spawn_alyx,Enable,,0.75,1"} }
+				OnMapSpawn "alyx,AddOutput,OnUser1 spawnalyxrel:kill::0:-1,0,-1"
+				OnMapSpawn "alyx,FireUser1,,0.1,-1"
+				OnMapSpawn "spawnalyxrel,Trigger,,0.2,-1"
+			}
+		}
+		create {classname "logic_relay"
+			values
+			{
+				targetname "spawnalyxrel"
+				OnTrigger "spawn_alyx,Enable,,0,-1"
+			}
+		}
 		edit {classname "func_areaportal" values {targetname "disabledPortal" StartOpen "1"} }
 
 //Prevent Backtracking
@@ -422,6 +435,7 @@ d2_prison_08
 //Trav|Edt - add countdown timer for combine teleporter
 		create {classname "hud_timer"
 			values {targetname "trav_hud_timer"
+				TimerText "Teleporter"
 				TimerType "1"} }
 
 		//delete {targetname "trigger_teleport_player_enter_1"}

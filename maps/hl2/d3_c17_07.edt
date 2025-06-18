@@ -214,8 +214,8 @@ d3_c17_07
 				OnTrigger "syn_spawn_manager,MovePlayers,,0.1,-1"
 				OnTrigger "trav_teleport_alyx1,Teleport,,0,-1"
 				OnTrigger "trav_teleport_turret,Teleport,,0,-1"
-				OnTrigger "alyx_briefingroom_exitdoor,Close,,0.2,-1"
-				OnTrigger "alyx_briefingroom_exitdoor,Lock,,1,-1"
+				//OnTrigger "alyx_briefingroom_exitdoor,Close,,0.2,-1"
+				//OnTrigger "alyx_briefingroom_exitdoor,Lock,,1,-1"
 				OnTrigger "syn_spawn_manager,SetCheckPoint,syn_spawn_player_2,0,-1"
 				OnTrigger "alyx_doorbreak_save,Save,,3,-1"
 				OnTrigger "syn_global_settings,AddOutput,IsVehicleMap 1,0,-1"} }

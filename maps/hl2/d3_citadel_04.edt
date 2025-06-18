@@ -250,6 +250,10 @@ d3_citadel_04
 				damage "5000"
 				damagetype "512"} }
 
+		create {classname "ambient_generic" values {message "weapons/stunstick/spark1.wav"} }
+		create {classname "ambient_generic" values {message "weapons/stunstick/spark2.wav"} }
+		create {classname "ambient_generic" values {message "weapons/stunstick/spark3.wav"} }
+
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d3_citadel_04"} }
 	}

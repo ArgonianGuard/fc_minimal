@@ -69,7 +69,7 @@ ep1_citadel_00
 				edt_maxs "200 200 200"
 				spawnflags "1"
 				targetname "trav_intro_trigger"
-				OnTrigger "syn_hudtimer,Start,45,0,1"
+				OnTrigger "syn_hudtimer,Start,10,0,1"
 				OnTrigger "viewcontrol_black,Enable,,0.1,1"
 			}
 		}

@@ -64,11 +64,11 @@ d1_trainstation_01
 			values
 			{
 				targetname "weapon_progress"
-				wpnprogress "0"
+				wpnprogress "1"
 				physcannon_progress "0"
 			}
 		}
-			
+		
 		//inside to the train
 		create 
 		{
@@ -107,7 +107,7 @@ d1_trainstation_01
 			values {//model "*25"
 				edt_getbspmodelfor_targetname "teleport"
 				spawnflags "1"
-				OnTrigger "syn_start_timer,Start,30,4,-1"
+				OnTrigger "syn_start_timer,Start,10,1,-1"
 				} }
 
 		// Countdown timer
@@ -188,7 +188,6 @@ d1_trainstation_01
 			values {spawnflags "2"
 				targetname "syn_vint_diff_cosmetic_ent_temp"
 				Template01 "syn_vint_diff_cosmetic_1_ent"
-				Template02 "syn_vint_diff_cosmetic_2_ent"
 				Template03 "syn_vint_diff_cosmetic_3_ent"
 				Template04 "syn_vint_diff_cosmetic_4_ent"
 				Template05 "syn_vint_diff_cosmetic_5_ent"
@@ -205,18 +204,6 @@ d1_trainstation_01
 				spawnflags "256"
 				m_iszEntity "syn_vint_diff_cosmetic_1_ent"
 				m_iszPostIdle "plazalean"} }
-
-		create {classname "npc_metropolice"
-			origin "-4247.31 -1539.56 -31"
-			values {spawnflags "8708"
-				targetname "syn_vint_diff_cosmetic_2_ent"
-				additionalequipment "weapon_smg1"} }
-
-		create {classname "scripted_sequence"
-			values {targetname "syn_vint_diff_cosmetic_2_ss"
-				spawnflags "256"
-				m_iszEntity "syn_vint_diff_cosmetic_2_ent"
-				m_iszPostIdle "smg1idle1"} }
 
 		create {classname "npc_metropolice"
 			origin "-4560 -1516 -32"
@@ -431,6 +418,7 @@ d1_trainstation_01
 				OnPlayersIn "barney_room_blocker_2,Enable,,0,-1"
 				OnPlayersIn "logic_BarneyExitNag,CancelPending,,0,-1"
 				OnPlayersIn "security_04,Disable,,0.1,-1"
+				OnStartTouch "gordon_criminal_global,TurnOn,,0.1,1"
 			}
 		}
 		delete {targetname "trigger_storage_close_door_1"}
@@ -444,7 +432,7 @@ d1_trainstation_01
 			values
 			{
 				targetname "syn_end_ladder"
-				StartDisabled "1"
+				StartDisabled "0"
 				point0 "-3458 93 110"
 				point1 "-3458 93 -32"
 			}
@@ -482,6 +470,91 @@ d1_trainstation_01
 		create {classname "info_target" origin "-3456 -256 -24" values {targetname "syn_barneyroom_teleport_target" angles "0 0 0"} }
 
 		edit {targetname "barney_room_blocker" values {targetname "trav_barney_room_blocker"} }
+		// Make it easier to pass through the queue faster
+		delete {targetname "citizen_queue_start_3"}
+		edit {targetname "customs_template" values {Template03 ""} }
+		
+		create {classname "logic_auto"
+			values
+			{
+				spawnflags "1"
+				// Add a save after train in case people die, to stop restarting the whole cutscene
+				OnMapSpawn "train_door_2_trig1,AddOutput,OnTrigger autosave:Save::1:1,0,-1"
+				OnMapSpawn "security_intro_02,AddOutput,OnTrigger2 logic_disable_cameras:Kill::0.1:-1,0,-1"
+				OnMapSpawn "interro_room_template,AddOutput,OnEntitySpawned setupskipseq:Trigger::0.1:-1,0,-1"
+				OnMapSpawn "customs_template,AddOutput,OnEntitySpawned setupskipseqext:Trigger::0.1:-1,0,-1"
+				OnMapSpawn "luggage_script_template,AddOutput,OnEntitySpawned setupskipseqext:Trigger::0.1:-1,0,-1"
+				OnMapSpawn "terminal_side_props_template,AddOutput,OnEntitySpawned setupskipseqext:Trigger::0.1:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer gordon_criminal_global:TurnOff::0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer gordon_invulnerable:TurnOff::0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer npc_metropolice:SetEnemyFilter:notcitizens:0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer npc_citizen:SetRelationship:player D_FR 99:0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer weapon_point_2:Cancel::0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer actbusy_customs_queue:Deactivate::0:-1,0,-1"
+				OnMapSpawn "npc_metropolice,AddOutput,OnDamagedByPlayer syn_vint_diff_cosmetic_*:CancelSequence::0:-1,0,-1"
+				OnMapSpawn "npc_cscanner,AddOutput,OnDamagedByPlayer gordon_criminal_global:TurnOff::0:-1,0,-1"
+				OnMapSpawn "npc_cscanner,AddOutput,OnDamagedByPlayer gordon_invulnerable:TurnOff::0:-1,0,-1"
+				OnMapSpawn "npc_cscanner,AddOutput,OnDamagedByPlayer npc_metropolice:SetEnemyFilter:notcitizens:0:-1,0,-1"
+				OnMapSpawn "npc_cscanner,AddOutput,OnDamagedByPlayer npc_citizen:SetRelationship:player D_FR 99:0:-1,0,-1"
+			}
+		}
+		create {classname "logic_autosave" values {targetname "autosave"} }
+		create {classname "logic_relay"
+			values
+			{
+				targetname "setupskipseq"
+				OnTrigger "barneyroom_door_cop_1,AddOutput,OnDeath security_intro_02:Cancel::0:-1,0,-1"
+				OnTrigger "barneyroom_door_cop_1,AddOutput,OnDeath security_intro_01b:Cancel::0:-1,0,-1"
+				OnTrigger "barneyroom_door_cop_1,AddOutput,OnDeath security_intro_01b:Kill::1:-1,0,-1"
+				OnTrigger "barneyroom_door_cop_1,AddOutput,OnDeath ss_Helmet_Reveal_pos:BeginSequence::0.1:-1,0,-1"
+				OnTrigger "barneyroom_door_cop_1,AddOutput,OnDeath security_01:Start::4:-1,0,-1"
+				OnTrigger "barneyroom_door_cop_1,AddOutput,OnDeath gordon_criminal_global:TurnOff::0.1:-1,0,-1"
+				OnTrigger "barneyroom_door_cop_1,AddOutput,OnDeath gordon_invulnerable:TurnOff::0.1:-1,0,-1"
+			}
+		}
+		create {classname "scripted_sequence" origin "-3336 -292 -28"
+			values
+			{
+				targetname "ss_Helmet_Reveal_pos"
+				spawnflags "96"
+				m_iszPlay "helmet_reveal"
+				m_iszEntity "barney"
+				m_fMoveTo "1"
+				angles "0 183 0"
+				OnScriptEvent01 "helmetFaceplate_head,TurnOff,,0,-1"
+				OnScriptEvent01 "helmetFaceplate_hand,TurnOn,,0,-1"
+				OnScriptEvent02 "helmetFaceplate_hand,TurnOff,,0,-1"
+				OnBeginSequence "logic_disable_cameras,Trigger,,0,-1"
+				OnBeginSequence "logic_disable_cameras,Kill,,0.1,-1"
+			}
+		}
+		create {classname "logic_relay"
+			values
+			{
+				targetname "setupskipseqext"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer gordon_criminal_global:TurnOff::0:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer gordon_invulnerable:TurnOff::0:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer npc_metropolice:SetEnemyFilter:notcitizens:0:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer npc_citizen:SetRelationship:player D_FR 99:0:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer ss_citizen_introom_chair:Kill::0:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer introom_door_2_slot:SetAnimation:Close:0:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer lcs_cop_introom:Cancel::0:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer lcs_cop_introom:Kill::0.1:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer citizen_introom_1:Kill::0.1:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer weapon_point_2:Cancel::0:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer actbusy_customs_queue:Deactivate::0:-1,0,-1"
+				OnTrigger "npc_metropolice,AddOutput,OnDamagedByPlayer syn_vint_diff_cosmetic_*:CancelSequence::0:-1,0,-1"
+			}
+		}
+		create {classname "filter_activator_class"
+			values
+			{
+				targetname "notcitizens"
+				filterclass "npc_citizen"
+				Negated "1"
+			}
+		}
+		edit {classname "env_global" origin "-4155.29 -2081.65 -23" values {targetname "gordon_invulnerable"} }
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d1_trainstation_01"} }

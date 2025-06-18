@@ -493,7 +493,7 @@ d2_coast_04
 				OnMapSpawn "prop_ragdoll,DisableMotion,,10,-1"} }
 				
 		//replace prop_ragdoll with physics cars to prevent network lag
-		edit {classname "prop_ragdoll" origin "2216 3680 1093" values {classname "prop_physics" model "models/props_vehicles/car005a_physics.mdl"} }
+		delete {classname "prop_ragdoll" origin "2216 3680 1093"}
 		edit {classname "prop_ragdoll" origin "2792 3328 1093" values {classname "prop_physics" model "models/props_vehicles/car002a_physics.mdl"} }
 		edit {classname "prop_ragdoll" origin "2592 3536 1245" values {classname "prop_physics" model "models/props_vehicles/car002b_physics.mdl"} }
 		edit {classname "prop_ragdoll" origin "2582.85 3640.5 1093" values {classname "prop_physics" model "models/props_vehicles/car003a_physics.mdl"} }
@@ -607,14 +607,14 @@ d2_coast_04
 				edt_getbspmodelfor_classname "trigger_once"
 				edt_getbspmodelfor_origin "6048 -3684 448"
 				spawnflags "1"
-				targetname "syn_carreq_alert"
+				targetname "syn_antirush_carreq_alert"
 				OnTrigger "syn_carreq_text,Display,,1,-1"
 			}
 		}
 		
 		create {classname "prop_dynamic" origin "6270 -3684 370"
 			values {model "models/synergy/tools/syn_transition.mdl"
-				targetname "syn_carreq_prop"
+				targetname "syn_antirush_carreq_prop"
 				angles "0 90 0"
 				solid "6"
 				DisableShadows "1"} }
@@ -644,8 +644,8 @@ d2_coast_04
 				OnTrigger "syn_spawn_vehicle_2,Enable,,1,-1"
 				OnTrigger "syn_moreplayerssec,CheckSkill,,1,-1"
 				OnTrigger "syn_carreq_push,Disable,,1,-1"
-				OnTrigger "syn_carreq_alert,Disable,,1,-1"
-				OnTrigger "syn_carreq_prop,Kill,,0,1"} }
+				OnTrigger "syn_antirush_carreq_alert,Disable,,1,-1"
+				OnTrigger "syn_antirush_carreq_prop,Kill,,0,1"} }
 
 //Trav|Edt - Allow any vehicles to break glass window and add save
 		delete {targetname "jeepwindow_jeepfilter"}
@@ -664,17 +664,8 @@ d2_coast_04
 				OnTrigger "autosave,save,,3,-1"
 				OnTrigger "syn_moreplayersthird,CheckSkill,,0,-1"
 				OnTrigger "syn_spawn_vehicle_3,Enable,,0,-1"
+				OnTrigger "syn_spawnscar2,ForceSpawn,,0,1"
 				OnTrigger "syn_spawn_manager,SetCheckpoint,syn_spawn_player_3b,0,-1"} }
-
-//Trav|Edt - Add truck after jump
-		create {classname "prop_vehicle_jeep"
-			origin "1927.99 2576.01 1032"
-			values {targetname "trav_SCAR2"
-			angles " 0 285 0"
-			model "models/vehicles/8seattruck.mdl"
-			vehiclescript "scripts/vehicles/truck.txt"
-			//skin "1"
-			} }
 
 //Trav|Edt - anti-rush
 		create {classname "trigger_coop"

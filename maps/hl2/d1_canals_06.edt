@@ -2,13 +2,7 @@ d1_canals_06
 {
 	entity {
 //--Setup--
-		delete {targetname "global_newgame_spawner_airboat"}
 		delete {classname "logic_auto" origin "12371.9 9297.58 -203"}
-
-//remove sp airboat from prev level
-		create {classname "logic_auto"
-			values {spawnflags "1"
-				OnMapSpawn "global_newgame_spawner_airboat,Kill,,0,-1"} }
 
 //Prevent Backtracking
 		create {classname "prop_dynamic" origin "13664 9408 -256"
@@ -59,7 +53,7 @@ d1_canals_06
 
 //--Spawns--
 		create {classname "info_spawn_manager"
-			values {targetname "syn_spawn_manager"} }
+			values {targetname "syn_spawn_manager" initialcheckpoint "syn_spawn_player_1"} }
 
 		create {classname "info_player_coop" origin "12304 8886 -180"//12368 9294 -212
 			values {angles "0 211 0" targetname "syn_spawn_player_1"} }//y150

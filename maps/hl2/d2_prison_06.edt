@@ -20,7 +20,11 @@ d2_prison_06
 			values {spawnflags "1"
 				OnMapSpawn "func_areaportal,AddOutPut,targetname syn_disabledPortal,0,-1"
 				OnMapSpawn "func_areaportal,AddOutPut,StartOpen 1,0,-1"
+				
+				OnMapSpawn "physbox_room3_plug,EnableMotion,,1,-1"
 				} }
+		// FC - not all classes have explosives
+		delete {classname "func_breakable" origin "979.5 -2897.5 -168"}
 
 //prevent potential backtracking
 		create {classname "syn_transition_wall" origin "1800 2064 -304"}

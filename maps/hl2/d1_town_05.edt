@@ -508,6 +508,17 @@ d1_town_05
 //				OnTrigger "d1_town-coast_changelevel,Enable,,0.1,-1"
 //			}
 //		}
+
+		edit {classname "npc_citizen" values {enemyfilter "notball"} }
+		create {classname "filter_activator_name"
+			values
+			{
+				targetname "notball"
+				Negated "1"
+				filtername "ball"
+			}
+		}
+
         delete {targetname "d1_town-coast_changelevel"}
         edit {targetname "trigger_changelevel"
             values

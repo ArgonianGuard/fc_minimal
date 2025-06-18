@@ -345,6 +345,17 @@ d1_eli_02
 
 		// remove annoying prop
 		"delete" { "classname" "prop_physics" "origin" "-3089.51 3400.07 -2947.89" }
+		
+		edit {targetname "timer_attack" values {UpperRandomBound "40" RefireTime "20"} }
+		delete {targetname "logic_T_w_1_6_end"}
+		create {classname "logic_auto"
+			values
+			{
+				spawnflags "1"
+				OnMapSpawn "logic_T_w_1_5_end,AddOutput,OnTrigger logic_T_w_1_10_end:Enable::0:-1,0,-1"
+				OnMapSpawn "logic_T_w_1_5_end,AddOutput,OnTrigger logic_T_w_1_10_end:Trigger::1:-1,0,-1"
+			}
+		}
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d1_eli_02"} }

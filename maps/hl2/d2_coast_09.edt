@@ -514,13 +514,6 @@ d2_coast_09
 				targetname "syn_vint"} }
 
 		create {classname "item_ammo_crate"
-			origin "636 -6556 -463"
-			values {AmmoType "4"
-				fademaxdist "1500"
-				fademindist "1000"
-				targetname "syn_vint"} }
-
-		create {classname "item_ammo_crate"
 			origin "636 -6616 -463"
 			values {AmmoType "7"
 				fademaxdist "1500"

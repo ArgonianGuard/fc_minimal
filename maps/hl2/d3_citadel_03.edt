@@ -96,6 +96,16 @@ create { classname "info_player_coop" origin "7728 -1344 2672" values {angles "0
 
 //End of Trav|Edt
 
+		create {classname "fc_weapon_progress"
+			values
+			{
+				targetname "fc_weapon_progress"
+				physcannon_progress "1"
+				wpnprogress "0"
+				portalgun_progress "0"
+			}
+		}
+
 		// fix dissolver
 		"delete" { "targetname" "weapon_dissolve" }
 		"create"
@@ -111,9 +121,25 @@ create { classname "info_player_coop" origin "7728 -1344 2672" values {angles "0
 				"targetname" "weapon_dissolve"
 				"spawnflags" "64"
 				"StartDisabled" "1"
+				"OnChargingPhyscannon" "fc_weapon_progress,SetWeaponProgress,0,0,1"
+				"OnChargingPhyscannon" "fc_weapon_progress,SetPhyscannonProgress,0,0,1"
 				"OnChargingPhyscannon" "logic_weapon_strip_physcannon_start,Trigger,,0,1" // -1
 			}
 		}
+		
+		create {classname "logic_auto"
+			values
+			{
+				spawnflags "1"
+				OnMapSpawn "logic_weapon_strip_physcannon_end,AddOutput,OnTrigger fc_weapon_progress:SetWeaponProgress:2:2:-1,0,-1"
+				OnMapSpawn "logic_weapon_strip_physcannon_end,AddOutput,OnTrigger fc_weapon_progress:SetPhyscannonProgress:2:2:-1,0,-1"
+				OnMapSpawn "logic_weapon_strip_dissolve,AddOutput,OnTrigger logic_weapon_strip_physcannon_end:Trigger::10:-1,0,-1"
+			}
+		}
+		
+		create {classname "ambient_generic" values {message "weapons/stunstick/spark1.wav"} }
+		create {classname "ambient_generic" values {message "weapons/stunstick/spark2.wav"} }
+		create {classname "ambient_generic" values {message "weapons/stunstick/spark3.wav"} }
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d3_citadel_03"} }

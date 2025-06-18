@@ -191,10 +191,9 @@ d1_town_02
 				OnTrigger "syn_wall_removeme_temp_t02,ForceSpawn,,0,-1"
 				"OnTrigger" "syn_spawn_manager,SetCheckPoint,syn_spawn_player_3,0,0"
 				//"OnTrigger" "edt_shotty_equip,Enable,,0,0"
-				OnTrigger "syn_vint_trav_gman,Kill,,0,-1"
 				OnTrigger "syn_wall_removeme_t03,Kill,,0,-1"
-				OnTrigger "syn_vint_stopplayerjump_1,Kill,,0,-1"
-				OnTrigger "syn_vint_trav_trigger_hurt,Disable,,0,-1"} }
+				OnTrigger "syn_antirush_stopplayerjump_1,Kill,,0,-1"
+				OnTrigger "syn_antirush_trav_trigger_hurt,Disable,,0,-1"} }
 //^^
 	//	//make it work if we start on 03
 	//	
@@ -322,7 +321,7 @@ d1_town_02
 				edt_getbspmodelfor_classname "trigger_multiple"
 				edt_getbspmodelfor_origin "-4000 832 -3472"
 				spawnflags "1"
-				targetname "syn_vint_trav_trigger_hurt"
+				targetname "syn_antirush_trav_trigger_hurt"
 				damage "5000"
 				damagetype "32"
 				nodmgforce "1"} }
@@ -363,45 +362,6 @@ d1_town_02
 			model "models/props_junk/wood_crate001a_damaged.mdl"
 				targetname "syn_vint"} }
 
-		create {classname "npc_gman"
-			origin "-3928 -206 -3584"
-			values {spawnflags "16532"
-				targetname "syn_vint_trav_gman"} }
-
-		create {classname "scripted_sequence"
-			origin "-3928 -206 -3584"
-			values {spawnflags "96"
-				targetname "syn_vint_trav_ss_gman_1"
-				m_iszEntity "syn_vint_trav_gman"
-				m_iszPlay "tiefidget"
-				m_iszNextScript "syn_vint_trav_ss_gman_2"} }
-
-		create {classname "scripted_sequence"
-			origin "-3928 56 -3456"
-			values {spawnflags "96"
-				angles "0 90 0"
-				targetname "syn_vint_trav_ss_gman_2"
-				m_fMoveTo "1"
-				OnEndSequence "syn_vint_trav_gman,Kill,,0,-1"
-				OnEndSequence "syn_vint_trav_ss_gman_1,Kill,,0,-1"
-				OnEndSequence "!self,Kill,,0.1,-1"} }
-
-		//create {classname "ambient_generic"
-		//	origin "-3920 -104 -3480"
-		//	values {spawnflags "48"
-		//		targetname "trav_gman_cough"
-		//		message "ambient\voices\cough2.wav"} }
-
-		create {classname "trigger_once"
-			origin "-3732 -212 -3526"
-			values {
-				//model "*136"
-				edt_getbspmodelfor_classname "trigger_once"
-				edt_getbspmodelfor_origin "-3732 -212 -3526"
-				spawnflags "1"
-				OnTrigger "syn_vint_trav_ss_gman_1,BeginSequence,,4,-1"} }
-				//OnTrigger "trav_gman_cough,PlaySound,,7,-1"
-
 //Trav|Edt - add clip so players cant skip to next level (saw in speedvid)
 		create {classname "func_brush"
 			origin "-3384 632.01 -3196"
@@ -410,7 +370,7 @@ d1_town_02
 				edt_getbspmodelfor_classname "func_brush"
 				edt_getbspmodelfor_origin "-3360 448 -3196"
 				spawnflags "2"
-				targetname "syn_vint_stopplayerjump_1"} }
+				targetname "syn_antirush_stopplayerjump_1"} }
 				
 		create {classname "trigger_push"
 			origin "-4480 -180 -2900"
@@ -419,7 +379,7 @@ d1_town_02
 				edt_getbspmodelfor_classname "trigger_multiple"
 				edt_getbspmodelfor_origin "-4000 832 -3472"
 				spawnflags "1"
-				targetname "syn_vint_trigger_jump"
+				targetname "syn_antirush_trigger_jump"
 				pushdir "0 0 0"
 				speed "850"} }
 				
@@ -429,7 +389,7 @@ d1_town_02
 				edt_getbspmodelfor_classname "trigger_once"
 				edt_getbspmodelfor_origin "-2344 759.07 -3204"
 				spawnflags "1"
-				targetname "syn_vint_trigger_jump"
+				targetname "syn_antirush_trigger_jump"
 				pushdir "0 90 0"
 				speed "850"} }
 				
@@ -439,7 +399,7 @@ d1_town_02
 				edt_getbspmodelfor_classname "trigger_once"
 				edt_getbspmodelfor_origin "-2344 759.07 -3204"
 				spawnflags "1"
-				targetname "syn_vint_trigger_jump"
+				targetname "syn_antirush_trigger_jump"
 				pushdir "0 90 0"
 				speed "850"} }
 
@@ -452,7 +412,7 @@ d1_town_02
 				spawnflags "1"
 				pushdir "0 90 0"
 				speed "850"
-				targetname "syn_vint_stopplayerjump_1"
+				targetname "syn_antirush_stopplayerjump_1"
 			}
 		}
 
@@ -465,7 +425,7 @@ d1_town_02
 				spawnflags "1"
 				pushdir "0 40 0"
 				speed "850"
-				targetname "syn_vint_stopplayerjump_1"
+				targetname "syn_antirush_stopplayerjump_1"
 			}
 		}
 
@@ -492,7 +452,7 @@ d1_town_02
 				OnMapSpawn "freight_lift_button_2,AddOutput,OnPressed syn_new_weapon:EquipAllPlayers::3:-1,0,-1"
 				OnMapSpawn "freight_lift_button_2,AddOutput,OnPressed autosave_shotgun:Save::5:1,0,-1"
 				OnMapSpawn "freight_lift_button_2,AddOutput,OnPressed syn_vint_trav_maker_zombies_elevator:Enable::28:-1,0,-1"
-				OnMapSpawn "freight_lift_button_2,AddOutput,OnPressed syn_vint_trav_trigger_hurt:Disable::5:-1,0,-1"
+				OnMapSpawn "freight_lift_button_2,AddOutput,OnPressed syn_antirush_trav_trigger_hurt:Disable::5:-1,0,-1"
 				OnMapSpawn "freight_lift_button_2,AddOutput,OnPressed syn_spawn_manager:SetCheckpoint:syn_spawn_player_2:0:1,0,-1"
 				OnMapSpawn "freight_lift_button_2,AddOutput,OnPressed syn_vint_trav_maker_zombies_wait:AddMaxChildren:10:0:-1,0,-1"
 				OnMapSpawn "freight_lift_button_2,AddOutput,OnPressed syn_vint_trav_maker_zombies_wait:Enable::0.1:-1,0,-1"
@@ -698,7 +658,7 @@ d1_town_02
 				edt_getbspmodelfor_origin "-4545 965 -2960"
 				spawnflags "2"
 				angles "0 -15 0"
-				targetname "syn_vint"
+				targetname "syn_antirush"
 			}
 		}
 
@@ -779,7 +739,7 @@ d1_town_02
 				PlayerValue "50"
 				//OnStartTouch "churchtram_lever,Lock,,0,1"
 				OnPlayersIn "trav_churchtram_lever,UnLock,,0,1"
-				OnPlayersIn "syn_modi_antiskip,Kill,,0,1"
+				OnPlayersIn "syn_antirush_modi_antiskip,Kill,,0,1"
 				OnPlayersIn "syn_modi_checkpoint_gregory,Enable,,0,1"
 				OnPlayersIn "!self,Disable,,1,1"} }
 				
@@ -841,7 +801,7 @@ d1_town_02
 				edt_getbspmodelfor_origin "-4856 800 -3224"
 				angles "0 0 0"
 				spawnflags "1"
-				targetname "syn_modi_antiskip"
+				targetname "syn_antirush_modi_antiskip"
 				damage "5000"
 				damagetype "32"
 			} 
@@ -894,6 +854,7 @@ d1_town_02
 			values {spawnflags "1"
 				OnMapSpawn "trav_churchtram_lever,AddOutput,OnFullyOpen syn_churchyard_playerclip_trigger:Enable::6:-1,0,1"
 				OnMapSpawn "trav_churchtram_lever,AddOutput,OnFullyOpen cavezombies_away_timer:Enable::0:-1,0,1"
+				OnMapSpawn "trav_churchtram_lever,AddOutput,OnOpen !self:Unlock::5:-1,0,-1"
 				OnMapSpawn "churchtram_lever_button,AddOutput,OnIn trav_churchtram_lever:Open::0:-1,0,-1"
 				OnMapSpawn "churchtram_lever_button,AddOutput,OnOut trav_churchtram_lever:Close::0:-1,0,-1"
 				OnMapSpawn "monk_rock_scene_b3,AddOutput,OnCompletion syn_break1:Enable::1:-1,0,-1"} }
@@ -1046,6 +1007,15 @@ d1_town_02
 			}
 		}
 		
+		edit {classname "npc_monk" values {enemyfilter "notball"} }
+		create {classname "filter_activator_name"
+			values
+			{
+				targetname "notball"
+				Negated "1"
+				filtername "ball"
+			}
+		}
 
 //Trav|Edt - Functionality check
 		create {classname "logic_relay" values {targetname "trav_functionality_d1_town_02"} }
