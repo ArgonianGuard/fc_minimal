@@ -1,0 +1,21 @@
+"gamemounting.txt"
+{
+	"TheyHungerSource"
+	{
+		"appid"	"220"
+		"required"	"0"
+		"sourcemod"	"1"
+		"contenttag"	"ths"
+
+		"paths"
+		{
+			"local"			"TheyHungerSource/TheyHunger"
+			"local"			"TheyHungerSource/TheyHunger/thsp_dir.vpk"
+			"local"			"TheyHungerSource/TheyHunger/THSPF_dir.vpk"
+
+			"dedicated"		"TheyHungerSource/TheyHunger"
+			"dedicated"		"TheyHungerSource/TheyHunger/thsp_dir.vpk"
+			"dedicated"		"TheyHungerSource/TheyHunger/THSPF_dir.vpk"
+		}
+	}
+}
