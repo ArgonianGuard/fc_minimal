@@ -745,7 +745,7 @@ d2_prison_07
 				targetname "failsavechange"
 				spawnflags "1"
 				edt_mins "-100 -100 -100"
-				edt_maxs "100 100 100"
+				edt_maxs "100 100 50"
 				OnTrigger "changeto08,ChangeLevel,,2,1"
 				OnTrigger "command,Command,changelevel hl2 d2_prison_08 landmark_d2_prison_07-08,5,1"
 				OnTrigger "command,Kill,,6,-1"
