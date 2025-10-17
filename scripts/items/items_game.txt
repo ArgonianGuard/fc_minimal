@@ -35872,6 +35872,7 @@
 			"mouse_pressed_sound"	"physics/metal/metal_box_break2.wav"
 			"drop_sound"	"tfc/misc/teleport_in.wav"
 		}
+		// MvM Minigun. 
 		"850"
 		{
 			"name"			"Deflector"
@@ -35879,7 +35880,7 @@
 			"prefab"		"weapon_minigun"
 			"craft_class"	""
 			"baseitem"		"0"
-			"show_in_armory"	"1"
+			"show_in_armory"	"0"
 			"item_name"		"#TF_Minigun_Deflector"
 			"item_quality"	"developer"
 			"model_player"	"models/weapons/c_models/c_minigun/c_minigun.mdl"
@@ -36125,6 +36126,7 @@
 			"drop_sound"		"ui/item_heavy_gun_drop.wav"
 			"xifier_class_remap"		"flamethrower"
 		}
+		// Soldier eyelander, not vanilla.
 		"9152"
 		{
 			"prefab"	"weapon_sword"
@@ -36146,7 +36148,7 @@
 			"image_inventory"	"backpack/weapons/c_models/c_claymore/c_claymore"
 			"model_player"	"models/weapons/lambda/v_models/v_claymore.mdl"
 			"model_world"	"models/weapons/c_models/c_claymore/c_claymore.mdl"
-			"show_in_armory"	"1"
+			"show_in_armory"	"0"
 			"attach_to_hands"	"2"
 			"anim_slot"	"melee"
 			"used_by_classes"
@@ -38069,6 +38071,7 @@
 			"mouse_pressed_sound"	"ui/item_bottle_pickup.wav"
 			"drop_sound"		"ui/item_bottle_drop.wav"
 		}
+		// Engy revolver. not vanilla tf2. 
 		"9560"
 		{
 			"name" "Engy Revolver"
@@ -38099,7 +38102,7 @@
 			"min_ilevel"	"10"
 			"max_ilevel"	"10"
 			"image_inventory"	"backpack/weapons/w_models/w_revolver"
-			"show_in_armory"	"1"
+			"show_in_armory"	"0"
 			"attach_to_hands"	"2"
 			"image_inventory_size_w"		"128"
 			"image_inventory_size_h"		"82"
@@ -41012,7 +41015,7 @@
 			"mouse_pressed_sound"	"ui/item_metal_weapon_pickup.wav"
 			"drop_sound"		"ui/item_metal_weapon_drop.wav"
 		}
-		
+		// Sniper Shotgun. Not vanilla
 		"9864"
 		 {
             "name"    "TF_WEAPON_SHOTGUN_SNIPER_SECONDARY"
@@ -41022,7 +41025,7 @@
             "baseitem"    "0"
 			"item_name"		"Shotgun"
             "item_slot"    "primary"
-			"show_in_armory"	"1"
+			"show_in_armory"	"0"
             "model_player"    "models/weapons/v_models/v_shotgun_sniper.mdl"
             "model_world"    "models/weapons/c_models/c_shotgun/c_shotgun.mdl"
 			"anim_slot"		 "primary"
